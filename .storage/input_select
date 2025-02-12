@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "minor_version": 2,
+  "key": "input_select",
+  "data": {
+    "items": [
+      {
+        "id": "threat_level",
+        "name": "threat_level",
+        "icon": "mdi:alert-circle-outline",
+        "options": [
+          "low",
+          "medium",
+          "high",
+          "critical"
+        ]
+      }
+    ]
+  }
+}

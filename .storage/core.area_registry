@@ -1,0 +1,297 @@
+{
+  "version": 1,
+  "minor_version": 8,
+  "key": "core.area_registry",
+  "data": {
+    "areas": [
+      {
+        "aliases": [],
+        "floor_id": "ground_floor",
+        "icon": "mdi:stove",
+        "id": "kitchen",
+        "labels": [
+          "downstairs",
+          "kitchen_room"
+        ],
+        "name": "kitchen_room",
+        "picture": null,
+        "created_at": "2024-12-11T17:33:23.262579+00:00",
+        "modified_at": "2025-01-15T19:03:14.266925+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      },
+      {
+        "aliases": [],
+        "floor_id": "ground_floor",
+        "icon": "mdi:file-cabinet",
+        "id": "pantry",
+        "labels": [
+          "downstairs",
+          "kitchen_room"
+        ],
+        "name": "pantry_room",
+        "picture": null,
+        "created_at": "2024-12-11T19:29:59.196856+00:00",
+        "modified_at": "2025-01-15T19:03:04.862145+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      },
+      {
+        "aliases": [],
+        "floor_id": "ground_floor",
+        "icon": "mdi:door",
+        "id": "entry",
+        "labels": [
+          "downstairs"
+        ],
+        "name": "entry_room",
+        "picture": null,
+        "created_at": "2024-12-11T19:29:59.198193+00:00",
+        "modified_at": "2025-01-15T19:04:30.290728+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      },
+      {
+        "aliases": [],
+        "floor_id": "ground_floor",
+        "icon": "mdi:bed-king",
+        "id": "master",
+        "labels": [
+          "downstairs",
+          "master_room"
+        ],
+        "name": "master_room",
+        "picture": null,
+        "created_at": "2024-12-11T19:29:59.208218+00:00",
+        "modified_at": "2025-01-15T19:01:51.704630+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      },
+      {
+        "aliases": [],
+        "floor_id": "ground_floor",
+        "icon": "mdi:wrench",
+        "id": "craft_room",
+        "labels": [
+          "downstairs",
+          "hobby_room"
+        ],
+        "name": "hobby_room",
+        "picture": null,
+        "created_at": "2024-12-11T19:29:59.211848+00:00",
+        "modified_at": "2025-01-15T18:57:46.186171+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      },
+      {
+        "aliases": [],
+        "floor_id": "ground_floor",
+        "icon": "mdi:bed-king",
+        "id": "gavins_room",
+        "labels": [
+          "downstairs",
+          "gavin_room"
+        ],
+        "name": "gavin_room",
+        "picture": null,
+        "created_at": "2024-12-11T19:29:59.214090+00:00",
+        "modified_at": "2025-01-16T15:38:15.334602+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      },
+      {
+        "aliases": [],
+        "floor_id": "second_floor",
+        "icon": "mdi:bed-king",
+        "id": "guest_room",
+        "labels": [
+          "upstairs",
+          "guest_room"
+        ],
+        "name": "guest_room",
+        "picture": null,
+        "created_at": "2024-12-11T19:29:59.214656+00:00",
+        "modified_at": "2025-01-15T19:04:56.851311+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      },
+      {
+        "aliases": [],
+        "floor_id": "ground_floor",
+        "icon": "mdi:bed-king",
+        "id": "lindas_room",
+        "labels": [
+          "downstairs",
+          "linda_room"
+        ],
+        "name": "linda_room",
+        "picture": null,
+        "created_at": "2024-12-11T19:29:59.215777+00:00",
+        "modified_at": "2025-01-16T19:17:29.907592+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      },
+      {
+        "aliases": [],
+        "floor_id": "ground_floor",
+        "icon": "mdi:cannabis",
+        "id": "grow_room",
+        "labels": [
+          "downstairs",
+          "canna_closet"
+        ],
+        "name": "canna_closet",
+        "picture": null,
+        "created_at": "2024-12-11T19:29:59.253297+00:00",
+        "modified_at": "2025-01-15T20:13:14.763275+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      },
+      {
+        "aliases": [],
+        "floor_id": "ground_floor",
+        "icon": "mdi:sofa",
+        "id": "family_room",
+        "labels": [
+          "downstairs",
+          "family_room"
+        ],
+        "name": "family_room",
+        "picture": null,
+        "created_at": "2024-12-18T15:51:07.260122+00:00",
+        "modified_at": "2025-01-15T18:58:58.434823+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      },
+      {
+        "aliases": [],
+        "floor_id": "second_floor",
+        "icon": "mdi:stairs-up",
+        "id": "upstairs",
+        "labels": [
+          "upstairs"
+        ],
+        "name": "upstairs",
+        "picture": null,
+        "created_at": "2024-12-31T17:08:17.446204+00:00",
+        "modified_at": "2025-01-15T19:05:37.310952+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      },
+      {
+        "aliases": [],
+        "floor_id": "ground_floor",
+        "icon": "mdi:chair-rolling",
+        "id": "office",
+        "labels": [
+          "downstairs"
+        ],
+        "name": "office_room",
+        "picture": null,
+        "created_at": "2025-01-02T20:12:14.390395+00:00",
+        "modified_at": "2025-01-15T19:04:23.510863+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      },
+      {
+        "aliases": [],
+        "floor_id": "ground_floor",
+        "icon": "mdi:grass",
+        "id": "front_yard",
+        "labels": [
+          "downstairs"
+        ],
+        "name": "front_yard",
+        "picture": null,
+        "created_at": "2025-01-15T18:55:46.158891+00:00",
+        "modified_at": "2025-01-15T18:55:46.158901+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      },
+      {
+        "aliases": [],
+        "floor_id": "ground_floor",
+        "icon": "mdi:grass",
+        "id": "back_yard",
+        "labels": [
+          "downstairs"
+        ],
+        "name": "back_yard",
+        "picture": null,
+        "created_at": "2025-01-15T18:56:15.015881+00:00",
+        "modified_at": "2025-01-15T19:06:30.442149+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      },
+      {
+        "aliases": [],
+        "floor_id": "ground_floor",
+        "icon": "mdi:garage",
+        "id": "garage",
+        "labels": [],
+        "name": "garage",
+        "picture": null,
+        "created_at": "2025-01-15T19:23:05.033309+00:00",
+        "modified_at": "2025-01-15T19:23:05.033319+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      },
+      {
+        "aliases": [],
+        "floor_id": "ground_floor",
+        "icon": "mdi:food",
+        "id": "dining_room",
+        "labels": [],
+        "name": "dining_room",
+        "picture": null,
+        "created_at": "2025-01-15T19:28:54.455135+00:00",
+        "modified_at": "2025-01-15T19:28:54.455146+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "icon": null,
+        "id": "bedroom",
+        "labels": [],
+        "name": "Bedroom",
+        "picture": null,
+        "created_at": "2025-01-15T23:25:48.451259+00:00",
+        "modified_at": "2025-01-15T23:25:48.451261+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      },
+      {
+        "aliases": [],
+        "floor_id": "ground_floor",
+        "icon": "mdi:wardrobe",
+        "id": "master_closet",
+        "labels": [
+          "canna_closet"
+        ],
+        "name": "master_closet",
+        "picture": null,
+        "created_at": "2025-01-20T19:03:11.480890+00:00",
+        "modified_at": "2025-01-20T19:03:11.480893+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      },
+      {
+        "aliases": [],
+        "floor_id": "ground_floor",
+        "icon": "mdi:washing-machine",
+        "id": "laundry_room",
+        "labels": [
+          "downstairs"
+        ],
+        "name": "laundry_room",
+        "picture": null,
+        "created_at": "2025-01-27T14:31:14.702159+00:00",
+        "modified_at": "2025-01-27T14:31:14.702171+00:00",
+        "humidity_entity_id": null,
+        "temperature_entity_id": null
+      }
+    ]
+  }
+}

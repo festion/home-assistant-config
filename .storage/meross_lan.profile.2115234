@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "meross_lan.profile.2115234",
+  "data": {
+    "appId": "5959fef0e7b8fea888aa130325280102",
+    "token": "623564ecc8362256c78ff874fe88cc87c047ac047b238f49752c241a1cabab18",
+    "deviceInfo": {
+      "2202145092509936103148e1e989a111": {
+        "uuid": "2202145092509936103148e1e989a111",
+        "onlineStatus": 1,
+        "devName": "Smart Garage Door Opener",
+        "devIconId": "device039_un",
+        "bindTime": 1655486942,
+        "deviceType": "msg100",
+        "subType": "us",
+        "channels": [
+          {}
+        ],
+        "region": "us",
+        "fmwareVersion": "3.2.7",
+        "hdwareVersion": "3.0.0",
+        "userDevIcon": "",
+        "iconType": 1,
+        "domain": "mqtt-us-4.meross.com",
+        "reservedDomain": "mqtt-us-4.meross.com",
+        "hardwareCapabilities": []
+      }
+    },
+    "deviceInfoTime": 1739374263.5344594,
+    "latestVersion": [
+      {
+        "type": "msg100",
+        "subType": "us",
+        "version": "3.2.7",
+        "url": "http://static-file.meross.com/staticfile/1663312972491/6116359.bin",
+        "md5": "e26354f20b8df836f3b5a2ed33d9b655",
+        "description": "1. Fixed a possible crash problem;\n2. Improved the success rate of firmware upgrade;\n3. Improved the accuracy of door open/close notifications;\n4. Enhanced the online stability of the device.",
+        "alias": "",
+        "mcu": [],
+        "upgradeType": "02"
+      }
+    ],
+    "latestVersionTime": 1739201463.530198,
+    "tokenRequestTime": 0.0
+  }
+}

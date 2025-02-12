@@ -1,0 +1,261 @@
+{
+  "version": 1,
+  "minor_version": 2,
+  "key": "core.label_registry",
+  "data": {
+    "labels": [
+      {
+        "color": "grey",
+        "description": "Rav4",
+        "icon": "mdi:car",
+        "label_id": "rav4",
+        "name": "rav4",
+        "created_at": "2025-01-14T22:55:42.190701+00:00",
+        "modified_at": "2025-01-15T18:10:34.202605+00:00"
+      },
+      {
+        "color": null,
+        "description": "Sensors",
+        "icon": null,
+        "label_id": "sensors",
+        "name": "sensors",
+        "created_at": "2025-01-15T18:09:15.598066+00:00",
+        "modified_at": "2025-01-15T18:10:40.314102+00:00"
+      },
+      {
+        "color": null,
+        "description": "Lights",
+        "icon": "mdi:lightbulb",
+        "label_id": "lights",
+        "name": "lights",
+        "created_at": "2025-01-15T18:09:49.024099+00:00",
+        "modified_at": "2025-01-15T18:10:46.023405+00:00"
+      },
+      {
+        "color": null,
+        "description": null,
+        "icon": "mdi:power-plug",
+        "label_id": "plugs",
+        "name": "plugs",
+        "created_at": "2025-01-15T18:10:58.777812+00:00",
+        "modified_at": "2025-01-15T18:10:58.777816+00:00"
+      },
+      {
+        "color": null,
+        "description": null,
+        "icon": "mdi:stairs-up",
+        "label_id": "upstairs",
+        "name": "upstairs",
+        "created_at": "2025-01-15T18:11:34.776525+00:00",
+        "modified_at": "2025-01-15T18:11:34.776529+00:00"
+      },
+      {
+        "color": null,
+        "description": null,
+        "icon": "mdi:stairs-down",
+        "label_id": "downstairs",
+        "name": "downstairs",
+        "created_at": "2025-01-15T18:11:48.148734+00:00",
+        "modified_at": "2025-01-15T18:11:48.148738+00:00"
+      },
+      {
+        "color": null,
+        "description": "Guest bedroom",
+        "icon": "mdi:bed-king-outline",
+        "label_id": "guest_room",
+        "name": "guest_room",
+        "created_at": "2025-01-15T18:13:32.077302+00:00",
+        "modified_at": "2025-01-15T18:13:32.077313+00:00"
+      },
+      {
+        "color": null,
+        "description": "Master Bedroom",
+        "icon": "mdi:bed-king-outline",
+        "label_id": "master_room",
+        "name": "master_room",
+        "created_at": "2025-01-15T18:14:00.290793+00:00",
+        "modified_at": "2025-01-15T18:14:00.290799+00:00"
+      },
+      {
+        "color": null,
+        "description": "Linda's bedroom",
+        "icon": "mdi:bed-king-outline",
+        "label_id": "linda_room",
+        "name": "linda_room",
+        "created_at": "2025-01-15T18:14:21.277073+00:00",
+        "modified_at": "2025-01-15T18:14:21.277083+00:00"
+      },
+      {
+        "color": null,
+        "description": null,
+        "icon": "mdi:bed-king-outline",
+        "label_id": "gavin_room",
+        "name": "gavin_room",
+        "created_at": "2025-01-15T18:14:34.525753+00:00",
+        "modified_at": "2025-01-15T18:14:34.525761+00:00"
+      },
+      {
+        "color": null,
+        "description": "Hobby room",
+        "icon": "mdi:bed-king-outline",
+        "label_id": "hobby_room",
+        "name": "hobby_room",
+        "created_at": "2025-01-15T18:15:49.537453+00:00",
+        "modified_at": "2025-01-15T18:15:49.537461+00:00"
+      },
+      {
+        "color": "light-green",
+        "description": null,
+        "icon": "mdi:cannabis",
+        "label_id": "canna_closet",
+        "name": "canna_closet",
+        "created_at": "2025-01-15T18:16:11.933110+00:00",
+        "modified_at": "2025-01-15T18:16:11.933121+00:00"
+      },
+      {
+        "color": "green",
+        "description": null,
+        "icon": "mdi:lightbulb-group",
+        "label_id": "grow_lights",
+        "name": "grow_lights",
+        "created_at": "2025-01-15T18:17:50.034967+00:00",
+        "modified_at": "2025-01-15T18:17:50.034970+00:00"
+      },
+      {
+        "color": null,
+        "description": "switches",
+        "icon": "mdi:light-switch",
+        "label_id": "switches",
+        "name": "switches",
+        "created_at": "2025-01-15T18:41:43.451517+00:00",
+        "modified_at": "2025-01-15T18:41:43.451527+00:00"
+      },
+      {
+        "color": null,
+        "description": "ceiling fans",
+        "icon": "mdi:ceiling-fan",
+        "label_id": "fans",
+        "name": "fans",
+        "created_at": "2025-01-15T18:42:11.974332+00:00",
+        "modified_at": "2025-01-15T18:42:11.974336+00:00"
+      },
+      {
+        "color": null,
+        "description": "family room",
+        "icon": "mdi:sofa",
+        "label_id": "family_room",
+        "name": "family_room",
+        "created_at": "2025-01-15T18:43:50.946168+00:00",
+        "modified_at": "2025-01-15T18:43:50.946181+00:00"
+      },
+      {
+        "color": null,
+        "description": null,
+        "icon": "mdi:stove",
+        "label_id": "kitchen_room",
+        "name": "kitchen_room",
+        "created_at": "2025-01-15T18:44:52.063796+00:00",
+        "modified_at": "2025-01-15T18:44:52.063807+00:00"
+      },
+      {
+        "color": null,
+        "description": null,
+        "icon": "mdi:table-picnic",
+        "label_id": "dining_room",
+        "name": "dining_room",
+        "created_at": "2025-01-15T18:46:27.905355+00:00",
+        "modified_at": "2025-01-15T18:46:27.905365+00:00"
+      },
+      {
+        "color": null,
+        "description": "garage",
+        "icon": "mdi:garage",
+        "label_id": "garage",
+        "name": "garage",
+        "created_at": "2025-01-15T19:22:31.297371+00:00",
+        "modified_at": "2025-01-15T19:22:31.297377+00:00"
+      },
+      {
+        "color": null,
+        "description": null,
+        "icon": "mdi:speaker",
+        "label_id": "speakers",
+        "name": "speakers",
+        "created_at": "2025-01-15T19:48:17.478471+00:00",
+        "modified_at": "2025-01-15T19:48:17.478481+00:00"
+      },
+      {
+        "color": null,
+        "description": null,
+        "icon": null,
+        "label_id": "front_yard",
+        "name": "front_yard",
+        "created_at": "2025-01-15T19:59:25.050355+00:00",
+        "modified_at": "2025-01-15T19:59:25.050358+00:00"
+      },
+      {
+        "color": null,
+        "description": null,
+        "icon": null,
+        "label_id": "back_yard",
+        "name": "back_yard",
+        "created_at": "2025-01-15T19:59:43.630384+00:00",
+        "modified_at": "2025-01-15T19:59:43.630394+00:00"
+      },
+      {
+        "color": null,
+        "description": null,
+        "icon": "mdi:sprinkler",
+        "label_id": "sprinklers",
+        "name": "sprinklers",
+        "created_at": "2025-01-15T20:01:07.044116+00:00",
+        "modified_at": "2025-01-15T20:01:07.044128+00:00"
+      },
+      {
+        "color": null,
+        "description": null,
+        "icon": "mdi:alert-octagon-outline",
+        "label_id": "always_on",
+        "name": "always_on",
+        "created_at": "2025-01-15T20:17:25.430918+00:00",
+        "modified_at": "2025-01-15T20:17:25.430922+00:00"
+      },
+      {
+        "color": null,
+        "description": null,
+        "icon": "mdi:camera",
+        "label_id": "camera",
+        "name": "camera",
+        "created_at": "2025-01-16T18:57:49.528877+00:00",
+        "modified_at": "2025-01-16T18:57:49.528882+00:00"
+      },
+      {
+        "color": null,
+        "description": null,
+        "icon": "mdi:car",
+        "label_id": "toyota_camry",
+        "name": "toyota_camry",
+        "created_at": "2025-01-20T19:09:36.079873+00:00",
+        "modified_at": "2025-01-20T19:09:36.079877+00:00"
+      },
+      {
+        "color": null,
+        "description": null,
+        "icon": null,
+        "label_id": "jeremy",
+        "name": "jeremy",
+        "created_at": "2025-01-23T22:14:31.322566+00:00",
+        "modified_at": "2025-01-23T22:14:31.322576+00:00"
+      },
+      {
+        "color": "red",
+        "description": null,
+        "icon": "mdi:exclamation-thick",
+        "label_id": "critical",
+        "name": "critical",
+        "created_at": "2025-01-30T16:56:15.938854+00:00",
+        "modified_at": "2025-01-30T16:56:15.938867+00:00"
+      }
+    ]
+  }
+}

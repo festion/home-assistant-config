@@ -1,0 +1,354 @@
+- id: '1736869556746'
+  alias: Lights Sunset Sunrise
+  description: Automation based on sunrise/sun set
+  trigger:
+  - platform: sun
+    event: sunset
+    id: Sunset
+  - platform: sun
+    event: sunrise
+    id: Sunrise
+    offset: +00:15:00
+  action:
+  - service: light.turn_{{ 'on' if trigger.id == 'Sunset' else 'off' }}
+    target:
+      entity_id: light.porch_light
+  - choose:
+    - conditions:
+      - condition: trigger
+        id:
+        - Sunset
+      sequence:
+      - service: light.turn_on
+        target:
+          entity_id: light.hall_light
+        data:
+          brightness_pct: 100
+    - conditions:
+      - condition: trigger
+        id:
+        - Sunrise
+      sequence:
+      - service: light.turn_off
+        target:
+          entity_id: light.hall_light
+    default:
+    - service: logbook.log
+      data:
+        message: 'No Sunrise/Sunset actions (trigger: {{ trigger.id }})'
+        name: Lights Sunset Sunrise Automation
+        entity_id: sun.sun
+- id: '1736963481981'
+  alias: Fertigation
+  description: ''
+  triggers:
+  - at: 03:30:00
+    trigger: time
+  - at: 07:30:00
+    trigger: time
+  - at: '11:30:00'
+    trigger: time
+  - at: '15:30:00'
+    trigger: time
+  actions:
+  - target:
+      entity_id: switch.tp_link_smart_plug_c82e_feed_pump
+    action: switch.turn_on
+    data: {}
+  - target:
+      entity_id: switch.tp_link_smart_plug_c82e_waste_pump
+    action: switch.turn_on
+    data: {}
+  - delay:
+      seconds: 20
+  - target:
+      entity_id: switch.tp_link_smart_plug_c82e_feed_pump
+    action: switch.turn_off
+    data: {}
+  - delay:
+      minutes: 2
+  - target:
+      entity_id: switch.tp_link_smart_plug_c82e_waste_pump
+    action: switch.turn_off
+    data: {}
+  - target:
+      entity_id: input_datetime.last_fertigation_time
+    data:
+      time: '{{ now().strftime(''%H:%M:%S'') }}'
+      date: '{{ now().strftime(''%Y-%m-%d'') }}'
+    action: input_datetime.set_datetime
+  - data:
+      message: Fertigation complete!
+    action: notify.mobile_app_pixel_9_pro_xl
+  mode: single
+- id: '1736972320641'
+  alias: always_on
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.your_always_on_switch
+    to: 'off'
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.your_always_on_switch
+  mode: single
+- id: '1736972664016'
+  alias: garage_door_always_on
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.your_garage_door_switch
+    to: 'off'
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.your_garage_door_switch
+  mode: single
+- id: '1736972856548'
+  alias: grow_lights_on
+  description: ''
+  triggers:
+  - at: 07:00:00
+    trigger: time
+  actions:
+  - action: switch.turn_on
+    data: {}
+    target:
+      device_id:
+      - 926c4953ea02067f982b118018edf8c9
+      - 7b00cdfe9c39e9924f6237f8276758f1
+  - type: turn_on
+    device_id: b5ff60f0a817ac7dcb110e87863a5577
+    entity_id: ff7a37ecea5f88e39440f05d029dcb16
+    domain: switch
+  mode: single
+- id: '1736972905755'
+  alias: grow_lights_off
+  description: ''
+  triggers:
+  - at: '19:00:00'
+    trigger: time
+  actions:
+  - action: switch.turn_off
+    target:
+      device_id:
+      - 926c4953ea02067f982b118018edf8c9
+      - 7b00cdfe9c39e9924f6237f8276758f1
+    data: {}
+  - type: turn_off
+    device_id: b5ff60f0a817ac7dcb110e87863a5577
+    entity_id: ff7a37ecea5f88e39440f05d029dcb16
+    domain: switch
+  mode: single
+- id: '1737217638878'
+  alias: pantry_light_motion
+  description: ''
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.eye_of_sauron_motion_detection
+      light_target:
+        entity_id: light.pantry_light_4
+- id: '1737669355677'
+  alias: Lock after 30
+  description: ''
+  triggers:
+  - entity_id: lock.touchscreen_deadbolt
+    to: unlocked
+    for:
+      seconds: 30
+    trigger: state
+  conditions:
+  - condition: state
+    entity_id: binary_sensor.front_door_sensor_window_door_is_open
+    state: 'off'
+  actions:
+  - target:
+      device_id: 7549d9536a0df1258fc38e7bd3b2ae45
+    action: lock.lock
+    data: {}
+  - action: notify.mobile_app_pixel_9_pro_xl
+    metadata: {}
+    data:
+      message: Front door locked
+  mode: single
+- id: 49dd66f31a314733a5654bb96d1574e4
+  alias: Ring Doorbell - Front Door Actions
+  description: Lock door and control lights based on doorbell ring and sun position
+  triggers:
+  - entity_id:
+    - binary_sensor.front_doorbell_ding
+    trigger: state
+    to: 'on'
+  actions:
+  - action: lock.lock
+    data: {}
+    target:
+      entity_id: lock.touchscreen_deadbolt
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: sun.sun
+        state: above_horizon
+      sequence:
+      - action: light.turn_on
+        data: {}
+        target:
+          device_id: e3a8d0af1ac975f40852a6d0c724354b
+      - delay:
+          hours: 0
+          minutes: 2
+          seconds: 0
+      - action: light.turn_off
+        data: {}
+        target:
+          device_id: e3a8d0af1ac975f40852a6d0c724354b
+    - conditions:
+      - condition: state
+        entity_id: sun.sun
+        state: below_horizon
+      sequence:
+      - target:
+          entity_id:
+          - light.hall_light
+          - light.porch_light
+        action: light.turn_on
+        data: {}
+      - delay:
+          seconds: 30
+      - target:
+          entity_id:
+          - light.hall_light
+          - light.porch_light
+        action: light.turn_off
+        data: {}
+- id: '1738078626589'
+  alias: front_door_unlock
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - lock.touchscreen_deadbolt
+    from: locked
+    to: unlocked
+  conditions: []
+  actions:
+  - choose:
+    - conditions:
+      - condition: sun
+        before: sunset
+        after: sunrise
+      sequence:
+      - action: light.turn_on
+        metadata: {}
+        data: {}
+        target:
+          device_id: e3a8d0af1ac975f40852a6d0c724354b
+    - conditions: []
+      sequence:
+      - action: light.turn_on
+        metadata: {}
+        data: {}
+        target:
+          device_id:
+          - 33973ae92e3432af0497bd2a632d3f3a
+          - e3a8d0af1ac975f40852a6d0c724354b
+  mode: single
+- id: '1738079317260'
+  alias: morning_lights
+  description: ''
+  triggers:
+  - trigger: time
+    at: 07:00:00
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data:
+      rgb_color:
+      - 255
+      - 255
+      - 255
+    target:
+      device_id:
+      - 128280a2d47db59f6a4b1c19acaee420
+      - 956fa2e080a73fbea47b9e08b4eddb87
+      - 1c4135785d14a8e1f0008ecc2e37f1ba
+      - beb6e6a00028bd8ef9521d6c6faf4380
+  mode: single
+- id: '1738256101698'
+  alias: front_door_unlocked_scream
+  description: ''
+  triggers:
+  - device_id: 7549d9536a0df1258fc38e7bd3b2ae45
+    domain: lock
+    entity_id: 17fccd7707a9adefc3f234679f21f439
+    type: unlocked
+    trigger: device
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  conditions: []
+  actions:
+  - device_id: 7549d9536a0df1258fc38e7bd3b2ae45
+    domain: lock
+    entity_id: 17fccd7707a9adefc3f234679f21f439
+    type: lock
+  - action: notify.persistent_notification
+    metadata: {}
+    data:
+      message: Front Door is unlocked!
+      title: Front Door unlocked
+  - action: notify.mobile_app_pixel_9_pro_xl
+    metadata: {}
+    data:
+      title: Front Door unlocked
+      message: Front Door unlocked!
+  - action: notify.mobile_app_pixel_watch_3
+    metadata: {}
+    data:
+      title: Front Door unlocked
+      message: Front Door unlocked
+  - action: notify.alexa_media_everywhere
+    metadata: {}
+    data:
+      message: Front Door unlocked
+      title: Front Door unlocked
+  - action: input_select.select_option
+    metadata: {}
+    data:
+      option: critical
+    target:
+      entity_id: input_select.threat_level
+  mode: single
+- id: '1738259251934'
+  alias: Reduce threat after door lock
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - lock.touchscreen_deadbolt
+    from: unlocked
+    to: locked
+  conditions:
+  - condition: state
+    entity_id: input_select.threat_level
+    state: critical
+  actions:
+  - action: notify.mobile_app_pixel_9_pro_xl
+    data:
+      message: Front Door Locked
+      title: Front Door Locked
+  - action: notify.mobile_app_pixel_watch_3
+    data:
+      message: Front Door Locked
+      title: Front Door Locked
+  - action: input_select.select_option
+    metadata: {}
+    data:
+      option: high
+    target:
+      entity_id: input_select.threat_level
+  mode: single

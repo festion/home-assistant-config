@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "image",
+  "data": {
+    "items": [
+      {
+        "id": "38def8977883996399537680774d1da5",
+        "filesize": 171503,
+        "content_type": "image/jpeg",
+        "name": "badge.jpg",
+        "uploaded_at": "2025-01-22T15:57:38.129550+00:00"
+      },
+      {
+        "id": "bda389f0d6c1d5f7f675f6e8731468b8",
+        "filesize": 24716,
+        "content_type": "image/jpeg",
+        "name": "74632533_10219691291131123_4712024666439417856_n.jpg",
+        "uploaded_at": "2025-01-22T16:01:15.220547+00:00"
+      },
+      {
+        "id": "e5afa3377224725f89c7fac3906a2a56",
+        "filesize": 56529,
+        "content_type": "image/jpeg",
+        "name": "46444408_10216964776849970_422469694952308736_n.jpg",
+        "uploaded_at": "2025-01-22T16:02:09.634341+00:00"
+      },
+      {
+        "id": "58c5181af8245ff73e811defbb0eced5",
+        "filesize": 361271,
+        "content_type": "image/png",
+        "name": "unnamed.png",
+        "uploaded_at": "2025-01-22T16:29:23.963307+00:00"
+      }
+    ]
+  }
+}

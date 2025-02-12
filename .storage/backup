@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "minor_version": 3,
+  "key": "backup",
+  "data": {
+    "backups": [
+      {
+        "backup_id": "a2f9a232",
+        "failed_agent_ids": []
+      },
+      {
+        "backup_id": "2f655146",
+        "failed_agent_ids": []
+      },
+      {
+        "backup_id": "f5ad273c",
+        "failed_agent_ids": []
+      },
+      {
+        "backup_id": "058dc24a",
+        "failed_agent_ids": []
+      }
+    ],
+    "config": {
+      "agents": {
+        "hassio.local": {
+          "protected": false
+        }
+      },
+      "create_backup": {
+        "agent_ids": [
+          "hassio.local",
+          "cloud.cloud"
+        ],
+        "include_addons": [],
+        "include_all_addons": true,
+        "include_database": true,
+        "include_folders": null,
+        "name": null,
+        "password": "WT6H-16F7-GSB1-W8XA-WBA3-ABQX-CZMJ"
+      },
+      "last_attempted_automatic_backup": "2025-02-12T05:17:57.004485-06:00",
+      "last_completed_automatic_backup": "2025-02-12T05:37:32.846523-06:00",
+      "retention": {
+        "copies": 3,
+        "days": null
+      },
+      "schedule": {
+        "days": [],
+        "recurrence": "daily",
+        "state": "daily",
+        "time": null
+      }
+    }
+  }
+}

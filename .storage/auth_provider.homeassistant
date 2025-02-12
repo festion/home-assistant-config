@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "auth_provider.homeassistant",
+  "data": {
+    "users": [
+      {
+        "username": "jeremy",
+        "password": "JDJiJDEyJGNCeU5jWFZpcU4xSU13aHI1TlNWci4xbVJtS25tdW5mQkE2RnZrZlNUSkd6NzV6QmcuTE1x"
+      },
+      {
+        "username": "apiuser",
+        "password": "JDJiJDEyJEhTaXFiektpelhMOHhxaXRKbHIwdGV4ZnVORDNtNmh2NDZ6U3NzZWkvMEhUN1JKNXptZVk2"
+      },
+      {
+        "username": "mqtt_user",
+        "password": "JDJiJDEyJFlGa2lET25FaXRlaDM2UkZUbzNUUmUyYnpPNzhOZ01ZZzUxM2RWVEpJYkRWS0RwRzFUZjJl"
+      },
+      {
+        "username": "kristy",
+        "password": "JDJiJDEyJGZwQVJDdk1WdU5kUkJNZDIxTWNnUnVpUjhybkRELlgzQXFuWi5wVEZ0Nzkvd1haSFQuRmV5"
+      },
+      {
+        "username": "kindle_fire",
+        "password": "JDJiJDEyJGZYYThoOUNmVGdlTEMvUkVqbUZuOWU0bEtrd0VIZnpSSkNRTUpXNU5ac2xURldvNTBBMi5P"
+      }
+    ]
+  }
+}

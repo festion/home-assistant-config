@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "minor_version": 2,
+  "key": "core.floor_registry",
+  "data": {
+    "floors": [
+      {
+        "aliases": [],
+        "floor_id": "second_floor",
+        "icon": null,
+        "level": 2,
+        "name": "Second Floor",
+        "created_at": "2024-12-16T16:23:42.932250+00:00",
+        "modified_at": "2024-12-16T16:23:42.932261+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": "ground_floor",
+        "icon": null,
+        "level": 1,
+        "name": "Ground Floor",
+        "created_at": "2024-12-16T16:28:14.706540+00:00",
+        "modified_at": "2024-12-16T16:28:14.706544+00:00"
+      }
+    ]
+  }
+}

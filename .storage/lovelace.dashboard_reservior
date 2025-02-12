@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_reservior",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Canna Closet Reservior",
+          "badges": [],
+          "type": "masonry",
+          "cards": [
+            {
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.reserviorsensor_reservoir_depth",
+              "detail": 1,
+              "unit": "gal",
+              "name": "Nutrient Level",
+              "icon": "mdi:pail",
+              "hours_to_show": 48
+            },
+            {
+              "graph": "none",
+              "type": "sensor",
+              "detail": 1,
+              "name": "Temperature",
+              "entity": "sensor.waterlevelsensor_reservoir_water_temp"
+            }
+          ],
+          "subview": false,
+          "icon": "mdi:pail"
+        }
+      ]
+    }
+  }
+}

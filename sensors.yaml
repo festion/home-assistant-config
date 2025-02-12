@@ -1,0 +1,20 @@
+sensor:
+  - platform: template  # Two spaces for indentation
+    sensors:
+      current_interval_average: # Four spaces for indentation
+        friendly_name: Current Interval Average Depth
+        value_template: >- # Six spaces for indentation
+          {% set last_fertigation = states('input_datetime.last_fertigation_time') %}
+          {% set readings = states('sensor.reservoir_depth') %}
+          {% if readings is string %}
+            {% set readings = readings.split(',') | map('float') %}
+          {% endif %}
+          {% set filtered_readings = [
+            reading for reading in readings # Eight spaces for indentation
+            if as_timestamp(reading.last_updated) > as_timestamp(last_fertigation)
+          ] %}
+          {% if filtered_readings | length > 0 %}
+            {{ filtered_readings | average }}
+          {% else %}
+            unavailable
+          {% endif %}

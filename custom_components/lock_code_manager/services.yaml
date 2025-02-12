@@ -1,0 +1,5 @@
+---
+hard_refresh_usercodes:
+  target:
+    entity:
+      domain: lock

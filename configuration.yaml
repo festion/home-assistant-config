@@ -1,0 +1,153 @@
+# --- Frontend (Themes & Lovelace) ---
+# Include custom themes and Lovelace resources.
+frontend:
+  # Loads custom themes from the 'themes' directory.
+  # !include_dir_merge_named merges all files in the directory into a single dictionary.
+  themes: !include_dir_merge_named themes
+
+# --- Lovelace Configuration ---
+lovelace:
+  mode: yaml  # Enables YAML mode for Lovelace configuration.
+  resources:
+    # - url: /local/community/  # This line is commented out and likely incomplete.
+    #   type: module             # It's recommended to use HACS for managing custom resources.
+    # Registers the WebRTC Camera custom card resource.
+    - url: /webrtc/webrtc-camera.js
+      type: module
+    - url: /hacsfiles/mushroom-strategy/mushroom-strategy.js
+      type: module
+# --- Default Integrations ---
+default_config:
+
+# --- Configuration Splits ---
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+group: !include groups.yaml
+
+
+# --- HTTP Configuration ---
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 192.168.1.0/24
+
+# --- Custom Panel ---
+panel_custom:
+  - name: ha_system
+    sidebar_title: System Info
+    sidebar_icon: mdi:information-variant
+    js_url: /api/hassio/app/entrypoint.js
+    url_path: "hassio/system/info"
+    embed_iframe: true
+    require_admin: true
+    config:
+      ingress: core_configurator
+
+# --- Envisalink Integration ---
+envisalink:
+  host: 192.168.1.108
+  panel_type: DSC
+  user_name: user
+  password: user
+  code: "1059"
+  port: 4025
+  evl_version: 4
+  keepalive_interval: 60
+  zonedump_interval: 30
+  timeout: 10
+  panic_type: Police
+
+  zones:
+    1:
+      name: "Front Garage"
+      type: "opening"
+    2:
+      name: "Back Door"
+      type: "opening"
+    3:
+      name: "Master Windows"
+      type: "opening"
+    4:
+      name: "Downstairs Windows"
+      type: "opening"
+    5:
+      name: "Upstairs Windows"
+      type: "opening"
+
+  partitions:
+    1:
+      name: "Home Alarm"
+
+
+#Proxmox integration
+proxmoxve:
+  - host: 192.168.1.137
+    username: hass@pve
+    password: redflower805
+    verify_ssl: false
+    nodes:
+      - node: proxmox
+        vms:
+          - 114
+          - 116
+        containers:
+          - 102
+          - 103
+          - 104
+          - 105
+          - 106
+          - 107
+          - 108
+          - 109
+          - 110
+          - 113
+          - 115
+          - 118
+
+recorder:
+  include:
+    entities:
+      - sensor.reserviorsensor_reservoir_depth
+  purge_keep_days: 30 # Optional: keep the history for a month          
+
+sensor:
+  - platform: template
+    sensors:
+      current_interval_average:
+        unique_id: current_interval_average_depth
+        friendly_name: Current Interval Average Depth
+        value_template: >-
+          {% set last_fertigation_str = states('input_datetime.last_fertigation_time') %}
+          {% if last_fertigation_str %}
+            {% set last_fertigation = as_datetime(last_fertigation_str) %}
+            {% set readings_str = states('sensor.reserviorsensor_reservoir_depth') %}
+            {% if readings_str is string %}
+              {% set readings_with_timestamps = %}
+              {% for item in readings_str.split(',') %}
+                {% set reading = item | float %}
+                {% set timestamp_str = states('sensor.reserviorsensor_reservoir_depth').attributes.get('timestamps')[loop.index0] %}
+                {% if timestamp_str %}
+                  {% set timestamp = as_datetime(timestamp_str) %}
+                  {% set readings_with_timestamps = readings_with_timestamps + [{'reading': reading, 'timestamp': timestamp}] %}
+                {% endif %}
+              {% endfor %}
+
+              {% set filtered_readings = %}
+              {% for item in readings_with_timestamps %}
+                {% if item.timestamp > last_fertigation %}
+                  {% set filtered_readings = filtered_readings + [item.reading] %}
+                {% endif %}
+              {% endfor %}
+
+              {% if filtered_readings | length > 0 %}
+                {{ filtered_readings | average }}
+              {% else %}
+                unavailable
+              {% endif %}
+            {% else %}
+              unavailable
+            {% endif %}
+          {% else %}
+            unavailable
+          {% endif %}

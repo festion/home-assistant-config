@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "minor_version": 1,
+  "key": "person",
+  "data": {
+    "items": [
+      {
+        "id": "jeremy",
+        "name": "Jeremy",
+        "user_id": "670a621a73434353a612851b6ce8a845",
+        "device_trackers": [
+          "device_tracker.pixel_9_pro_xl",
+          "device_tracker.pixel_watch_3"
+        ],
+        "picture": "/api/image/serve/38def8977883996399537680774d1da5/512x512"
+      },
+      {
+        "id": "kristy",
+        "name": "Kristy",
+        "device_trackers": [
+          "device_tracker.iphone"
+        ],
+        "user_id": "c8b53c075978487fa819f833e4db5387",
+        "picture": "/api/image/serve/e5afa3377224725f89c7fac3906a2a56/512x512"
+      },
+      {
+        "id": "linda",
+        "name": "Linda",
+        "device_trackers": [],
+        "user_id": null,
+        "picture": "/api/image/serve/58c5181af8245ff73e811defbb0eced5/512x512"
+      },
+      {
+        "id": "gavin",
+        "name": "Gavin",
+        "device_trackers": [],
+        "user_id": null,
+        "picture": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+esphome:
+  name: waterlevelsensor2model2
+  friendly_name: waterlevelsensor2model2
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+api:
+  encryption:
+    key: "BYwcZxWeAkuICKFAdvJhet7pHWA+E2gTO/QjQyKGtxM="
+
+ota:
+  platform: esphome
+  password: "a63b19d581c8dfa4fd8d493fcafc9b66"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  ap:
+    ssid: "Waterlevelsensor2Model2"
+    password: "yjNnOGxIovJP"
+logger:
+  level: DEBUG
+time:
+   - platform: sntp
+     id: my_time
+
+one_wire:
+  - platform: gpio
+    pin: GPIO13
+
+# sensor:
+  # - platform: dallas_temp
+    # id: res_water_temp
+    # name: "Reservoir Water Temp"
+    # filters:
+      # - filter_out: nan
+      # - lambda: return x * (9.0/5.0) + 32.0;
+    # unit_of_measurement: "°F"
+    # accuracy_decimals: 2
+
+# deep_sleep:
+  # sleep_duration: 60s
+
+# interval:
+  # - interval: 60s
+    # then:
+      # - if:
+          # condition:
+            # - lambda: 'return id(my_time).now().minute == 0;'
+          # then:
+            # - component.update: res_water_temp
+            # - delay: 1s

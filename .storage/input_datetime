@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_datetime",
+  "data": {
+    "items": [
+      {
+        "id": "last_fertigation_time",
+        "has_date": true,
+        "has_time": true,
+        "name": "Last Fertigation Time"
+      }
+    ]
+  }
+}

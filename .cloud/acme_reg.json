@@ -1,0 +1,15 @@
+{
+    "body": {
+        "contact": [
+            "mailto:jeremy.ames@outlook.com"
+        ],
+        "key": {
+            "e": "AQAB",
+            "kty": "RSA",
+            "n": "suKMP8Ea8ha5OyTJFz5-JBXgnRut0q3pKJLKw0yce8vOW0gb1TgLPf-g-lD-ta8n2KvOkbACagRLm8Pou24KOn6yCWvIzdv8jBSkdvaI9d8s_RWFm2sl1vfpmL9GdlR-AZpyaBYCoc3C84fkN-tpt-HwVaRuBKSYQcitM955zPshDs0c-x_k7pA6Us2OB1FbeniGqFJ5ZESwep9AQI827Ne2xZ3jVZB-aXBqt9vNxx1rdBIonrJ48e6nEI6oQOyFpdrwrfyj467z38mPvNzb-w7PrdMO1p_sGP6JBSQssH9eg8ObRWM40pnTtx7P5td0y0OinQTdFobR5KZCjjhCWQ"
+        },
+        "status": "valid"
+    },
+    "terms_of_service": "https://letsencrypt.org/documents/LE-SA-v1.4-April-3-2024.pdf",
+    "uri": "https://acme-v02.api.letsencrypt.org/acme/acct/2172498015"
+}

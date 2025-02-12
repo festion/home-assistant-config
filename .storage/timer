@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "timer",
+  "data": {
+    "items": [
+      {
+        "id": "timer_front_door",
+        "name": "timer.front_door",
+        "duration": "0:00:01",
+        "restore": false
+      }
+    ]
+  }
+}

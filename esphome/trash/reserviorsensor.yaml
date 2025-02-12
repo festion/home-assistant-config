@@ -1,0 +1,68 @@
+esphome:
+  name: reserviorsensor
+  friendly_name: reserviorsensor
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "ubZm3a0FsUOuSbxElQNcKpA8jF+LmghkSd9l6tyY7a0="
+
+ota:
+  - platform: esphome
+    password: "0c318e001acc36b905b084520e0b0e37"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Reserviorsensor Fallback Hotspot"
+    password: "mNTH1UB5aEGe"
+
+captive_portal:
+# Water Level Sensor
+    
+sensor:
+  - platform: wifi_signal
+    name: "WiFi Signal Sensor"
+    update_interval: 60s          #to display WiFi signal strength
+    
+  - platform: ultrasonic
+    trigger_pin: GPIO5
+    echo_pin: GPIO18
+    unit_of_measurement: "%"
+    icon: "mdi:water-percent"
+    accuracy_decimals: 0
+    update_interval: 300000ms
+    name: "CannaCloset reservoir"              #You may change the tank name
+  # distance between sensor and water brim 0.10m
+  # full tank: tank height-0.10m = .39m
+  # current reading: x
+  # used = (x - 0.10m)
+  # remaining = (.49m - used)
+  # percent = (remaining / .49m) * 100
+    
+    filters:
+      - lambda: return (1-((x-.10)/.49))*100;
+      - filter_out: nan
+      
+  - platform: ultrasonic
+    trigger_pin: GPIO5
+    echo_pin: GPIO18
+    update_interval: 1200000ms     #5 minutes. You can change this value
+    name: "Remaining Water in Tank"
+    unit_of_measurement: "l"
+    accuracy_decimals: 0
+    
+    filters:
+      - lambda: return (1-((x-.10)/.49))*1000;
+      - filter_out: nan        
