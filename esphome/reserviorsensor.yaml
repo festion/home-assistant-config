@@ -15,10 +15,7 @@ external_components:
     components: [gpio]
     refresh: 1min
     
-# Enable logging
 logger:
-
-# Enable Home Assistant API
 api:
   encryption:
     key: !secret api_encryption_key
@@ -40,14 +37,60 @@ wifi:
 
 one_wire:
   platform: gpio
-  pin: GPIO13  # Correct indentation
+  pin: GPIO13
 
-# Time component
 time:
   - platform: sntp
-    id: reservoir_clock
+    id: sntp_time
+    on_time:
+      # 3:30 AM
+      - seconds: 0
+        minutes: 30
+        hours: 3
+        then:
+          - lambda: |-
+              id(depth_sum) = 0;
+              id(depth_count) = 0;
+              id(last_fertigation_time) = millis();
+      # 7:30 AM
+      - seconds: 0
+        minutes: 30
+        hours: 7
+        then:
+          - lambda: |-
+              id(depth_sum) = 0;
+              id(depth_count) = 0;
+              id(last_fertigation_time) = millis();
+      # 11:30 AM
+      - seconds: 0
+        minutes: 30
+        hours: 11
+        then:
+          - lambda: |-
+              id(depth_sum) = 0;
+              id(depth_count) = 0;
+              id(last_fertigation_time) = millis();
+      # 3:30 PM
+      - seconds: 0
+        minutes: 30
+        hours: 15
+        then:
+          - lambda: |-
+              id(depth_sum) = 0;
+              id(depth_count) = 0;
+              id(last_fertigation_time) = millis();
 
-# Water Level Sensor
+globals:
+  - id: last_fertigation_time
+    type: uint32_t
+    initial_value: '0'
+  - id: depth_sum
+    type: float
+    initial_value: '0'
+  - id: depth_count
+    type: uint32_t
+    initial_value: '0'
+
 sensor:
   - platform: wifi_signal
     name: "WiFi Signal Sensor"
@@ -59,35 +102,55 @@ sensor:
     timeout: 2m
     pulse_time: 20us
     update_interval: 60s
-    name: "Reservoir Depth"
-    id: reservoir_depth  # Consistent ID
+    name: "Reservoir Current Volume"
+    id: reservoir_volume
     unit_of_measurement: "gal"
-    accuracy_decimals: 4
+    accuracy_decimals: 2
     filters:
       - filter_out: nan
-      - lambda: |
-          #include <cmath> // Include for M_PI
-
+      - lambda: |-
           const float bucket_height = 40.85;
           const float bucket_diameter = 29.21;
-
           float distance_cm = x * 100;
           float water_level_cm = bucket_height - distance_cm;
-
+          
           if (water_level_cm < 0) {
             water_level_cm = 0;
           } else if (water_level_cm > bucket_height) {
             water_level_cm = bucket_height;
           }
-
+          
           float bucket_radius = bucket_diameter / 2.0;
           float water_volume_cm3 = M_PI * bucket_radius * bucket_radius * water_level_cm;
           float water_volume_gal = water_volume_cm3 * 0.000264172;
-
+          
+          // Store depth for average calculation
+          id(depth_sum) += water_level_cm;
+          id(depth_count)++;
+          
           return water_volume_gal;
 
+  - platform: template
+    name: "Average Volume Since Last Fertigation"
+    id: avg_volume
+    unit_of_measurement: "gal"
+    accuracy_decimals: 2
+    update_interval: 60s
+    lambda: |-
+      if (id(depth_count) > 0) {
+        const float bucket_diameter = 29.21;
+        float avg_depth_cm = id(depth_sum) / id(depth_count);
+        
+        float bucket_radius = bucket_diameter / 2.0;
+        float avg_volume_cm3 = M_PI * bucket_radius * bucket_radius * avg_depth_cm;
+        float avg_volume_gal = avg_volume_cm3 * 0.000264172;
+        
+        return avg_volume_gal;
+      }
+      return 0.0;
+
   - platform: dallas_temp
-    id: reservoir_water_temp  # Consistent ID
+    id: reservoir_water_temp
     name: "Reservoir Water Temp"
     filters:
       - filter_out: nan
