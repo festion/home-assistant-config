@@ -85,7 +85,7 @@ proxmoxve:
   - host: 192.168.1.137
     username: hass@pve
     password: redflower805
-    verify_ssl: false
+    verify_ssl: true
     nodes:
       - node: proxmox
         vms:
@@ -104,12 +104,15 @@ proxmoxve:
           - 113
           - 115
           - 118
+          
 
 recorder:
+  purge_keep_days: 30
   include:
     entities:
-      - sensor.reserviorsensor_reservoir_depth
-  purge_keep_days: 30 # Optional: keep the history for a month          
+      - sensor.reserviorsensor_average_volume_since_last_fertigation
+      - sensor.reserviorsensor_reservoir_current_volume
+      - sensor.waterlevelsensor_reservoir_water_temp     
 
 sensor:
   - platform: template
@@ -119,35 +122,36 @@ sensor:
         friendly_name: Current Interval Average Depth
         value_template: >-
           {% set last_fertigation_str = states('input_datetime.last_fertigation_time') %}
-          {% if last_fertigation_str %}
+          {% set readings_str = states('sensor.reserviorsensor_reservoir_depth') %}
+          
+          {% if last_fertigation_str and readings_str is string and readings_str != 'unknown' %}
             {% set last_fertigation = as_datetime(last_fertigation_str) %}
-            {% set readings_str = states('sensor.reserviorsensor_reservoir_depth') %}
-            {% if readings_str is string %}
-              {% set readings_with_timestamps = %}
-              {% for item in readings_str.split(',') %}
-                {% set reading = item | float %}
-                {% set timestamp_str = states('sensor.reserviorsensor_reservoir_depth').attributes.get('timestamps')[loop.index0] %}
-                {% if timestamp_str %}
-                  {% set timestamp = as_datetime(timestamp_str) %}
-                  {% set readings_with_timestamps = readings_with_timestamps + [{'reading': reading, 'timestamp': timestamp}] %}
+            {% set readings_with_timestamps = [] %}
+            
+            {% for item in readings_str.split(',') %}
+              {% set reading = item | float(default=none) %}
+              {% set timestamp_str = states('sensor.reserviorsensor_reservoir_depth').attributes.get('timestamps')[loop.index0] %}
+              
+              {% if reading is not none and timestamp_str %}
+                {% set timestamp = as_datetime(timestamp_str) %}
+                {% if timestamp > last_fertigation %}
+                  {% set readings_with_timestamps = readings_with_timestamps + [reading] %}
                 {% endif %}
-              {% endfor %}
-
-              {% set filtered_readings = %}
-              {% for item in readings_with_timestamps %}
-                {% if item.timestamp > last_fertigation %}
-                  {% set filtered_readings = filtered_readings + [item.reading] %}
-                {% endif %}
-              {% endfor %}
-
-              {% if filtered_readings | length > 0 %}
-                {{ filtered_readings | average }}
-              {% else %}
-                unavailable
               {% endif %}
+            {% endfor %}
+            
+            {% if readings_with_timestamps | length > 0 %}
+              {{ readings_with_timestamps | average }}
             {% else %}
-              unavailable
+              {{ 'unavailable' }}
             {% endif %}
           {% else %}
-            unavailable
+            {{ 'unavailable' }}
           {% endif %}
+          
+input_datetime:
+  last_fertigation_time:
+    name: Last Fertigation Time
+    has_date: true
+    has_time: true
+    initial: "2024-02-14 00:00:00"

@@ -13,14 +13,14 @@
         "brightness": 142
     },
     "0x54ef4410008393a3": {
-        "voltage": 3016,
+        "voltage": 3014,
         "battery": 100,
         "detection_interval": 30,
         "motion_sensitivity": "medium",
         "trigger_indicator": true,
-        "occupancy": true,
-        "illuminance": 40,
-        "linkquality": 232,
+        "occupancy": false,
+        "illuminance": 108,
+        "linkquality": 132,
         "device_temperature": 25,
         "power_outage_count": 0
     },
@@ -30,26 +30,26 @@
         "occupancy": false,
         "tamper": false,
         "battery_low": false,
-        "temperature": 22.41,
-        "linkquality": 192
+        "temperature": 21.9,
+        "linkquality": 200
     },
     "0x286d97000113f617": {
         "battery": 52.5,
-        "linkquality": 120,
-        "temperature": 22.53,
+        "linkquality": 104,
+        "temperature": 21.85,
         "water_leak": false,
         "tamper": false,
         "battery_low": false
     },
     "0x00158d000af2a851": {
-        "voltage": 3065,
+        "voltage": 3055,
         "battery": 100,
         "device_temperature": 30,
         "power_outage_count": 16,
-        "linkquality": 220
+        "linkquality": 236
     },
     "0xa4c1381ee56b8bae": {
-        "linkquality": 112,
+        "linkquality": 128,
         "state": "ON",
         "brightness": 142,
         "color_mode": "xy",
@@ -64,7 +64,7 @@
         "color_power_on_behavior": "initial"
     },
     "0xa4c138d04ea0033c": {
-        "linkquality": 148,
+        "linkquality": 160,
         "color_mode": "xy",
         "color": {
             "x": 0.323,
@@ -74,14 +74,14 @@
             "h": 0,
             "s": 0
         },
-        "state": "OFF",
+        "state": "ON",
         "brightness": 142,
         "color_power_on_behavior": "initial"
     },
     "0xa4c138e95c788c21": {
         "color_power_on_behavior": "initial",
         "do_not_disturb": false,
-        "linkquality": 140,
+        "linkquality": 152,
         "state": "ON",
         "brightness": 142,
         "color_mode": "xy",
@@ -100,10 +100,10 @@
             "installed_version": 16786690,
             "latest_version": 16786690
         },
-        "linkquality": 108,
+        "linkquality": 136,
         "color_temp_startup": 500,
         "power_on_behavior": "previous",
-        "state": "ON",
+        "state": "OFF",
         "color_mode": "color_temp",
         "color_temp": 250,
         "brightness": 254,

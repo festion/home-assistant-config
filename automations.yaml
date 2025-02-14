@@ -54,29 +54,27 @@
   - target:
       entity_id: switch.tp_link_smart_plug_c82e_feed_pump
     action: switch.turn_on
-    data: {}
   - target:
       entity_id: switch.tp_link_smart_plug_c82e_waste_pump
     action: switch.turn_on
-    data: {}
   - delay:
       seconds: 20
   - target:
       entity_id: switch.tp_link_smart_plug_c82e_feed_pump
     action: switch.turn_off
-    data: {}
   - delay:
       minutes: 2
   - target:
       entity_id: switch.tp_link_smart_plug_c82e_waste_pump
     action: switch.turn_off
-    data: {}
   - target:
       entity_id: input_datetime.last_fertigation_time
     data:
-      time: '{{ now().strftime(''%H:%M:%S'') }}'
-      date: '{{ now().strftime(''%Y-%m-%d'') }}'
+      datetime: '{{ now().strftime(''%Y-%m-%d %H:%M:%S'') }}'
     action: input_datetime.set_datetime
+  - data:
+      timestamp: '{{ as_timestamp(now()) | int }}'
+    action: esphome.reserviorsensor_set_last_fertigation_time
   - data:
       message: Fertigation complete!
     action: notify.mobile_app_pixel_9_pro_xl
@@ -108,38 +106,36 @@
 - id: '1736972856548'
   alias: grow_lights_on
   description: ''
-  triggers:
-  - at: 07:00:00
-    trigger: time
-  actions:
-  - action: switch.turn_on
-    data: {}
+  trigger:
+  - platform: time
+    at: 07:00:00
+  action:
+  - service: switch.turn_on
     target:
       device_id:
       - 926c4953ea02067f982b118018edf8c9
       - 7b00cdfe9c39e9924f6237f8276758f1
-  - type: turn_on
-    device_id: b5ff60f0a817ac7dcb110e87863a5577
-    entity_id: ff7a37ecea5f88e39440f05d029dcb16
-    domain: switch
+  - service: switch.turn_on
+    target:
+      device_id: b5ff60f0a817ac7dcb110e87863a5577
+      entity_id: ff7a37ecea5f88e39440f05d029dcb16
   mode: single
 - id: '1736972905755'
   alias: grow_lights_off
   description: ''
-  triggers:
-  - at: '19:00:00'
-    trigger: time
-  actions:
-  - action: switch.turn_off
+  trigger:
+  - platform: time
+    at: '19:00:00'
+  action:
+  - service: switch.turn_off
     target:
       device_id:
       - 926c4953ea02067f982b118018edf8c9
       - 7b00cdfe9c39e9924f6237f8276758f1
-    data: {}
-  - type: turn_off
-    device_id: b5ff60f0a817ac7dcb110e87863a5577
-    entity_id: ff7a37ecea5f88e39440f05d029dcb16
-    domain: switch
+  - service: switch.turn_off
+    target:
+      device_id: b5ff60f0a817ac7dcb110e87863a5577
+      entity_id: ff7a37ecea5f88e39440f05d029dcb16
   mode: single
 - id: '1737217638878'
   alias: pantry_light_motion
@@ -153,37 +149,33 @@
 - id: '1737669355677'
   alias: Lock after 30
   description: ''
-  triggers:
-  - entity_id: lock.touchscreen_deadbolt
+  trigger:
+  - platform: state
+    entity_id: lock.touchscreen_deadbolt
     to: unlocked
     for:
       seconds: 30
-    trigger: state
-  conditions:
+  condition:
   - condition: state
     entity_id: binary_sensor.front_door_sensor_window_door_is_open
     state: 'off'
-  actions:
-  - target:
+  action:
+  - service: lock.lock
+    target:
       device_id: 7549d9536a0df1258fc38e7bd3b2ae45
-    action: lock.lock
-    data: {}
-  - action: notify.mobile_app_pixel_9_pro_xl
-    metadata: {}
+  - service: notify.mobile_app_pixel_9_pro_xl
     data:
       message: Front door locked
   mode: single
 - id: 49dd66f31a314733a5654bb96d1574e4
   alias: Ring Doorbell - Front Door Actions
   description: Lock door and control lights based on doorbell ring and sun position
-  triggers:
-  - entity_id:
-    - binary_sensor.front_doorbell_ding
-    trigger: state
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.front_doorbell_ding
     to: 'on'
-  actions:
-  - action: lock.lock
-    data: {}
+  action:
+  - service: lock.lock
     target:
       entity_id: lock.touchscreen_deadbolt
   - choose:
@@ -192,16 +184,12 @@
         entity_id: sun.sun
         state: above_horizon
       sequence:
-      - action: light.turn_on
-        data: {}
+      - service: light.turn_on
         target:
           device_id: e3a8d0af1ac975f40852a6d0c724354b
       - delay:
-          hours: 0
           minutes: 2
-          seconds: 0
-      - action: light.turn_off
-        data: {}
+      - service: light.turn_off
         target:
           device_id: e3a8d0af1ac975f40852a6d0c724354b
     - conditions:
@@ -209,47 +197,39 @@
         entity_id: sun.sun
         state: below_horizon
       sequence:
-      - target:
+      - service: light.turn_on
+        target:
           entity_id:
           - light.hall_light
           - light.porch_light
-        action: light.turn_on
-        data: {}
       - delay:
           seconds: 30
-      - target:
+      - service: light.turn_off
+        target:
           entity_id:
           - light.hall_light
           - light.porch_light
-        action: light.turn_off
-        data: {}
 - id: '1738078626589'
   alias: front_door_unlock
   description: ''
-  triggers:
-  - trigger: state
-    entity_id:
-    - lock.touchscreen_deadbolt
+  trigger:
+  - platform: state
+    entity_id: lock.touchscreen_deadbolt
     from: locked
     to: unlocked
-  conditions: []
-  actions:
+  action:
   - choose:
     - conditions:
       - condition: sun
         before: sunset
         after: sunrise
       sequence:
-      - action: light.turn_on
-        metadata: {}
-        data: {}
+      - service: light.turn_on
         target:
           device_id: e3a8d0af1ac975f40852a6d0c724354b
     - conditions: []
       sequence:
-      - action: light.turn_on
-        metadata: {}
-        data: {}
+      - service: light.turn_on
         target:
           device_id:
           - 33973ae92e3432af0497bd2a632d3f3a
@@ -258,13 +238,11 @@
 - id: '1738079317260'
   alias: morning_lights
   description: ''
-  triggers:
-  - trigger: time
+  trigger:
+  - platform: time
     at: 07:00:00
-  conditions: []
-  actions:
-  - action: light.turn_on
-    metadata: {}
+  action:
+  - service: light.turn_on
     data:
       rgb_color:
       - 255
@@ -280,75 +258,79 @@
 - id: '1738256101698'
   alias: front_door_unlocked_scream
   description: ''
-  triggers:
-  - device_id: 7549d9536a0df1258fc38e7bd3b2ae45
-    domain: lock
-    entity_id: 17fccd7707a9adefc3f234679f21f439
-    type: unlocked
-    trigger: device
+  trigger:
+  - platform: state
+    entity_id: lock.touchscreen_deadbolt
+    to: unlocked
     for:
-      hours: 0
       minutes: 5
-      seconds: 0
-  conditions: []
-  actions:
-  - device_id: 7549d9536a0df1258fc38e7bd3b2ae45
-    domain: lock
-    entity_id: 17fccd7707a9adefc3f234679f21f439
-    type: lock
-  - action: notify.persistent_notification
-    metadata: {}
+  action:
+  - service: lock.lock
+    target:
+      entity_id: lock.touchscreen_deadbolt
+  - service: notify.persistent_notification
     data:
       message: Front Door is unlocked!
       title: Front Door unlocked
-  - action: notify.mobile_app_pixel_9_pro_xl
-    metadata: {}
+  - service: notify.mobile_app_pixel_9_pro_xl
     data:
       title: Front Door unlocked
       message: Front Door unlocked!
-  - action: notify.mobile_app_pixel_watch_3
-    metadata: {}
+  - service: notify.mobile_app_pixel_watch_3
     data:
       title: Front Door unlocked
       message: Front Door unlocked
-  - action: notify.alexa_media_everywhere
-    metadata: {}
+  - service: notify.alexa_media_everywhere
     data:
       message: Front Door unlocked
       title: Front Door unlocked
-  - action: input_select.select_option
-    metadata: {}
-    data:
-      option: critical
+  - service: input_select.select_option
     target:
       entity_id: input_select.threat_level
+    data:
+      option: critical
   mode: single
 - id: '1738259251934'
   alias: Reduce threat after door lock
   description: ''
-  triggers:
-  - trigger: state
-    entity_id:
-    - lock.touchscreen_deadbolt
+  trigger:
+  - platform: state
+    entity_id: lock.touchscreen_deadbolt
     from: unlocked
     to: locked
-  conditions:
+  condition:
   - condition: state
     entity_id: input_select.threat_level
     state: critical
-  actions:
-  - action: notify.mobile_app_pixel_9_pro_xl
+  action:
+  - service: notify.mobile_app_pixel_9_pro_xl
     data:
       message: Front Door Locked
       title: Front Door Locked
-  - action: notify.mobile_app_pixel_watch_3
+  - service: notify.mobile_app_pixel_watch_3
     data:
       message: Front Door Locked
       title: Front Door Locked
-  - action: input_select.select_option
-    metadata: {}
-    data:
-      option: high
+  - service: input_select.select_option
     target:
       entity_id: input_select.threat_level
+    data:
+      option: high
+  mode: single
+- id: '1739482139761'
+  alias: Update Last Fertigation Time
+  description: ''
+  trigger:
+  - platform: time
+    at:
+    - 03:30:00
+    - 07:30:00
+    - '11:30:00'
+    - '15:30:00'
+  action:
+  - service: input_datetime.set_datetime
+    target:
+      entity_id: input_datetime.last_fertigation_time
+    data:
+      datetime: '{{ now().strftime(''%Y-%m-%d %H:%M:%S'') }}'
   mode: single

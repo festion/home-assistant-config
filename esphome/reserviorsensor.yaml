@@ -16,9 +16,17 @@ external_components:
     refresh: 1min
     
 logger:
+
 api:
   encryption:
     key: !secret api_encryption_key
+  services:
+    - service: set_last_fertigation_time
+      variables:
+        timestamp: int
+      then:
+        - lambda: |-
+            id(last_fertigation_timestamp) = timestamp;
 
 ota:
   platform: esphome
@@ -35,66 +43,42 @@ wifi:
     ssid: "reserviorsensor"
     password: !secret ap_password
 
+# Enhanced time synchronization settings
+time:
+  - platform: sntp
+    id: sntp_time
+    timezone: America/Chicago
+    servers:
+      - 0.pool.ntp.org
+      - 1.pool.ntp.org
+      - 2.pool.ntp.org
+    on_time_sync:
+      then:
+        - logger.log: "Time synchronized with NTP server"
+
 one_wire:
   platform: gpio
   pin: GPIO13
 
-time:
-  - platform: sntp
-    id: sntp_time
-    on_time:
-      # 3:30 AM
-      - seconds: 0
-        minutes: 30
-        hours: 3
-        then:
-          - lambda: |-
-              id(depth_sum) = 0;
-              id(depth_count) = 0;
-              id(last_fertigation_time) = millis();
-      # 7:30 AM
-      - seconds: 0
-        minutes: 30
-        hours: 7
-        then:
-          - lambda: |-
-              id(depth_sum) = 0;
-              id(depth_count) = 0;
-              id(last_fertigation_time) = millis();
-      # 11:30 AM
-      - seconds: 0
-        minutes: 30
-        hours: 11
-        then:
-          - lambda: |-
-              id(depth_sum) = 0;
-              id(depth_count) = 0;
-              id(last_fertigation_time) = millis();
-      # 3:30 PM
-      - seconds: 0
-        minutes: 30
-        hours: 15
-        then:
-          - lambda: |-
-              id(depth_sum) = 0;
-              id(depth_count) = 0;
-              id(last_fertigation_time) = millis();
-
 globals:
-  - id: last_fertigation_time
-    type: uint32_t
+  - id: last_fertigation_timestamp
+    type: int
+    restore_value: true
     initial_value: '0'
   - id: depth_sum
     type: float
+    restore_value: true
     initial_value: '0'
   - id: depth_count
     type: uint32_t
+    restore_value: true
     initial_value: '0'
 
 sensor:
   - platform: wifi_signal
     name: "WiFi Signal Sensor"
     update_interval: 60s
+    entity_category: diagnostic
 
   - platform: ultrasonic
     trigger_pin: GPIO17
@@ -104,6 +88,8 @@ sensor:
     update_interval: 60s
     name: "Reservoir Current Volume"
     id: reservoir_volume
+    device_class: volume
+    state_class: total_increasing
     unit_of_measurement: "gal"
     accuracy_decimals: 2
     filters:
@@ -124,7 +110,6 @@ sensor:
           float water_volume_cm3 = M_PI * bucket_radius * bucket_radius * water_level_cm;
           float water_volume_gal = water_volume_cm3 * 0.000264172;
           
-          // Store depth for average calculation
           id(depth_sum) += water_level_cm;
           id(depth_count)++;
           
@@ -133,6 +118,8 @@ sensor:
   - platform: template
     name: "Average Volume Since Last Fertigation"
     id: avg_volume
+    device_class: volume
+    state_class: total_increasing
     unit_of_measurement: "gal"
     accuracy_decimals: 2
     update_interval: 60s
@@ -152,8 +139,29 @@ sensor:
   - platform: dallas_temp
     id: reservoir_water_temp
     name: "Reservoir Water Temp"
+    device_class: temperature
+    state_class: measurement
     filters:
       - filter_out: nan
       - lambda: return x * (9.0/5.0) + 32.0;
     unit_of_measurement: "°F"
     accuracy_decimals: 2
+
+text_sensor:
+  - platform: template
+    name: "Last Fertigation Time"
+    id: last_fertigation_text
+    icon: mdi:timer-sync
+    update_interval: 60s
+    lambda: |-
+      if (id(last_fertigation_timestamp) == 0) {
+        return {"Never"};
+      }
+      time_t timestamp = id(last_fertigation_timestamp);
+      struct tm* timeinfo = localtime(&timestamp);
+      char buffer[26];
+      
+      // Format: Feb 14, 2024 3:30 PM
+      strftime(buffer, sizeof(buffer), "%b %d, %Y %I:%M %p", timeinfo);
+      
+      return {buffer};
