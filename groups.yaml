@@ -1,5 +1,0 @@
-all_phones_notify: # NO "group:" KEY HERE
-  name: All Family Phones
-  entities:
-    - notify.jeremy_pixel9_mobile_app
-    

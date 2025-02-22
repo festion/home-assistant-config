@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "zone",
+  "data": {
+    "items": [
+      {
+        "id": "gavin_work",
+        "latitude": 33.006724603520915,
+        "longitude": -96.5755319595337,
+        "name": "Gavin work",
+        "icon": "mdi:map-marker",
+        "passive": false,
+        "radius": 74.0
+      }
+    ]
+  }
+}

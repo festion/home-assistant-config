@@ -16,6 +16,10 @@ lovelace:
       type: module
     - url: /hacsfiles/mushroom-strategy/mushroom-strategy.js
       type: module
+      
+prometheus:
+  namespace: homeassistant
+  
 # --- Default Integrations ---
 default_config:
 
@@ -24,7 +28,9 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 group: !include groups.yaml
-
+sensor: !include sensors.yaml
+template: !include templates.yaml
+mqtt: !include mqtt.yaml
 
 # --- HTTP Configuration ---
 http:
@@ -79,79 +85,34 @@ envisalink:
     1:
       name: "Home Alarm"
 
-
-#Proxmox integration
-proxmoxve:
-  - host: 192.168.1.137
-    username: hass@pve
-    password: redflower805
-    verify_ssl: true
-    nodes:
-      - node: proxmox
-        vms:
-          - 114
-          - 116
-        containers:
-          - 102
-          - 103
-          - 104
-          - 105
-          - 106
-          - 107
-          - 108
-          - 109
-          - 110
-          - 113
-          - 115
-          - 118
-          
+logger:
+  default: info
+  logs:
+    custom_components.ab_gateway: debug
 
 recorder:
   purge_keep_days: 30
   include:
     entities:
-      - sensor.reserviorsensor_average_volume_since_last_fertigation
-      - sensor.reserviorsensor_reservoir_current_volume
-      - sensor.waterlevelsensor_reservoir_water_temp     
-
-sensor:
-  - platform: template
-    sensors:
-      current_interval_average:
-        unique_id: current_interval_average_depth
-        friendly_name: Current Interval Average Depth
-        value_template: >-
-          {% set last_fertigation_str = states('input_datetime.last_fertigation_time') %}
-          {% set readings_str = states('sensor.reserviorsensor_reservoir_depth') %}
-          
-          {% if last_fertigation_str and readings_str is string and readings_str != 'unknown' %}
-            {% set last_fertigation = as_datetime(last_fertigation_str) %}
-            {% set readings_with_timestamps = [] %}
-            
-            {% for item in readings_str.split(',') %}
-              {% set reading = item | float(default=none) %}
-              {% set timestamp_str = states('sensor.reserviorsensor_reservoir_depth').attributes.get('timestamps')[loop.index0] %}
-              
-              {% if reading is not none and timestamp_str %}
-                {% set timestamp = as_datetime(timestamp_str) %}
-                {% if timestamp > last_fertigation %}
-                  {% set readings_with_timestamps = readings_with_timestamps + [reading] %}
-                {% endif %}
-              {% endif %}
-            {% endfor %}
-            
-            {% if readings_with_timestamps | length > 0 %}
-              {{ readings_with_timestamps | average }}
-            {% else %}
-              {{ 'unavailable' }}
-            {% endif %}
-          {% else %}
-            {{ 'unavailable' }}
-          {% endif %}
-          
-input_datetime:
-  last_fertigation_time:
-    name: Last Fertigation Time
-    has_date: true
-    has_time: true
-    initial: "2024-02-14 00:00:00"
+      - sensor.wroommicrousb_average_volume_since_last_fertigation
+      - sensor.wroommicrousb_reservoir_current_volume
+      - sensor.wroommicrousb_reservoir_water_temp
+      
+# Example configuration.yaml entry
+switch:
+  - platform: flux
+    unique_id: flux_circadian
+    lights:
+      - light.all_strips
+      - light.kitchen_light
+    name: Fluxer
+    start_time: "7:00"
+    stop_time: "23:00"
+    start_colortemp: 4000
+    sunset_colortemp: 3000
+    stop_colortemp: 1900
+    brightness: 200
+    disable_brightness_adjust: true
+    mode: xy
+    transition: 30
+    interval: 60      

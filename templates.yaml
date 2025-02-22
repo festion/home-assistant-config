@@ -1,0 +1,112 @@
+# --- BLE Device Templates ---
+- sensor:
+    - name: "Rav4 BTLE RSSI (from JSON)"
+      unique_id: rav4_btle_rssi_from_json
+      unit_of_measurement: "dBm"
+      state: >
+        {% set mac_to_find = "D0E29D3E51BA" %}
+        {% set gateway_data = state_attr('sensor.ble_gateway_raw_data', 'devices') %}
+        {% set rssi = -100 %}
+        {% if gateway_data is not none %}
+          {% for device in gateway_data %}
+            {% if device[1] == mac_to_find and device[2]|string|trim != '' %}
+              {% set rssi = device[2]|int(-100) %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        {{ rssi }}
+      state_class: measurement
+      device_class: signal_strength
+
+    - name: "Rav4 BTLE Advertising Data"
+      unique_id: rav4_btle_advertising_data
+      state: >
+        {% set mac_to_find = "D0E29D3E51BA" %}
+        {% set gateway_data = state_attr('sensor.ble_gateway_raw_data', 'devices') %}
+        {% set adv_data = "unknown" %}
+        {% if gateway_data is not none %}
+          {% for device in gateway_data %}
+            {% if device[1] == mac_to_find and device[3]|string|trim != '' %}
+              {% set adv_data = device[3] %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        {{ adv_data }}
+
+    - name: "Gavin's Camry RSSI (from JSON)"
+      unique_id: gaviun_camry_rssi_from_json
+      unit_of_measurement: "dBm"
+      state: >
+        {% set mac_to_find = "D712ED6A66C6" %}
+        {% set gateway_data = state_attr('sensor.ble_gateway_raw_data', 'devices') %}
+        {% set rssi = -100 %}
+        {% if gateway_data is not none %}
+          {% for device in gateway_data %}
+            {% if device[1] == mac_to_find and device[2]|string|trim != '' %}
+              {% set rssi = device[2]|int(-100) %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        {{ rssi }}
+      state_class: measurement
+      device_class: signal_strength
+
+    - name: "Gavin's Camry Advertising Data"
+      unique_id: gavin_camry_advertising_data
+      state: >
+        {% set mac_to_find = "D712ED6A66C6" %}
+        {% set gateway_data = state_attr('sensor.ble_gateway_raw_data', 'devices') %}
+        {% set adv_data = "unknown" %}
+        {% if gateway_data is not none %}
+          {% for device in gateway_data %}
+            {% if device[1] == mac_to_find and device[3]|string|trim != '' %}
+              {% set adv_data = device[3] %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        {{ adv_data }}
+
+- binary_sensor:
+    - name: "Rav4 in Driveway (from JSON)"
+      unique_id: rav4_in_driveway_from_json
+      device_class: presence
+      state: >
+        {% set mac_to_find = "D0E29D3E51BA" %}
+        {% set rssi_threshold = -80 %}
+        {% set gateway_data = state_attr('sensor.ble_gateway_raw_data', 'devices') %}
+        {% set detected = false %}
+        {% if gateway_data is not none %}
+          {% for device in gateway_data %}
+            {% if device[1] == mac_to_find %}
+              {% set rssi = device[2]|int(-100) %}
+              {% if rssi > rssi_threshold %}
+                {% set detected = true %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        {% if detected %}on{% else %}off{% endif %}
+      delay_off:
+        minutes: 2
+
+    - name: "Gavin's Camry in Driveway (from JSON)"
+      unique_id: gavin_camry_in_driveway_from_json
+      device_class: presence
+      state: >
+        {% set mac_to_find = "D712ED6A66C6" %}
+        {% set rssi_threshold = -80 %}
+        {% set gateway_data = state_attr('sensor.ble_gateway_raw_data', 'devices') %}
+        {% set detected = false %}
+        {% if gateway_data is not none %}
+          {% for device in gateway_data %}
+            {% if device[1] == mac_to_find %}
+              {% set rssi = device[2]|int(-100) %}
+              {% if rssi > rssi_threshold %}
+                {% set detected = true %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        {% if detected %}on{% else %}off{% endif %}
+      delay_off:
+        minutes: 2

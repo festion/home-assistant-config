@@ -1,0 +1,8 @@
+# --- MQTT Configuration ---
+sensor:
+  - name: "BLE Gateway Raw Data"
+    state_topic: "BTLE"
+    value_template: "OK"
+    json_attributes_topic: "BTLE"
+    json_attributes_template: "{{ value_json | tojson }}"
+    unique_id: ble_gateway_raw_data

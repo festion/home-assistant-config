@@ -1,20 +1,34 @@
-sensor:
-  - platform: template  # Two spaces for indentation
-    sensors:
-      current_interval_average: # Four spaces for indentation
-        friendly_name: Current Interval Average Depth
-        value_template: >- # Six spaces for indentation
-          {% set last_fertigation = states('input_datetime.last_fertigation_time') %}
-          {% set readings = states('sensor.reservoir_depth') %}
-          {% if readings is string %}
-            {% set readings = readings.split(',') | map('float') %}
-          {% endif %}
-          {% set filtered_readings = [
-            reading for reading in readings # Eight spaces for indentation
-            if as_timestamp(reading.last_updated) > as_timestamp(last_fertigation)
-          ] %}
-          {% if filtered_readings | length > 0 %}
-            {{ filtered_readings | average }}
+# --- Template Sensors ---
+- platform: template
+  sensors:
+    current_interval_average:
+      unique_id: current_interval_average_depth
+      friendly_name: Current Interval Average Depth
+      value_template: >-
+        {% set last_fertigation_str = states('input_datetime.last_fertigation_time') %}
+        {% set readings_str = states('sensor.reserviorsensor_reservoir_depth') %}
+        
+        {% if last_fertigation_str and readings_str is string and readings_str != 'unknown' %}
+          {% set last_fertigation = as_datetime(last_fertigation_str) %}
+          {% set readings_with_timestamps = [] %}
+          
+          {% for item in readings_str.split(',') %}
+            {% set reading = item | float(default=none) %}
+            {% set timestamp_str = states('sensor.reserviorsensor_reservoir_depth').attributes.get('timestamps')[loop.index0] %}
+            
+            {% if reading is not none and timestamp_str %}
+              {% set timestamp = as_datetime(timestamp_str) %}
+              {% if timestamp > last_fertigation %}
+                {% set readings_with_timestamps = readings_with_timestamps + [reading] %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          
+          {% if readings_with_timestamps | length > 0 %}
+            {{ readings_with_timestamps | average }}
           {% else %}
-            unavailable
+            {{ 'unavailable' }}
           {% endif %}
+        {% else %}
+          {{ 'unavailable' }}
+        {% endif %}
