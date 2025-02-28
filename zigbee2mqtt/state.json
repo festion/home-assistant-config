@@ -10,18 +10,18 @@
             "s": 0
         },
         "state": "ON",
-        "brightness": 26
+        "brightness": 64
     },
     "0x54ef4410008393a3": {
-        "voltage": 3014,
+        "voltage": 3011,
         "battery": 100,
         "detection_interval": 30,
         "motion_sensitivity": "medium",
         "trigger_indicator": true,
         "occupancy": false,
-        "illuminance": 1,
+        "illuminance": 0,
         "linkquality": 196,
-        "device_temperature": 24,
+        "device_temperature": 25,
         "power_outage_count": 0
     },
     "0x24fd5b000103f112": {
@@ -30,13 +30,13 @@
         "occupancy": false,
         "tamper": false,
         "battery_low": false,
-        "temperature": 21.08,
+        "temperature": 22.87,
         "linkquality": 188
     },
     "0x286d97000113f617": {
         "battery": 52.5,
         "linkquality": 128,
-        "temperature": 20.78,
+        "temperature": 22.72,
         "water_leak": false,
         "tamper": false,
         "battery_low": false
@@ -44,14 +44,14 @@
     "0x00158d000af2a851": {
         "voltage": 3035,
         "battery": 100,
-        "device_temperature": 29,
+        "device_temperature": 30,
         "power_outage_count": 16,
         "linkquality": 244
     },
     "0xa4c1381ee56b8bae": {
         "linkquality": 92,
         "state": "ON",
-        "brightness": 26,
+        "brightness": 64,
         "color_mode": "xy",
         "color": {
             "x": 0.323,
@@ -75,7 +75,7 @@
             "s": 0
         },
         "state": "ON",
-        "brightness": 26,
+        "brightness": 64,
         "color_power_on_behavior": "initial"
     },
     "0xa4c138e95c788c21": {
@@ -83,7 +83,7 @@
         "do_not_disturb": false,
         "linkquality": 164,
         "state": "ON",
-        "brightness": 26,
+        "brightness": 64,
         "color_mode": "xy",
         "color": {
             "x": 0.323,
@@ -103,7 +103,7 @@
         "linkquality": 108,
         "color_temp_startup": 500,
         "power_on_behavior": "previous",
-        "state": "ON",
+        "state": "OFF",
         "color_mode": "color_temp",
         "color_temp": 199,
         "brightness": 254,

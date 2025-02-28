@@ -191,22 +191,21 @@
 - id: '1738079317260'
   alias: morning_lights
   description: ''
-  trigger:
-  - platform: time
-    at: 07:00:00
-  action:
-  - service: light.turn_on
-    data:
+  triggers:
+  - at: 07:00:00
+    trigger: time
+  actions:
+  - data:
       rgb_color:
       - 255
       - 255
       - 255
+      transition: 60
+    action: light.turn_on
     target:
       device_id:
-      - 128280a2d47db59f6a4b1c19acaee420
-      - 956fa2e080a73fbea47b9e08b4eddb87
-      - 1c4135785d14a8e1f0008ecc2e37f1ba
-      - beb6e6a00028bd8ef9521d6c6faf4380
+      - 53a38436e48c861a918ad8dfc03dce79
+      - 08fe604d2c4001adaee1f2b56b998b15
   mode: single
 - id: '1738256101698'
   alias: front_door_unlocked_scream

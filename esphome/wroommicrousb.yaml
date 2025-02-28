@@ -29,6 +29,9 @@ api:
       then:
         - lambda: |-
             id(last_fertigation_timestamp) = timestamp;
+            // Reset average calculation values when fertigation occurs
+            id(depth_sum) = 0;
+            id(depth_count) = 0;
 
 ota:
   - platform: esphome
@@ -120,7 +123,7 @@ sensor:
     name: "Average Volume Since Last Fertigation"
     id: avg_volume
     device_class: volume
-    state_class: total_increasing
+    state_class: measurement
     unit_of_measurement: "gal"
     accuracy_decimals: 2
     update_interval: 60s
@@ -165,4 +168,4 @@ text_sensor:
       // Format: Feb 14, 2024 3:30 PM
       strftime(buffer, sizeof(buffer), "%b %d, %Y %I:%M %p", timeinfo);
       
-      return {buffer};    
+      return {buffer};
