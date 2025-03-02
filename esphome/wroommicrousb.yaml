@@ -123,7 +123,7 @@ sensor:
     name: "Average Volume Since Last Fertigation"
     id: avg_volume
     device_class: volume
-    state_class: measurement
+    state_class: ""
     unit_of_measurement: "gal"
     accuracy_decimals: 2
     update_interval: 60s

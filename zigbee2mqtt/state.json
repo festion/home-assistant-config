@@ -13,13 +13,13 @@
         "brightness": 64
     },
     "0x54ef4410008393a3": {
-        "voltage": 3011,
+        "voltage": 3013,
         "battery": 100,
         "detection_interval": 30,
         "motion_sensitivity": "medium",
         "trigger_indicator": true,
         "occupancy": false,
-        "illuminance": 0,
+        "illuminance": 1,
         "linkquality": 196,
         "device_temperature": 25,
         "power_outage_count": 0
@@ -30,13 +30,13 @@
         "occupancy": false,
         "tamper": false,
         "battery_low": false,
-        "temperature": 22.87,
+        "temperature": 22.01,
         "linkquality": 188
     },
     "0x286d97000113f617": {
         "battery": 52.5,
         "linkquality": 128,
-        "temperature": 22.72,
+        "temperature": 21.7,
         "water_leak": false,
         "tamper": false,
         "battery_low": false
