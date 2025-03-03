@@ -1,43 +1,54 @@
 - id: '1736869556746'
   alias: Lights Sunset Sunrise
   description: Automation based on sunrise/sun set
-  trigger:
-  - platform: sun
-    event: sunset
+  triggers:
+  - event: sunset
     id: Sunset
-  - platform: sun
-    event: sunrise
+    trigger: sun
+  - event: sunrise
     id: Sunrise
     offset: +00:15:00
-  action:
-  - service: light.turn_{{ 'on' if trigger.id == 'Sunset' else 'off' }}
-    target:
+    trigger: sun
+  actions:
+  - target:
       entity_id: light.porch_light
+    action: light.turn_{{ 'on' if trigger.id == 'Sunset' else 'off' }}
   - choose:
     - conditions:
       - condition: trigger
         id:
         - Sunset
       sequence:
-      - service: light.turn_on
-        target:
+      - target:
           entity_id: light.hall_light
         data:
           brightness_pct: 100
+        action: light.turn_on
+      - action: switch.turn_on
+        metadata: {}
+        data: {}
+        target:
+          entity_id: switch.tp_link_smart_plug_5e5b_walkway
     - conditions:
       - condition: trigger
         id:
         - Sunrise
       sequence:
-      - service: light.turn_off
-        target:
+      - target:
           entity_id: light.hall_light
+        action: light.turn_off
+        data: {}
+      - action: switch.turn_off
+        metadata: {}
+        data: {}
+        target:
+          entity_id: switch.tp_link_smart_plug_5e5b_walkway
     default:
-    - service: logbook.log
-      data:
+    - data:
         message: 'No Sunrise/Sunset actions (trigger: {{ trigger.id }})'
         name: Lights Sunset Sunrise Automation
         entity_id: sun.sun
+      action: logbook.log
 - id: '1736963481981'
   alias: Fertigation
   description: ''

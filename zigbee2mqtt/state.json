@@ -13,14 +13,14 @@
         "brightness": 64
     },
     "0x54ef4410008393a3": {
-        "voltage": 3013,
+        "voltage": 3016,
         "battery": 100,
         "detection_interval": 30,
         "motion_sensitivity": "medium",
         "trigger_indicator": true,
         "occupancy": false,
-        "illuminance": 1,
-        "linkquality": 196,
+        "illuminance": 3,
+        "linkquality": 120,
         "device_temperature": 25,
         "power_outage_count": 0
     },
@@ -30,13 +30,13 @@
         "occupancy": false,
         "tamper": false,
         "battery_low": false,
-        "temperature": 22.01,
-        "linkquality": 188
+        "temperature": 22.61,
+        "linkquality": 196
     },
     "0x286d97000113f617": {
         "battery": 52.5,
-        "linkquality": 128,
-        "temperature": 21.7,
+        "linkquality": 116,
+        "temperature": 21.51,
         "water_leak": false,
         "tamper": false,
         "battery_low": false
@@ -46,7 +46,7 @@
         "battery": 100,
         "device_temperature": 30,
         "power_outage_count": 16,
-        "linkquality": 244
+        "linkquality": 236
     },
     "0xa4c1381ee56b8bae": {
         "linkquality": 92,
@@ -100,7 +100,7 @@
             "installed_version": 16786690,
             "latest_version": 16786690
         },
-        "linkquality": 108,
+        "linkquality": 120,
         "color_temp_startup": 500,
         "power_on_behavior": "previous",
         "state": "OFF",
