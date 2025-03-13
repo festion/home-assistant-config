@@ -49,6 +49,19 @@
         name: Lights Sunset Sunrise Automation
         entity_id: sun.sun
       action: logbook.log
+
+# Automation to update the map entities sensor when presence changes
+- id: '1742000000001'
+  alias: Update Map Entities Sensor
+  description: "Forces the map entities sensor to refresh when presence changes"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.hide_home_icon
+  action:
+    - service: homeassistant.update_entity
+      target:
+        entity_id: sensor.map_entities
+
 - id: '1736963481981'
   alias: Fertigation
   description: ''
@@ -94,6 +107,7 @@
       message: Fertigation complete!
     action: notify.mobile_app_pixel_9_pro_xl
   mode: single
+
 - id: '1736972664016'
   alias: garage_door_always_on
   description: ''
@@ -108,6 +122,7 @@
     target:
       entity_id: switch.tp_link_power_strip_8bba_garage_door_opener_always_on
   mode: single
+
 - id: '1736972856548'
   alias: grow_lights_on
   description: ''
@@ -120,6 +135,7 @@
     action: switch.turn_on
     data: {}
   mode: single
+
 - id: '1736972905755'
   alias: grow_lights_off
   description: ''
@@ -132,6 +148,7 @@
     action: switch.turn_off
     data: {}
   mode: single
+
 - id: '1737217638878'
   alias: pantry_light_motion
   description: ''
@@ -141,6 +158,7 @@
       motion_entity: binary_sensor.eye_of_sauron_motion_detection
       light_target:
         device_id: f973418ec638992abe6d7ba0689bf2ed
+
 - id: '1737669355677'
   alias: Lock after 30
   description: ''
@@ -167,134 +185,4 @@
   - data:
       message: Front door locked
     action: notify.mobile_app_pixel_9_pro_xl
-  mode: single
-- id: '1738078626589'
-  alias: front_door_unlock
-  description: ''
-  triggers:
-  - entity_id:
-    - lock.front_door
-    from: locked
-    to: unlocked
-    trigger: state
-  actions:
-  - choose:
-    - conditions:
-      - condition: sun
-        before: sunset
-        after: sunrise
-      sequence:
-      - action: light.turn_on
-        data:
-          brightness_pct: 100
-        target:
-          device_id: 967c2ab1d3adc7eaae31cf22e6bad228
-    - conditions: []
-      sequence:
-      - action: light.turn_on
-        data:
-          brightness_pct: 100
-        target:
-          device_id:
-          - 967c2ab1d3adc7eaae31cf22e6bad228
-          - 619b02e8104048d5e2a7472e0e4b0aee
-  mode: single
-- id: '1738079317260'
-  alias: morning_lights
-  description: ''
-  triggers:
-  - at: 07:00:00
-    trigger: time
-  actions:
-  - data:
-      rgb_color:
-      - 255
-      - 255
-      - 255
-      transition: 60
-    action: light.turn_on
-    target:
-      device_id:
-      - 53a38436e48c861a918ad8dfc03dce79
-      - 08fe604d2c4001adaee1f2b56b998b15
-  mode: single
-- id: '1738256101698'
-  alias: front_door_unlocked_scream
-  description: ''
-  triggers:
-  - entity_id:
-    - lock.front_door
-    to: unlocked
-    for:
-      minutes: 5
-    trigger: state
-  actions:
-  - action: lock.lock
-    data: {}
-    target:
-      device_id: 32836b60fdccc501e777b202da401e93
-  - data:
-      message: Front Door is unlocked!
-      title: Front Door unlocked
-    action: notify.persistent_notification
-  - data:
-      title: Front Door unlocked
-      message: Front Door unlocked!
-    action: notify.mobile_app_pixel_9_pro_xl
-  - data:
-      title: Front Door unlocked
-      message: Front Door unlocked
-    action: notify.mobile_app_pixel_watch_3
-  - action: notify.lg_webos_tv_oled65c2pua
-    data:
-      message: Front Door unlocked
-  - target:
-      entity_id: input_select.threat_level
-    data:
-      option: critical
-    action: input_select.select_option
-  mode: single
-- id: '1738259251934'
-  alias: Reduce threat after door lock
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: lock.touchscreen_deadbolt
-    from: unlocked
-    to: locked
-  condition:
-  - condition: state
-    entity_id: input_select.threat_level
-    state: critical
-  action:
-  - service: notify.mobile_app_pixel_9_pro_xl
-    data:
-      message: Front Door Locked
-      title: Front Door Locked
-  - service: notify.mobile_app_pixel_watch_3
-    data:
-      message: Front Door Locked
-      title: Front Door Locked
-  - service: input_select.select_option
-    target:
-      entity_id: input_select.threat_level
-    data:
-      option: high
-  mode: single
-- id: '1739482139761'
-  alias: Update Last Fertigation Time
-  description: ''
-  trigger:
-  - platform: time
-    at:
-    - 03:30:00
-    - 07:30:00
-    - '11:30:00'
-    - '15:30:00'
-  action:
-  - service: input_datetime.set_datetime
-    target:
-      entity_id: input_datetime.last_fertigation_time
-    data:
-      datetime: '{{ now().strftime(''%Y-%m-%d %H:%M:%S'') }}'
   mode: single
