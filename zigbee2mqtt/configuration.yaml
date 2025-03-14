@@ -34,6 +34,7 @@ advanced:
     - 252
     - 14
     - 107
+  last_seen: ISO_8601_local
 mqtt:
   server: mqtt://core-mosquitto:1883
   user: mqtt_user
@@ -99,3 +100,5 @@ devices:
 groups:
   '1':
     friendly_name: all_strips
+availability:
+  enabled: true

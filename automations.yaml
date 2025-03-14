@@ -49,19 +49,16 @@
         name: Lights Sunset Sunrise Automation
         entity_id: sun.sun
       action: logbook.log
-
-# Automation to update the map entities sensor when presence changes
 - id: '1742000000001'
   alias: Update Map Entities Sensor
-  description: "Forces the map entities sensor to refresh when presence changes"
+  description: Forces the map entities sensor to refresh when presence changes
   trigger:
-    - platform: state
-      entity_id: binary_sensor.hide_home_icon
+  - platform: state
+    entity_id: binary_sensor.hide_home_icon
   action:
-    - service: homeassistant.update_entity
-      target:
-        entity_id: sensor.map_entities
-
+  - service: homeassistant.update_entity
+    target:
+      entity_id: sensor.map_entities
 - id: '1736963481981'
   alias: Fertigation
   description: ''
@@ -107,7 +104,6 @@
       message: Fertigation complete!
     action: notify.mobile_app_pixel_9_pro_xl
   mode: single
-
 - id: '1736972664016'
   alias: garage_door_always_on
   description: ''
@@ -122,7 +118,6 @@
     target:
       entity_id: switch.tp_link_power_strip_8bba_garage_door_opener_always_on
   mode: single
-
 - id: '1736972856548'
   alias: grow_lights_on
   description: ''
@@ -135,7 +130,6 @@
     action: switch.turn_on
     data: {}
   mode: single
-
 - id: '1736972905755'
   alias: grow_lights_off
   description: ''
@@ -148,7 +142,6 @@
     action: switch.turn_off
     data: {}
   mode: single
-
 - id: '1737217638878'
   alias: pantry_light_motion
   description: ''
@@ -158,7 +151,6 @@
       motion_entity: binary_sensor.eye_of_sauron_motion_detection
       light_target:
         device_id: f973418ec638992abe6d7ba0689bf2ed
-
 - id: '1737669355677'
   alias: Lock after 30
   description: ''
@@ -186,3 +178,14 @@
       message: Front door locked
     action: notify.mobile_app_pixel_9_pro_xl
   mode: single
+- id: '1741921580385'
+  alias: Match Outside Colour Temperature Kelvin
+  description: ''
+  use_blueprint:
+    path: HarvsG/match-color-temp-kelvin.yaml
+    input:
+      target_lights:
+      - light.bar_strip
+      - light.top_left_strip
+      - light.top_right_strip
+      - light.lamp
