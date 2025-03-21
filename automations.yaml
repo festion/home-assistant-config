@@ -189,3 +189,34 @@
       - light.top_left_strip
       - light.top_right_strip
       - light.lamp
+      max_color_temp: 3000
+      min_color_temp: 6500
+- id: '1742241925341'
+  alias: Tell Kristy the dryer is done
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - sensor.dryer_machine_state
+    from: run
+    to: stop
+  conditions: []
+  actions:
+  - device_id: 9792c0dfd1b107e57ce2e7d4ac5420f2
+    domain: mobile_app
+    type: notify
+    metadata: {}
+    message: Dryer is finished
+    title: Dryer
+  mode: single
+- id: '1742568407148'
+  alias: Report offline zigbee/zwave/battery/smart plug devices
+  description: ''
+  use_blueprint:
+    path: Tahutipai/report_zigbee_zwave_devices_gone_offline.yaml
+    input:
+      actions:
+      - action: notify.mobile_app_pixel_9_pro_xl
+        metadata: {}
+        data:
+          message: '{{offline_devices}} are offline'

@@ -1,0 +1,67 @@
+blueprint:
+  name: Report offline zigbee/zwave/battery/smart plug devices
+  description: Works with Smart Plugs, ZWave, Zigbee etc (Works with ZHA & Z2M)
+  domain: automation
+  input:
+    time:
+      name: Time to test on
+      description: Test is run at configured time
+      default: '10:00:00'
+      selector:
+        time: {}
+    day:
+      name: Weekday to test on
+      description: 'Test is run at configured time either everyday (0) or on a given
+        weekday (1: Monday ... 7: Sunday)'
+      default: 0
+      selector:
+        number:
+          min: 0.0
+          max: 7.0
+          mode: slider
+          step: 1.0
+    exclude:
+      name: Excluded Sensors
+      description: Battery sensors (e.g. smartphone) to exclude from detection. Only
+        entities are supported, devices must be expanded!
+      default:
+        entity_id: []
+      selector:
+        target:
+          entity:
+          - device_class:
+            - battery
+            - switch
+    actions:
+      name: Actions
+      description: Call your notification here. {{offline_devices}} will replaced
+        with the name of any offline devices
+      selector:
+        action: {}
+  source_url: https://gist.github.com/Tahutipai/971bf0e07e50ce6190e0dacd73262e2e
+variables:
+  day: !input day
+  exclude: !input exclude
+  offline_devices: "{% set result = namespace(offline_devices=[]) %} {% for sensor
+    in states.sensor | selectattr('attributes.device_class', 'defined') | selectattr('attributes.device_class',
+    '==', 'battery') %}\n  {% if \"unavailable\" in sensor | string  and not sensor.entity_id
+    in exclude.entity_id %}\n    {% set result.offline_devices = result.offline_devices
+    + [device_attr(device_id(sensor.entity_id), \"name\")] %}\n  {% endif %}\n{% endfor
+    %} {% for binary_sensor in states.binary_sensor | selectattr('attributes.device_class',
+    'defined') | selectattr('attributes.device_class', '==', 'battery') %}\n  {% if
+    \"unavailable\" in binary_sensor | string and not binary_sensor.entity_id in exclude.entity_id
+    %}\n    {% set result.offline_devices = result.offline_devices + [device_attr(device_id(binary_sensor.entity_id),
+    \"name\")] %}\n  {% endif %}\n{% endfor %} {% for switch in states.switch | selectattr('state','eq','unavailable')
+    %}\n  {% if switch.entity_id not in exclude.entity_id %}\n    {% set result.offline_devices
+    = result.offline_devices + [device_attr(device_id(switch.entity_id), \"name\")]
+    %}\n  {% endif %}\n{% endfor %} {{result.offline_devices|sort|unique|join('\\n')}}"
+trigger:
+- platform: time
+  at: !input time
+condition:
+- '{{ offline_devices != '''' and (day | int == 0 or day | int == now().isoweekday())
+  }}'
+action:
+- choose: []
+  default: !input actions
+mode: single

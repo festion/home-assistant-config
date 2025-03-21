@@ -1,0 +1,191 @@
+respond_calendar_event:
+  target:
+    device:
+      integration: ms365_calendar
+    entity:
+      integration: ms365_calendar
+      domain: calendar
+  fields:
+    event_id:
+      example: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      required: true
+      selector:
+        text:
+    response:
+      example: Decline
+      required: true
+      selector:
+        text:
+    message:
+      example: "I cannot attend this meeting"
+      selector:
+        text:
+    send_response:
+      example: True
+      selector:
+        boolean:
+
+create_calendar_event:
+  target:
+    device:
+      integration: ms365_calendar
+    entity:
+      integration: ms365_calendar
+      domain: calendar
+  fields:
+    subject:
+      example: Clean up the garage
+      required: true
+      selector:
+        text:
+    start:
+      example: "2025-03-22 20:00:00"
+      required: true
+      selector:
+        datetime:
+    end:
+      example: "2025-03-22 20:30:00"
+      required: true
+      selector:
+        datetime:
+    body:
+      example: Remember to also clean out the gutters
+      selector:
+        text:
+    location:
+      example: "1600 Pennsylvania Ave Nw, Washington, DC 20500"
+      selector:
+        text:
+    categories:
+      selector:
+        text:
+    sensitivity:
+      example: normal
+      selector:
+        select:
+          mode: dropdown
+          options:
+            - label: "Normal"
+              value: "normal"
+            - label: "Personal"
+              value: "personal"
+            - label: "Private"
+              value: "private"
+            - label: "Confidential"
+              value: "confidential"
+    show_as:
+      example: busy
+      selector:
+        select:
+          mode: dropdown
+          options:
+            - label: "Free"
+              value: "free"
+            - label: "Tentative"
+              value: "tentative"
+            - label: "Busy"
+              value: "busy"
+            - label: "Out of Office"
+              value: "oof"
+            - label: "Working Elsewhere"
+              value: "workingElsewhere"
+            - label: "Unknown"
+              value: "unknown"
+    is_all_day:
+      example: False
+      selector:
+        boolean:
+    attendees:
+      selector:
+        object:
+
+modify_calendar_event:
+  target:
+    device:
+      integration: ms365_calendar
+    entity:
+      integration: ms365_calendar
+      domain: calendar
+  fields:
+    event_id:
+      example: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      required: true
+      selector:
+        text:
+    subject:
+      example: Clean up the garage
+      selector:
+        text:
+    start:
+      example: "2025-03-22 20:00:00"
+      selector:
+        datetime:
+    end:
+      example: "2025-03-22 20:30:00"
+      selector:
+        datetime:
+    body:
+      example: Remember to also clean out the gutters
+      selector:
+        text:
+    location:
+      example: "1600 Pennsylvania Ave Nw, Washington, DC 20500"
+      selector:
+        text:
+    categories:
+      selector:
+        text:
+    sensitivity:
+      example: normal
+      selector:
+        select:
+          mode: dropdown
+          options:
+            - label: "Normal"
+              value: "normal"
+            - label: "Personal"
+              value: "personal"
+            - label: "Private"
+              value: "private"
+            - label: "Confidential"
+              value: "confidential"
+    show_as:
+      example: busy
+      selector:
+        select:
+          mode: dropdown
+          options:
+            - label: "Free"
+              value: "free"
+            - label: "Tentative"
+              value: "tentative"
+            - label: "Busy"
+              value: "busy"
+            - label: "Out of Office"
+              value: "oof"
+            - label: "Working Elsewhere"
+              value: "workingElsewhere"
+            - label: "Unknown"
+              value: "unknown"
+    is_all_day:
+      example: False
+      selector:
+        boolean:
+    attendees:
+      selector:
+        object:
+
+remove_calendar_event:
+  target:
+    device:
+      integration: ms365_calendar
+    entity:
+      integration: ms365_calendar
+      domain: calendar
+  fields:
+    event_id:
+      example: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      required: true
+      selector:
+        text:
+
