@@ -13,30 +13,30 @@
         "brightness": 64
     },
     "0x54ef4410008393a3": {
-        "voltage": 2970,
-        "battery": 80,
+        "voltage": 2997,
+        "battery": 98,
         "detection_interval": 30,
         "motion_sensitivity": "medium",
         "trigger_indicator": true,
         "occupancy": false,
         "illuminance": 0,
         "linkquality": 192,
-        "device_temperature": 24,
+        "device_temperature": 26,
         "power_outage_count": 0
     },
     "0x24fd5b000103f112": {
-        "voltage": 1700,
-        "battery": 17,
+        "voltage": 1600,
+        "battery": 4,
         "occupancy": false,
         "tamper": false,
         "battery_low": false,
-        "temperature": 22.05,
+        "temperature": 23.1,
         "linkquality": 168
     },
     "0x286d97000113f617": {
         "battery": 52.5,
         "linkquality": 172,
-        "temperature": 21.3,
+        "temperature": 22.19,
         "water_leak": false,
         "tamper": false,
         "battery_low": false
@@ -44,7 +44,7 @@
     "0x00158d000af2a851": {
         "voltage": 3025,
         "battery": 100,
-        "device_temperature": 33,
+        "device_temperature": 34,
         "power_outage_count": 16,
         "linkquality": 255
     },
@@ -105,23 +105,23 @@
         "linkquality": 100,
         "color_temp_startup": 500,
         "power_on_behavior": "previous",
-        "state": "OFF",
+        "state": "ON",
         "color_mode": "color_temp",
-        "color_temp": 454,
+        "color_temp": 500,
         "brightness": 254,
         "color": {
-            "x": 0.5056,
-            "y": 0.4152,
-            "hue": 27,
-            "saturation": 92,
-            "h": 27,
-            "s": 92
+            "x": 0.5267,
+            "y": 0.4133,
+            "hue": 25,
+            "saturation": 95,
+            "h": 25,
+            "s": 95
         }
     },
     "0x00158d008b3d8390": {
         "voltage": 3005,
         "battery": 100,
-        "device_temperature": 25,
+        "device_temperature": 26,
         "power_outage_count": 15,
         "trigger_count": 0,
         "linkquality": 172

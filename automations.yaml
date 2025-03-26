@@ -220,3 +220,16 @@
         metadata: {}
         data:
           message: '{{offline_devices}} are offline'
+- id: '1742733210353'
+  alias: Morning lights
+  description: ''
+  triggers:
+  - trigger: time
+    at: 07:00:00
+  conditions: []
+  actions:
+  - type: turn_on
+    device_id: 53a38436e48c861a918ad8dfc03dce79
+    entity_id: 49eccc694b76edeca73a6b8ef45b371f
+    domain: light
+  mode: single
