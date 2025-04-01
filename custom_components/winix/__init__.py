@@ -10,7 +10,7 @@ from awesomeversion import AwesomeVersion
 from winix import auth
 
 from homeassistant.components import persistent_notification
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
+from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import (
     CONF_PASSWORD,
     CONF_USERNAME,
@@ -39,7 +39,7 @@ SUPPORTED_PLATFORMS = [Platform.FAN, Platform.SENSOR]
 DEFAULT_SCAN_INTERVAL: Final = 30
 
 
-async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
+async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up the Winix component."""
 
     if not is_valid_ha_version():
@@ -206,12 +206,12 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     if unload_ok:
         hass.data.pop(WINIX_DOMAIN)
 
-    loaded_entries = [
-        entry
-        for entry in hass.config_entries.async_entries(WINIX_DOMAIN)
-        if entry.state == ConfigEntryState.LOADED
+    other_loaded_entries = [
+        _entry
+        for _entry in hass.config_entries.async_loaded_entries(WINIX_DOMAIN)
+        if _entry.entry_id != entry.entry_id
     ]
-    if len(loaded_entries) == 1:
+    if not other_loaded_entries:
         # If this is the last loaded instance, then unregister services
         hass.services.async_remove(WINIX_DOMAIN, SERVICE_REMOVE_STALE_ENTITIES)
 

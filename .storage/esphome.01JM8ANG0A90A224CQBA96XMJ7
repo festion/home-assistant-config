@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "esphome.01JM8ANG0A90A224CQBA96XMJ7",
+  "data": {
+    "device_info": {
+      "uses_password": false,
+      "name": "wroommicrousb",
+      "friendly_name": "wroommicrousb",
+      "mac_address": "8C:4F:00:30:5F:B8",
+      "compilation_time": "Feb 19 2025, 09:15:30",
+      "model": "esp32dev",
+      "manufacturer": "Espressif",
+      "has_deep_sleep": false,
+      "esphome_version": "2025.2.0",
+      "project_name": "",
+      "project_version": "",
+      "webserver_port": 0,
+      "legacy_voice_assistant_version": 0,
+      "voice_assistant_feature_flags": 0,
+      "legacy_bluetooth_proxy_version": 0,
+      "bluetooth_proxy_feature_flags": 0,
+      "suggested_area": ""
+    },
+    "services": [
+      {
+        "name": "set_last_fertigation_time",
+        "key": 332492429,
+        "args": [
+          {
+            "name": "timestamp",
+            "type": 1
+          }
+        ]
+      }
+    ],
+    "api_version": {
+      "major": 1,
+      "minor": 10
+    },
+    "update": [],
+    "sensor": [
+      {
+        "object_id": "wifi_signal_sensor",
+        "key": 2281838442,
+        "name": "WiFi Signal Sensor",
+        "unique_id": "8c4f00305fb8-wifisignal",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 2,
+        "device_class": "signal_strength",
+        "unit_of_measurement": "dBm",
+        "accuracy_decimals": 0,
+        "force_update": false,
+        "state_class": 1,
+        "last_reset_type": 0
+      },
+      {
+        "object_id": "reservoir_current_volume",
+        "key": 442875255,
+        "name": "Reservoir Current Volume",
+        "unique_id": "wroommicrousbsensorreservoir_current_volume",
+        "disabled_by_default": false,
+        "icon": "mdi:arrow-expand-vertical",
+        "entity_category": 0,
+        "device_class": "",
+        "unit_of_measurement": "gal",
+        "accuracy_decimals": 2,
+        "force_update": false,
+        "state_class": 1,
+        "last_reset_type": 0
+      },
+      {
+        "object_id": "average_volume_since_last_fertigation",
+        "key": 4000733978,
+        "name": "Average Volume Since Last Fertigation",
+        "unique_id": "wroommicrousbsensoraverage_volume_since_last_fertigation",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 0,
+        "device_class": "volume",
+        "unit_of_measurement": "gal",
+        "accuracy_decimals": 2,
+        "force_update": false,
+        "state_class": 2,
+        "last_reset_type": 0
+      },
+      {
+        "object_id": "reservoir_water_temp",
+        "key": 3732991369,
+        "name": "Reservoir Water Temp",
+        "unique_id": "wroommicrousbsensorreservoir_water_temp",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 0,
+        "device_class": "temperature",
+        "unit_of_measurement": "°F",
+        "accuracy_decimals": 2,
+        "force_update": false,
+        "state_class": 1,
+        "last_reset_type": 0
+      }
+    ],
+    "text_sensor": [
+      {
+        "object_id": "last_fertigation_time",
+        "key": 4174203316,
+        "name": "Last Fertigation Time",
+        "unique_id": "wroommicrousbtext_sensorlast_fertigation_time",
+        "disabled_by_default": false,
+        "icon": "mdi:timer-sync",
+        "entity_category": 0,
+        "device_class": ""
+      }
+    ]
+  }
+}

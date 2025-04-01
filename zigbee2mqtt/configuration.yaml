@@ -93,6 +93,9 @@ devices:
   '0x001788010ce63c53':
     friendly_name: lamp
     icon: device_icons/aebd1271512dcfb87775f223ebe44505.png
+  '0x00158d008b3d8390':
+    friendly_name: Drier Leak
+    icon: device_icons/2d19c1b8e82d9b72921bbd1fcbde4541.png
 groups:
   '1':
     friendly_name: all_strips
