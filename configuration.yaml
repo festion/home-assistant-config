@@ -24,6 +24,7 @@ scene: !include scenes.yaml
 sensor: !include sensors.yaml
 template: !include templates.yaml
 mqtt: !include mqtt.yaml
+notify: !include notify.yaml
 
 # --- HTTP Configuration ---
 http:

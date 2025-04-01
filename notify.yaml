@@ -1,0 +1,36 @@
+# Notification platforms
+
+# Email notifications for Kristy
+email_kristy:
+  name: email_kristy
+  platform: smtp
+  server: smtp.gmail.com
+  port: 587
+  timeout: 15
+  sender: your.email@gmail.com
+  encryption: starttls
+  username: your.email@gmail.com
+  password: !secret gmail_app_password
+  recipient: kristy.email@example.com
+  sender_name: Home Assistant
+
+# Group notifications
+all_devices:
+  name: all_devices
+  platform: group
+  services:
+    - service: mobile_app_pixel_9_pro_xl
+    - service: mobile_app_pixel_watch_3
+    
+jeremy_devices:
+  name: jeremy_devices
+  platform: group
+  services:
+    - service: mobile_app_pixel_9_pro_xl
+    - service: mobile_app_pixel_watch_3
+
+kristy_devices:
+  name: kristy_devices
+  platform: group
+  services:
+    - service: email_kristy
