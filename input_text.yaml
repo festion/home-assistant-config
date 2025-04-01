@@ -1,0 +1,27 @@
+ble_device_name:
+  name: BLE Device Name
+  icon: mdi:tag-text
+
+ble_device_mac:
+  name: BLE Device MAC Address
+  icon: mdi:bluetooth
+  pattern: "^([0-9A-Fa-f]{2}[:-]?){5}([0-9A-Fa-f]{2})$"
+  
+notify_title:
+  name: Notification Title
+  initial: ""
+  max: 100
+
+notify_message:
+  name: Notification Message
+  initial: ""
+  max: 255
+
+notify_jeremy_devices:
+  name: Jeremy Devices
+  initial: notify.mobile_app_pixel_9_pro_xl
+
+notify_kristy_devices:
+  name: Kristy Devices
+  initial: notify.email_kristy
+  

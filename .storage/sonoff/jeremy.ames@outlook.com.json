@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "sonoff/jeremy.ames@outlook.com.json",
+  "data": [
+    {
+      "name": "Micro-CFH",
+      "deviceid": "100118e599",
+      "apikey": "f283881b-2fc9-4a21-8f07-a477f4484047",
+      "extra": {
+        "uiid": 77,
+        "description": "20201203014",
+        "brandId": "5c4c1aee3a7d24c7100be054",
+        "apmac": "d0:27:02:31:c8:83",
+        "mac": "d0:27:02:31:c8:82",
+        "ui": "单通道插座-多通道版",
+        "modelInfo": "5ed0740abfe8bf2abd1fa4d6",
+        "model": "CKW-MSW-01",
+        "manufacturer": "深圳松诺技术有限公司",
+        "staMac": "44:5D:5E:42:C8:44"
+      },
+      "brandName": "SONOFF",
+      "brandLogo": "https://us-ota.coolkit.cc/logo/q62PevoglDNmwUJ9oPE7kRrpt1nL1CoA.png",
+      "showBrand": true,
+      "productModel": "Micro-CFH",
+      "tags": {
+        "m_4047_jere": "on"
+      },
+      "devConfig": {},
+      "settings": {
+        "opsNotify": 0,
+        "opsHistory": 1,
+        "alarmNotify": 1,
+        "wxAlarmNotify": 0,
+        "wxOpsNotify": 0,
+        "wxDoorbellNotify": 0,
+        "appDoorbellNotify": 1
+      },
+      "devGroups": [],
+      "family": {
+        "familyid": "67e1bf2efd61a1c56b32e948",
+        "index": 0,
+        "members": [],
+        "guests": []
+      },
+      "shareTo": [],
+      "devicekey": "00279c12-d389-4177-93f6-1004d919a816",
+      "online": true,
+      "params": {
+        "bindInfos": {},
+        "version": 8,
+        "switches": [
+          {
+            "switch": "on",
+            "outlet": 0
+          },
+          {
+            "switch": "off",
+            "outlet": 1
+          },
+          {
+            "switch": "off",
+            "outlet": 2
+          },
+          {
+            "switch": "off",
+            "outlet": 3
+          }
+        ],
+        "configure": [
+          {
+            "startup": "off",
+            "outlet": 0
+          },
+          {
+            "startup": "off",
+            "outlet": 1
+          },
+          {
+            "startup": "off",
+            "outlet": 2
+          },
+          {
+            "startup": "off",
+            "outlet": 3
+          }
+        ],
+        "pulses": [
+          {
+            "pulse": "off",
+            "width": 1000,
+            "outlet": 0
+          },
+          {
+            "pulse": "off",
+            "width": 1000,
+            "outlet": 1
+          },
+          {
+            "pulse": "off",
+            "width": 1000,
+            "outlet": 2
+          },
+          {
+            "pulse": "off",
+            "width": 1000,
+            "outlet": 3
+          }
+        ],
+        "lock": 0,
+        "sledOnline": "on",
+        "staMac": "44:5D:5E:42:C8:44",
+        "rssi": -74,
+        "fwVersion": "3.6.0",
+        "selfApikey": "123"
+      },
+      "denyFeatures": [
+        "loopTiming"
+      ],
+      "isSupportGroup": true,
+      "isSupportedOnMP": true,
+      "isSupportChannelSplit": false,
+      "deviceFeature": {}
+    }
+  ]
+}

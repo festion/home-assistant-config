@@ -1,0 +1,266 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.ble_management",
+  "data": {
+    "config": {
+      "title": "BLE Management",
+      "views": [
+        {
+          "path": "ble-management",
+          "title": "BLE Management",
+          "icon": "mdi:bluetooth-settings",
+          "cards": [
+            {
+              "type": "entities",
+              "title": "Current BLE Devices",
+              "icon": "mdi:bluetooth",
+              "entities": [
+                {
+                  "entity": "binary_sensor.ble_gateway_status",
+                  "name": "Gateway Status",
+                  "icon": "mdi:bluetooth-connect"
+                },
+                {
+                  "entity": "sensor.ble_debug_data",
+                  "name": "Detected Devices Count"
+                },
+                {
+                  "type": "custom:auto-entities",
+                  "card": {
+                    "type": "entities",
+                    "title": "BLE Presence Devices",
+                    "show_header_toggle": false
+                  },
+                  "filter": {
+                    "include": [
+                      {
+                        "entity_id": "*_presence",
+                        "options": {
+                          "secondary_info": "last-changed"
+                        }
+                      }
+                    ],
+                    "exclude": []
+                  },
+                  "sort": {
+                    "method": "friendly_name"
+                  }
+                },
+                {
+                  "type": "custom:auto-entities",
+                  "card": {
+                    "type": "entities",
+                    "title": "BLE RSSI Sensors",
+                    "show_header_toggle": false
+                  },
+                  "filter": {
+                    "include": [
+                      {
+                        "entity_id": "*_ble_rssi",
+                        "options": {
+                          "secondary_info": "last-changed"
+                        }
+                      }
+                    ],
+                    "exclude": []
+                  },
+                  "sort": {
+                    "method": "friendly_name"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "entities",
+                  "title": "Add New BLE Device",
+                  "entities": [
+                    {
+                      "entity": "input_text.ble_device_name"
+                    },
+                    {
+                      "entity": "input_text.ble_device_mac"
+                    },
+                    {
+                      "entity": "input_select.ble_device_type"
+                    },
+                    {
+                      "entity": "input_number.ble_rssi_threshold"
+                    },
+                    {
+                      "entity": "input_select.ble_device_icon"
+                    }
+                  ]
+                },
+                {
+                  "type": "button",
+                  "name": "Add BLE Device",
+                  "icon": "mdi:bluetooth-transfer",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "script.add_ble_device",
+                    "service_data": {
+                      "device_name": "{{ states('input_text.ble_device_name') }}",
+                      "mac_address": "{{ states('input_text.ble_device_mac') }}",
+                      "device_type": "{{ states('input_select.ble_device_type') }}",
+                      "rssi_threshold": "{{ states('input_number.ble_rssi_threshold') | int }}",
+                      "icon": "{{ states('input_select.ble_device_icon').split(' ')[1].replace('(', '').replace(')', '') }}"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "horizontal-stack",
+              "cards": [
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "markdown",
+                      "content": "## RAV4 Monitoring\n"
+                    },
+                    {
+                      "type": "entities",
+                      "entities": [
+                        {
+                          "entity": "binary_sensor.rav4_presence",
+                          "name": "Template Presence"
+                        },
+                        {
+                          "entity": "binary_sensor.rav4_presence_direct",
+                          "name": "Direct MQTT Presence"
+                        },
+                        {
+                          "entity": "sensor.rav4_ble_rssi",
+                          "name": "Template RSSI"
+                        },
+                        {
+                          "entity": "sensor.rav4_rssi_direct",
+                          "name": "Direct MQTT RSSI"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "markdown",
+                      "content": "## Camry Monitoring\n"
+                    },
+                    {
+                      "type": "entities",
+                      "entities": [
+                        {
+                          "entity": "binary_sensor.camry_presence",
+                          "name": "Template Presence"
+                        },
+                        {
+                          "entity": "binary_sensor.camry_presence_direct",
+                          "name": "Direct MQTT Presence"
+                        },
+                        {
+                          "entity": "sensor.camry_ble_rssi",
+                          "name": "Template RSSI"
+                        },
+                        {
+                          "entity": "sensor.camry_rssi_direct",
+                          "name": "Direct MQTT RSSI"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "## MQTT Topic Structure\n"
+                },
+                {
+                  "type": "entities",
+                  "title": "Last Update Times",
+                  "entities": [
+                    {
+                      "entity": "sensor.ble_gateway_raw_data",
+                      "name": "Raw BTLE Topic",
+                      "secondary_info": "last-updated"
+                    },
+                    {
+                      "entity": "sensor.ble_gateway_info",
+                      "name": "New Gateway Info Topic",
+                      "secondary_info": "last-updated"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "history-graph",
+                  "title": "RSSI History",
+                  "hours_to_show": 24,
+                  "entities": [
+                    {
+                      "entity": "sensor.rav4_ble_rssi"
+                    },
+                    {
+                      "entity": "sensor.rav4_rssi_direct"
+                    },
+                    {
+                      "entity": "sensor.camry_ble_rssi"
+                    },
+                    {
+                      "entity": "sensor.camry_rssi_direct"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "## Troubleshooting\n"
+                },
+                {
+                  "type": "button",
+                  "name": "Reset BLE Bridge Automation",
+                  "icon": "mdi:restart",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "automation.reload"
+                  }
+                },
+                {
+                  "type": "button",
+                  "name": "Check MQTT Connectivity",
+                  "icon": "mdi:server-network",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "mqtt.publish",
+                    "service_data": {
+                      "topic": "homeassistant/status",
+                      "payload": "online"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
