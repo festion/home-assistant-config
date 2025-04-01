@@ -69,6 +69,8 @@
     # Map Entities Sensor (for dynamically hiding the home icon)
     - name: "Map Entities"
       unique_id: map_entities
+      availability: >-
+        {{ true }}
       state: >-
         {% set entities = [
           'person.jeremy',

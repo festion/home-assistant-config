@@ -88,7 +88,12 @@ send_notification:
           {% endif %}
     - condition: template
       value_template: "{{ should_notify }}"
-    - service: "{{ notification_service }}"
+    - service: >
+        {% if 'notify.' in notification_service %}
+          {{ notification_service }}
+        {% else %}
+          notify.{{ notification_service }}
+        {% endif %}
       data:
         title: "{{ msg_title }}"
         message: "{{ msg_content }}"

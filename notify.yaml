@@ -1,9 +1,6 @@
 # Notification platforms
-
-# Email notifications for Kristy
-email_kristy:
+- platform: smtp
   name: email_kristy
-  platform: smtp
   server: smtp.gmail.com
   port: 587
   timeout: 15
@@ -15,22 +12,19 @@ email_kristy:
   sender_name: Home Assistant
 
 # Group notifications
-all_devices:
+- platform: group
   name: all_devices
-  platform: group
   services:
     - service: mobile_app_pixel_9_pro_xl
     - service: mobile_app_pixel_watch_3
     
-jeremy_devices:
+- platform: group
   name: jeremy_devices
-  platform: group
   services:
     - service: mobile_app_pixel_9_pro_xl
     - service: mobile_app_pixel_watch_3
 
-kristy_devices:
+- platform: group
   name: kristy_devices
-  platform: group
   services:
     - service: email_kristy

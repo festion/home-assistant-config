@@ -19,9 +19,9 @@ notify_message:
 
 notify_jeremy_devices:
   name: Jeremy Devices
-  initial: notify.mobile_app_pixel_9_pro_xl
+  initial: notify.jeremy_devices
 
 notify_kristy_devices:
   name: Kristy Devices
-  initial: notify.email_kristy
+  initial: notify.kristy_devices
   

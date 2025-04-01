@@ -3,12 +3,13 @@
 # Bidirectional Home Assistant Configuration Sync Tool
 echo "Home Assistant Configuration Sync Tool"
 echo "====================================="
-echo "Usage: $0 [OPTIONS]"
+echo "Usage: $0 [OPTIONS] [FILE1 FILE2 ...]"
 echo "Options:"
 echo "  --pull     Pull changes from remote to local (default)"
 echo "  --push     Push changes from local to remote"
 echo "  --dry-run  Test run only, no changes made (default)"
 echo "  --execute  Actually execute the changes"
+echo "  FILE1...   Optional specific files to sync (relative to repository root)"
 echo
 
 # Samba share details
@@ -21,6 +22,7 @@ DIRECTION="pull"
 DRY_RUN=true  # Default to test run
 SAMBA_USER="homeassistant"
 SAMBA_PASS="redflower805"
+SPECIFIC_FILES=""
 
 # Parse command line arguments
 while [[ "$#" -gt 0 ]]; do
@@ -29,7 +31,19 @@ while [[ "$#" -gt 0 ]]; do
     --pull) DIRECTION="pull"; shift ;;
     --dry-run) DRY_RUN=true; shift ;;
     --execute) DRY_RUN=false; shift ;;
-    *) echo "Unknown parameter: $1"; exit 1 ;;
+    *)
+      # If not a recognized flag, treat as specific file
+      if [[ -f "$LOCAL_REPO/$1" ]]; then
+        if [[ -z "$SPECIFIC_FILES" ]]; then
+          SPECIFIC_FILES="$1"
+        else
+          SPECIFIC_FILES="$SPECIFIC_FILES $1"
+        fi
+        shift
+      else
+        echo "Unknown parameter or file not found: $1"; exit 1
+      fi
+      ;;
   esac
 done
 
@@ -75,12 +89,30 @@ perform_sync() {
     echo "Performing ACTUAL SYNC..."
   fi
   
-  if [ "$DIRECTION" = "pull" ]; then
-    echo "Direction: REMOTE → LOCAL (pulling changes from Home Assistant)"
-    rsync $RSYNC_OPTS $MOUNT_POINT/ $LOCAL_REPO/
+  # If specific files are provided, sync only those
+  if [ -n "$SPECIFIC_FILES" ]; then
+    echo "Syncing specific files: $SPECIFIC_FILES"
+    
+    if [ "$DIRECTION" = "pull" ]; then
+      echo "Direction: REMOTE → LOCAL (pulling changes from Home Assistant)"
+      for file in $SPECIFIC_FILES; do
+        rsync $RSYNC_OPTS $MOUNT_POINT/$file $LOCAL_REPO/$file
+      done
+    else
+      echo "Direction: LOCAL → REMOTE (pushing changes to Home Assistant)"
+      for file in $SPECIFIC_FILES; do
+        rsync $RSYNC_OPTS $LOCAL_REPO/$file $MOUNT_POINT/$file
+      done
+    fi
   else
-    echo "Direction: LOCAL → REMOTE (pushing changes to Home Assistant)"
-    rsync $RSYNC_OPTS $LOCAL_REPO/ $MOUNT_POINT/
+    # Sync entire repository
+    if [ "$DIRECTION" = "pull" ]; then
+      echo "Direction: REMOTE → LOCAL (pulling changes from Home Assistant)"
+      rsync $RSYNC_OPTS $MOUNT_POINT/ $LOCAL_REPO/
+    else
+      echo "Direction: LOCAL → REMOTE (pushing changes to Home Assistant)"
+      rsync $RSYNC_OPTS $LOCAL_REPO/ $MOUNT_POINT/
+    fi
   fi
 }
 
