@@ -1,0 +1,860 @@
+2025-02-14 09:56:09.325 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration winix which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.325 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration midea_dehumidifier_lan which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.326 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration mail_and_packages which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.326 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration ac_infinity which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.327 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration adaptive_lighting which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.328 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration lock_code_manager which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.328 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration spotcast which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.329 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration ble_monitor which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.330 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration toyota_na which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.330 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration alexa_media which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.330 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration circadian_lighting which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.331 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.331 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration llama_conversation which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.331 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration tplink_easy_smart which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.331 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration extended_openai_conversation which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.331 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration ab_gateway which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.331 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration webrtc which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.332 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration localtuya which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.332 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration thermal_comfort which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.333 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration browser_mod which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.333 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration govee which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.333 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration pirateweather which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:09.334 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration meross_lan which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-02-14 09:56:14.538 WARNING (MainThread) [homeassistant.helpers.frame] Detected that custom integration 'browser_mod' accessed lovelace_data['resources'] instead of lovelace_data.resources at custom_components/browser_mod/mod_view.py, line 59: resources = hass.data["lovelace"]["resources"]. This will stop working in Home Assistant 2026.2, please report it to the author of the 'browser_mod' custom integration
+2025-02-14 09:56:14.761 WARNING (ImportExecutor_0) [homeassistant.backports.enum] StrEnum was used from tplink_easy_smart, this is a deprecated alias which will be removed in HA Core 2025.5. Use enum.StrEnum instead, please report it to the author of the 'tplink_easy_smart' custom integration
+2025-02-14 09:56:17.840 ERROR (MainThread) [homeassistant.components.input_datetime] Platform input_datetime does not generate unique IDs. ID last_fertigation_time already exists - ignoring input_datetime.last_fertigation_time
+2025-02-14 09:56:17.899 WARNING (SyncWorker_7) [urllib3.connection] Certificate did not match expected hostname: 192.168.1.137. Certificate: {'subject': ((('commonName', 'docker.internal.lakehouse.wtf'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R11'),)), 'version': 3, 'serialNumber': '03991A61C909EF0C11DDE32E41034D30E829', 'notBefore': 'Jan 28 17:01:40 2025 GMT', 'notAfter': 'Apr 28 17:01:39 2025 GMT', 'subjectAltName': (('DNS', 'docker.internal.lakehouse.wtf'), ('DNS', 'proxbox.internal.lakehouse.wtf'), ('DNS', 'proxmox.internal.lakehouse.wtf'), ('DNS', 'proxmox1.internal.lakehouse.wtf')), 'OCSP': ('http://r11.o.lencr.org',), 'caIssuers': ('http://r11.i.lencr.org/',)}
+2025-02-14 09:56:17.899 ERROR (SyncWorker_7) [homeassistant.components.proxmoxve] Unable to verify proxmox server SSL. Try using "verify_ssl: false" for proxmox instance 192.168.1.137:8006
+2025-02-14 09:56:20.962 WARNING (MainThread) [homeassistant.components.sensor] Entity sensor.reserviorsensor_reservoir_current_volume (<class 'homeassistant.components.esphome.sensor.EsphomeSensor'>) is using state class 'measurement' which is impossible considering device class ('volume') it is using; expected None or one of 'total_increasing', 'total'; Please update your configuration if your entity is manually configured, otherwise create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+esphome%22
+2025-02-14 09:56:20.976 WARNING (MainThread) [homeassistant.components.sensor] Entity sensor.reserviorsensor_average_volume_since_last_fertigation (<class 'homeassistant.components.esphome.sensor.EsphomeSensor'>) is using state class 'measurement' which is impossible considering device class ('volume') it is using; expected None or one of 'total_increasing', 'total'; Please update your configuration if your entity is manually configured, otherwise create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+esphome%22
+2025-02-14 10:04:29.591 WARNING (MainThread) [homeassistant.helpers.entity] Update of climate.master_bedroom is taking over 10 seconds
+2025-02-14 10:06:21.262 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 10:07:32.858 WARNING (MainThread) [alexapy.helpers] alexaapi.get_customer_history_records((<alexapy.alexalogin.AlexaLogin object at 0x7f3fc199fe00>,), {'max_record_size': 10}): Timeout error occurred accessing AlexaAPI: An exception of type CancelledError occurred. Arguments:
+()
+2025-02-14 10:11:21.595 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 10:15:10.498 WARNING (Recorder) [homeassistant.components.sensor.recorder] Entity sensor.reserviorsensor_reservoir_current_volume from integration esphome has state class total_increasing, but its state is not strictly increasing. Triggered by state 2.82 (3.0) with last_updated set to 2025-02-14T16:10:48.860943+00:00. Please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+esphome%22
+2025-02-14 10:16:21.584 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 10:21:21.583 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 10:26:00.459 WARNING (MainThread) [homeassistant.helpers.entity] Update of climate.master_bedroom is taking over 10 seconds
+2025-02-14 10:33:00.556 WARNING (MainThread) [homeassistant.helpers.entity] Update of climate.master_bedroom is taking over 10 seconds
+2025-02-14 10:36:24.214 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 10:41:24.677 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 10:46:24.591 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 10:49:34.030 ERROR (MainThread) [homeassistant.helpers.script.websocket_api_script] websocket_api script: Error executing script. Service not found for call_service at pos 1: Action sensor.reserviorsensor_last_fertigation_time not found
+2025-02-14 10:49:34.032 ERROR (MainThread) [homeassistant.components.websocket_api.http.connection] [139911322785904] Action sensor.reserviorsensor_last_fertigation_time not found
+2025-02-14 10:51:24.574 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 10:55:00.299 ERROR (MainThread) [homeassistant.helpers.script.websocket_api_script] websocket_api script: Error executing script. Service not found for call_service at pos 1: Action esphome.reserviorsensor_set_last_fertigation_time not found
+2025-02-14 10:55:00.299 ERROR (MainThread) [homeassistant.components.websocket_api.http.connection] [139911322785904] Action esphome.reserviorsensor_set_last_fertigation_time not found
+2025-02-14 10:56:21.823 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/sensor.py", line 207, in _update_attrs
+    self._attr_native_value = self.entity_description.value_fn(self)
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/sensor.py", line 60, in <lambda>
+    .active_time_by_zone_id.get(sensor.zone.id, timedelta())
+                                ^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 11:01:21.578 WARNING (MainThread) [homeassistant.components.sonos.speaker] No recent activity and cannot reach Linda’s Bedroom, marking unavailable
+2025-02-14 11:06:27.381 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 11:11:27.640 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 11:16:27.597 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 11:21:27.582 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 11:32:04.120 WARNING (MainThread) [alexapy.helpers] alexaapi.get_customer_history_records((<alexapy.alexalogin.AlexaLogin object at 0x7f3fc199fe00>,), {'max_record_size': 10}): Timeout error occurred accessing AlexaAPI: An exception of type CancelledError occurred. Arguments:
+()
+2025-02-14 11:32:20.468 ERROR (MainThread) [homeassistant.components.automation.fertigation] Fertigation: Error executing script. Service not found for call_service at pos 8: Action esphome.reserviorsensor_set_last_fertigation_time not found
+2025-02-14 11:36:30.264 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 11:41:30.711 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 11:46:30.621 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 11:51:30.584 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 11:56:22.866 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/sensor.py", line 207, in _update_attrs
+    self._attr_native_value = self.entity_description.value_fn(self)
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/sensor.py", line 60, in <lambda>
+    .active_time_by_zone_id.get(sensor.zone.id, timedelta())
+                                ^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 11:59:30.718 WARNING (MainThread) [homeassistant.helpers.entity] Update of climate.upstairs is taking over 10 seconds
+2025-02-14 12:06:33.284 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 12:11:33.613 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 12:16:33.585 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 12:21:33.572 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 12:35:30.787 WARNING (MainThread) [homeassistant.helpers.entity] Update of climate.family_room is taking over 10 seconds
+2025-02-14 12:36:36.302 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 12:41:36.708 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 12:45:49.183 WARNING (MainThread) [alexapy.helpers] alexaapi.get_customer_history_records((<alexapy.alexalogin.AlexaLogin object at 0x7f3fc199fe00>,), {'max_record_size': 10}): Timeout error occurred accessing AlexaAPI: An exception of type CancelledError occurred. Arguments:
+()
+2025-02-14 12:46:36.628 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 12:51:36.585 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 12:56:23.653 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/sensor.py", line 207, in _update_attrs
+    self._attr_native_value = self.entity_description.value_fn(self)
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/sensor.py", line 60, in <lambda>
+    .active_time_by_zone_id.get(sensor.zone.id, timedelta())
+                                ^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 13:06:39.285 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 13:11:39.673 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 13:16:39.617 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 13:19:50.797 ERROR (SyncWorker_30) [homeassistant.config] The configuration file configuration.yaml does not contain a dictionary
+2025-02-14 13:19:50.798 ERROR (MainThread) [homeassistant.components.homeassistant] The system cannot reload because the configuration is not valid: Error loading /config/configuration.yaml: The configuration file configuration.yaml does not contain a dictionary
+2025-02-14 13:19:50.798 ERROR (MainThread) [homeassistant.components.websocket_api.http.connection] [139911410282080] Unexpected exception
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/commands.py", line 245, in handle_call_service
+    response = await hass.services.async_call(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 2794, in async_call
+    response_data = await coro
+                    ^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/core.py", line 2837, in _execute_service
+    return await target(service_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 1110, in _async_admin_handler
+    await result
+  File "/usr/src/homeassistant/homeassistant/components/homeassistant/__init__.py", line 355, in async_handle_reload_all
+    raise HomeAssistantError(
+    ...<2 lines>...
+    )
+homeassistant.exceptions.HomeAssistantError: Cannot quick reload all YAML configurations because the configuration is not valid: Error loading /config/configuration.yaml: The configuration file configuration.yaml does not contain a dictionary
+2025-02-14 13:21:23.806 ERROR (MainThread) [homeassistant.components.automation] Automation with alias 'front_door_unlocked_scream' could not be validated and has been disabled: required key not provided @ data['actions']. Got None
+required key not provided @ data['triggers'][0]['trigger']. Got None
+2025-02-14 13:21:23.957 ERROR (MainThread) [homeassistant.components.automation] Automation with alias 'front_door_unlocked_scream' could not be validated and has been disabled: required key not provided @ data['actions']. Got None
+required key not provided @ data['triggers'][0]['trigger']. Got None
+2025-02-14 13:21:39.582 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 13:36:42.256 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 13:38:24.032 WARNING (MainThread) [alexapy.helpers] alexaapi.get_customer_history_records((<alexapy.alexalogin.AlexaLogin object at 0x7f3fc199fe00>,), {'max_record_size': 10}): Timeout error occurred accessing AlexaAPI: An exception of type CancelledError occurred. Arguments:
+()
+2025-02-14 13:41:42.669 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190
+2025-02-14 13:46:30.937 WARNING (MainThread) [homeassistant.helpers.entity] Update of climate.upstairs is taking over 10 seconds
+2025-02-14 13:46:42.611 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
+    await self._async_refresh(log_failures=True, scheduled=True)
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
+    self.async_update_listeners()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
+    update_callback()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
+    self._update_attrs()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
+    self._attr_is_on = self.entity_description.value_fn(self)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
+    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
+    return self.coordinator.data.zones[self.zone_id]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 8857190

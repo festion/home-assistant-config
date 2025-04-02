@@ -1,0 +1,171 @@
+esphome:
+  name: wroommicrousb
+  friendly_name: wroommicrousb
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+external_components:
+  - source:
+      type: git
+      url: https://github.com/ssieb/esphome
+      ref: onewire
+    components: [gpio]
+    refresh: 1min
+    
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "YejCGMWQaLxpOJPPndHlEK7/FzdNTQOyFKEgCSWOzBE="
+  services:
+    - service: set_last_fertigation_time
+      variables:
+        timestamp: int
+      then:
+        - lambda: |-
+            id(last_fertigation_timestamp) = timestamp;
+            // Reset average calculation values when fertigation occurs
+            id(depth_sum) = 0;
+            id(depth_count) = 0;
+
+ota:
+  - platform: esphome
+    password: "49a9cc8c49fbe905afcf6485b96b339e"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Wroommicrousb Fallback Hotspot"
+    password: "V161O4ypEIAg"
+
+captive_portal:
+# Enhanced time synchronization settings
+time:
+  - platform: sntp
+    id: sntp_time
+    timezone: America/Chicago
+    servers:
+      - 0.pool.ntp.org
+      - 1.pool.ntp.org
+      - 2.pool.ntp.org
+    on_time_sync:
+      then:
+        - logger.log: "Time synchronized with NTP server"
+
+one_wire:
+  platform: gpio
+  pin: GPIO13
+
+globals:
+  - id: last_fertigation_timestamp
+    type: int
+    restore_value: true
+    initial_value: '0'
+  - id: depth_sum
+    type: float
+    restore_value: true
+    initial_value: '0'
+  - id: depth_count
+    type: uint32_t
+    restore_value: true
+    initial_value: '0'
+
+sensor:
+  - platform: wifi_signal
+    name: "WiFi Signal Sensor"
+    update_interval: 60s
+    entity_category: diagnostic
+
+  - platform: ultrasonic
+    trigger_pin: GPIO17
+    echo_pin: GPIO16
+    timeout: 2m
+    pulse_time: 20us
+    update_interval: 60s
+    name: "Reservoir Current Volume"
+    id: reservoir_volume
+    device_class: ""
+    state_class: measurement
+    unit_of_measurement: "gal"
+    accuracy_decimals: 2
+    filters:
+      - filter_out: nan
+      - lambda: |-
+          const float bucket_height = 40.85;
+          const float bucket_diameter = 29.21;
+          float distance_cm = x * 100;
+          float water_level_cm = bucket_height - distance_cm;
+          
+          if (water_level_cm < 0) {
+            water_level_cm = 0;
+          } else if (water_level_cm > bucket_height) {
+            water_level_cm = bucket_height;
+          }
+          
+          float bucket_radius = bucket_diameter / 2.0;
+          float water_volume_cm3 = M_PI * bucket_radius * bucket_radius * water_level_cm;
+          float water_volume_gal = water_volume_cm3 * 0.000264172;
+          
+          id(depth_sum) += water_level_cm;
+          id(depth_count)++;
+          
+          return water_volume_gal;
+
+  - platform: template
+    name: "Average Volume Since Last Fertigation"
+    id: avg_volume
+    device_class: volume
+    state_class: ""
+    unit_of_measurement: "gal"
+    accuracy_decimals: 2
+    update_interval: 60s
+    lambda: |-
+      if (id(depth_count) > 0) {
+        const float bucket_diameter = 29.21;
+        float avg_depth_cm = id(depth_sum) / id(depth_count);
+        
+        float bucket_radius = bucket_diameter / 2.0;
+        float avg_volume_cm3 = M_PI * bucket_radius * bucket_radius * avg_depth_cm;
+        float avg_volume_gal = avg_volume_cm3 * 0.000264172;
+        
+        return avg_volume_gal;
+      }
+      return 0.0;
+
+  - platform: dallas_temp
+    id: reservoir_water_temp
+    name: "Reservoir Water Temp"
+    device_class: temperature
+    state_class: measurement
+    filters:
+      - filter_out: nan
+      - lambda: return x * (9.0/5.0) + 32.0;
+    unit_of_measurement: "°F"
+    accuracy_decimals: 2
+
+text_sensor:
+  - platform: template
+    name: "Last Fertigation Time"
+    id: last_fertigation_text
+    icon: mdi:timer-sync
+    update_interval: 60s
+    lambda: |-
+      if (id(last_fertigation_timestamp) == 0) {
+        return {"Never"};
+      }
+      time_t timestamp = id(last_fertigation_timestamp);
+      struct tm* timeinfo = localtime(&timestamp);
+      char buffer[26];
+      
+      // Format: Feb 14, 2024 3:30 PM
+      strftime(buffer, sizeof(buffer), "%b %d, %Y %I:%M %p", timeinfo);
+      
+      return {buffer};

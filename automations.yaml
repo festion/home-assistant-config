@@ -64,7 +64,8 @@
   - service: persistent_notification.create
     data:
       title: Map Entities Update
-      message: "Map entities sensor refreshed: {{ states('sensor.map_entities') }}"
+      message: 'Map entities sensor refreshed: {{ states(''sensor.map_entities'')
+        }}'
       notification_id: map_entities_update
 - id: '1736963481981'
   alias: Fertigation
@@ -158,33 +159,6 @@
       motion_entity: binary_sensor.eye_of_sauron_motion_detection
       light_target:
         device_id: f973418ec638992abe6d7ba0689bf2ed
-- id: '1737669355677'
-  alias: Lock after 30
-  description: ''
-  triggers:
-  - device_id: 32836b60fdccc501e777b202da401e93
-    domain: lock
-    entity_id: f74b245176e9841e08f9c4c3195aa1ff
-    type: unlocked
-    trigger: device
-    for:
-      hours: 0
-      minutes: 0
-      seconds: 30
-  conditions:
-  - condition: state
-    entity_id: binary_sensor.front_door_sensor_window_door_is_open
-    state: 'off'
-  actions:
-  - target:
-      device_id:
-      - 32836b60fdccc501e777b202da401e93
-    action: lock.lock
-    data: {}
-  - data:
-      message: Front door locked
-    action: notify.mobile_app_pixel_9_pro_xl
-  mode: single
 - id: '1741921580385'
   alias: Match Outside Colour Temperature Kelvin
   description: ''
@@ -209,12 +183,11 @@
     to: stop
   conditions: []
   actions:
-  - device_id: 9792c0dfd1b107e57ce2e7d4ac5420f2
-    domain: mobile_app
-    type: notify
+  - action: notify.mobile_app_iphone
     metadata: {}
-    message: Dryer is finished
-    title: Dryer
+    data:
+      message: Dryer is finished
+      title: Dryer
   mode: single
 - id: '1742568407148'
   alias: Report offline zigbee/zwave/battery/smart plug devices
@@ -235,14 +208,15 @@
     at: 07:00:00
   conditions: []
   actions:
-  - type: turn_on
-    device_id: 53a38436e48c861a918ad8dfc03dce79
-    entity_id: 49eccc694b76edeca73a6b8ef45b371f
-    domain: light
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: light.all_strips
   mode: single
-- id: 'low_reservior_level_alert'
+- id: low_reservior_level_alert
   alias: Low Reservior Level Alert
-  description: 'Send notification when reservoir water level falls below 1 gallon'
+  description: Send notification when reservoir water level falls below 1 gallon
   triggers:
   - platform: numeric_state
     entity_id: sensor.wroommicrousb_reservoir_current_volume
@@ -251,15 +225,16 @@
   actions:
   - service: notify.mobile_app_pixel_9_pro_xl
     data:
-      title: "Low Reservior Alert!"
-      message: "Reservoir level is below 1 gallon, there is less than 24 hours of fertigation nutrients remaining. Please refill soon."
+      title: Low Reservior Alert!
+      message: Reservoir level is below 1 gallon, there is less than 24 hours of fertigation
+        nutrients remaining. Please refill soon.
       data:
         priority: high
         ttl: 0
         channel: water_alerts
   - service: notify.mobile_app_pixel_watch_3
     data:
-      title: "Low Reservior Alert"
-      message: "Reservoir water level critically low!"
+      title: Low Reservior Alert
+      message: Reservoir water level critically low!
   mode: single
   max_exceeded: silent

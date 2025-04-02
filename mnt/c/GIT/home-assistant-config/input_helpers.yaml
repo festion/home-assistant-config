@@ -1,0 +1,43 @@
+# BLE Device Management
+input_text:
+  ble_device_name:
+    name: BLE Device Name
+    icon: mdi:tag-text
+
+  ble_device_mac:
+    name: BLE Device MAC Address
+    icon: mdi:bluetooth
+    pattern: "^([0-9A-Fa-f]{2}[:-]?){5}([0-9A-Fa-f]{2})$"
+
+input_select:
+  ble_device_type:
+    name: BLE Device Type
+    options:
+      - presence
+      - temperature
+      - other
+    initial: presence
+    icon: mdi:devices
+
+  ble_device_icon:
+    name: BLE Device Icon
+    options:
+      - Car (mdi:car)
+      - Phone (mdi:cellphone)
+      - Watch (mdi:watch)
+      - Tag (mdi:tag)
+      - Sensor (mdi:access-point)
+      - Thermometer (mdi:thermometer)
+      - Bluetooth (mdi:bluetooth)
+    initial: Bluetooth (mdi:bluetooth)
+    icon: mdi:format-list-bulleted
+
+input_number:
+  ble_rssi_threshold:
+    name: RSSI Threshold
+    min: -100
+    max: -40
+    step: 1
+    initial: -80
+    unit_of_measurement: dBm
+    icon: mdi:signal-variant

@@ -99,3 +99,4 @@ devices:
 groups:
   '1':
     friendly_name: all_strips
+availability: {}

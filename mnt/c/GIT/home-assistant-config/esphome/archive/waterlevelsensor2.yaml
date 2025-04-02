@@ -1,0 +1,78 @@
+esphome:
+  name: waterlevelsensor2
+  friendly_name: waterlevelsensor2
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "TUcJJ7eCg3qq3UfwPddlALAiWioQnU719DRjI+CHxLE="
+
+ota:
+  - platform: esphome
+    password: "c3d3b96bd898f0882b7e00fb74230af0"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Waterlevelsensor2"
+    password: "mtCyl9dDEcbv"
+
+captive_portal:
+
+# Water Level Sensor   
+sensor:
+  - platform: wifi_signal
+    name: "WiFi Signal Sensor"
+    update_interval: 60s
+
+  - platform: ultrasonic
+    trigger_pin: GPIO17
+    echo_pin: GPIO16
+    timeout: 2m
+    pulse_time: 20us
+    update_interval: 30s
+    name: "Water Level (gal)"
+    unit_of_measurement: "gal"
+    accuracy_decimals: 4
+    filters:
+      - filter_out: nan
+      - lambda: |
+          // Constants (replace with your actual values)
+          const float bucket_height = 40.85;
+          const float bucket_diameter = 29.21;
+          
+          // Calculate distance in cm
+          float distance_cm = x * 100;
+          ESP_LOGD("distance_cm", "Distance (cm): %f", distance_cm);
+
+          // Calculate water level in cm (no offset)
+          float water_level_cm = bucket_height - distance_cm;
+          ESP_LOGD("water_level_cm", "Water Level (cm): %f", water_level_cm);
+
+          // Ensure water level is within valid range
+          if (water_level_cm < 0) {
+            water_level_cm = 0;
+          } else if (water_level_cm > bucket_height) {
+            water_level_cm = bucket_height;
+          }
+
+          // Calculate water volume in cm³ and gallons
+          float bucket_radius = bucket_diameter / 2.0;
+          float water_volume_cm3 = PI * bucket_radius * bucket_radius * water_level_cm;
+          float water_volume_gal = water_volume_cm3 * 0.000264172;
+
+          ESP_LOGD("water_volume_cm3", "Water Volume (cm³): %f", water_volume_cm3);
+          ESP_LOGD("water_volume_gal", "Water Volume (gal): %f", water_volume_gal);
+
+          return water_volume_gal;

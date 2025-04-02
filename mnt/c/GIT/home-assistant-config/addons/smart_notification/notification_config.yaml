@@ -1,0 +1,12 @@
+audiences:
+  mobile:
+    services:
+      - notify.mobile_app_pixel_9_pro_xl
+    min_severity: high
+
+  dashboard:
+    services:
+      - persistent_notification.create
+    min_severity: low
+
+severity_levels: [low, medium, high, emergency]

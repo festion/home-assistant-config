@@ -1,860 +1,779 @@
-2025-02-14 09:56:09.325 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration winix which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.325 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration midea_dehumidifier_lan which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.326 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration mail_and_packages which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.326 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration ac_infinity which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.327 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration adaptive_lighting which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.328 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration lock_code_manager which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.328 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration spotcast which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.329 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration ble_monitor which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.330 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration toyota_na which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.330 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration alexa_media which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.330 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration circadian_lighting which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.331 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.331 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration llama_conversation which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.331 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration tplink_easy_smart which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.331 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration extended_openai_conversation which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.331 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration ab_gateway which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.331 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration webrtc which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.332 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration localtuya which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.332 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration thermal_comfort which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.333 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration browser_mod which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.333 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration govee which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.333 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration pirateweather which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:09.334 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration meross_lan which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2025-02-14 09:56:14.538 WARNING (MainThread) [homeassistant.helpers.frame] Detected that custom integration 'browser_mod' accessed lovelace_data['resources'] instead of lovelace_data.resources at custom_components/browser_mod/mod_view.py, line 59: resources = hass.data["lovelace"]["resources"]. This will stop working in Home Assistant 2026.2, please report it to the author of the 'browser_mod' custom integration
-2025-02-14 09:56:14.761 WARNING (ImportExecutor_0) [homeassistant.backports.enum] StrEnum was used from tplink_easy_smart, this is a deprecated alias which will be removed in HA Core 2025.5. Use enum.StrEnum instead, please report it to the author of the 'tplink_easy_smart' custom integration
-2025-02-14 09:56:17.840 ERROR (MainThread) [homeassistant.components.input_datetime] Platform input_datetime does not generate unique IDs. ID last_fertigation_time already exists - ignoring input_datetime.last_fertigation_time
-2025-02-14 09:56:17.899 WARNING (SyncWorker_7) [urllib3.connection] Certificate did not match expected hostname: 192.168.1.137. Certificate: {'subject': ((('commonName', 'docker.internal.lakehouse.wtf'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R11'),)), 'version': 3, 'serialNumber': '03991A61C909EF0C11DDE32E41034D30E829', 'notBefore': 'Jan 28 17:01:40 2025 GMT', 'notAfter': 'Apr 28 17:01:39 2025 GMT', 'subjectAltName': (('DNS', 'docker.internal.lakehouse.wtf'), ('DNS', 'proxbox.internal.lakehouse.wtf'), ('DNS', 'proxmox.internal.lakehouse.wtf'), ('DNS', 'proxmox1.internal.lakehouse.wtf')), 'OCSP': ('http://r11.o.lencr.org',), 'caIssuers': ('http://r11.i.lencr.org/',)}
-2025-02-14 09:56:17.899 ERROR (SyncWorker_7) [homeassistant.components.proxmoxve] Unable to verify proxmox server SSL. Try using "verify_ssl: false" for proxmox instance 192.168.1.137:8006
-2025-02-14 09:56:20.962 WARNING (MainThread) [homeassistant.components.sensor] Entity sensor.reserviorsensor_reservoir_current_volume (<class 'homeassistant.components.esphome.sensor.EsphomeSensor'>) is using state class 'measurement' which is impossible considering device class ('volume') it is using; expected None or one of 'total_increasing', 'total'; Please update your configuration if your entity is manually configured, otherwise create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+esphome%22
-2025-02-14 09:56:20.976 WARNING (MainThread) [homeassistant.components.sensor] Entity sensor.reserviorsensor_average_volume_since_last_fertigation (<class 'homeassistant.components.esphome.sensor.EsphomeSensor'>) is using state class 'measurement' which is impossible considering device class ('volume') it is using; expected None or one of 'total_increasing', 'total'; Please update your configuration if your entity is manually configured, otherwise create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+esphome%22
-2025-02-14 10:04:29.591 WARNING (MainThread) [homeassistant.helpers.entity] Update of climate.master_bedroom is taking over 10 seconds
-2025-02-14 10:06:21.262 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+2025-04-02 05:58:01.844 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration winix which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.845 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration midea_dehumidifier_lan which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.845 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration ac_infinity which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.846 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration adaptive_lighting which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.846 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration lock_code_manager which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.847 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration spotcast which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.847 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration ble_monitor which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.848 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration ms365_calendar which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.848 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration toyota_na which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.849 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration alexa_media which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.849 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration circadian_lighting which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.849 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration noaa_space_weather which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.850 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.850 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration llama_conversation which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.851 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration tplink_easy_smart which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.851 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration xtend_tuya which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.852 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration tuya_local which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.852 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration extended_openai_conversation which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.852 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration ab_gateway which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.853 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration localtuya which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.853 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration thermal_comfort which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.854 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration browser_mod which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.854 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration sonoff which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.855 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration govee which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.855 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration pirateweather which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:01.856 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration meross_lan which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-02 05:58:02.748 INFO (MainThread) [homeassistant.setup] Setup of domain system_log took 0.10 seconds
+2025-04-02 05:58:02.748 INFO (MainThread) [homeassistant.setup] Setup of domain logger took 0.10 seconds
+2025-04-02 05:58:02.748 INFO (MainThread) [homeassistant.setup] Setup of domain http took 0.10 seconds
+2025-04-02 05:58:02.748 INFO (MainThread) [homeassistant.setup] Setting up websocket_api
+2025-04-02 05:58:02.749 INFO (MainThread) [homeassistant.setup] Setup of domain websocket_api took 0.00 seconds
+2025-04-02 05:58:02.749 INFO (MainThread) [homeassistant.setup] Setting up network
+2025-04-02 05:58:02.750 INFO (MainThread) [homeassistant.setup] Setup of domain network took 0.00 seconds
+2025-04-02 05:58:02.750 INFO (MainThread) [homeassistant.bootstrap] Setting up frontend: {'frontend'}
+2025-04-02 05:58:02.750 INFO (MainThread) [homeassistant.setup] Setting up api
+2025-04-02 05:58:02.751 INFO (MainThread) [homeassistant.setup] Setup of domain api took 0.00 seconds
+2025-04-02 05:58:02.751 INFO (MainThread) [homeassistant.setup] Setting up auth
+2025-04-02 05:58:02.752 INFO (MainThread) [homeassistant.setup] Setup of domain auth took 0.00 seconds
+2025-04-02 05:58:02.752 INFO (MainThread) [homeassistant.setup] Setting up config
+2025-04-02 05:58:02.754 INFO (MainThread) [homeassistant.setup] Setup of domain config took 0.00 seconds
+2025-04-02 05:58:02.755 INFO (MainThread) [homeassistant.setup] Setting up device_automation
+2025-04-02 05:58:02.755 INFO (MainThread) [homeassistant.setup] Setup of domain device_automation took 0.00 seconds
+2025-04-02 05:58:02.755 INFO (MainThread) [homeassistant.setup] Setting up diagnostics
+2025-04-02 05:58:02.755 INFO (MainThread) [homeassistant.setup] Setup of domain diagnostics took 0.00 seconds
+2025-04-02 05:58:02.756 INFO (MainThread) [homeassistant.setup] Setting up file_upload
+2025-04-02 05:58:02.756 INFO (MainThread) [homeassistant.setup] Setup of domain file_upload took 0.00 seconds
+2025-04-02 05:58:02.756 INFO (MainThread) [homeassistant.setup] Setting up image_upload
+2025-04-02 05:58:02.756 INFO (MainThread) [homeassistant.setup] Setting up repairs
+2025-04-02 05:58:02.757 INFO (MainThread) [homeassistant.setup] Setup of domain repairs took 0.00 seconds
+2025-04-02 05:58:02.757 INFO (MainThread) [homeassistant.setup] Setting up search
+2025-04-02 05:58:02.757 INFO (MainThread) [homeassistant.setup] Setup of domain search took 0.00 seconds
+2025-04-02 05:58:02.758 INFO (MainThread) [homeassistant.setup] Setup of domain image_upload took 0.00 seconds
+2025-04-02 05:58:02.758 INFO (MainThread) [homeassistant.setup] Setting up person
+2025-04-02 05:58:02.760 INFO (MainThread) [homeassistant.setup] Setup of domain person took 0.00 seconds
+2025-04-02 05:58:02.760 INFO (MainThread) [homeassistant.setup] Setting up onboarding
+2025-04-02 05:58:02.760 INFO (MainThread) [homeassistant.setup] Setup of domain onboarding took 0.00 seconds
+2025-04-02 05:58:02.761 INFO (MainThread) [homeassistant.setup] Setting up lovelace
+2025-04-02 05:58:02.762 INFO (MainThread) [homeassistant.setup] Setup of domain lovelace took 0.00 seconds
+2025-04-02 05:58:02.763 INFO (MainThread) [homeassistant.setup] Setting up frontend
+2025-04-02 05:58:02.767 INFO (MainThread) [homeassistant.setup] Setup of domain frontend took 0.00 seconds
+2025-04-02 05:58:02.767 INFO (MainThread) [homeassistant.bootstrap] Setting up recorder: {'recorder'}
+2025-04-02 05:58:02.768 INFO (MainThread) [homeassistant.setup] Setting up recorder
+2025-04-02 05:58:02.770 INFO (MainThread) [homeassistant.components.http] Now listening on port 8123
+2025-04-02 05:58:02.772 INFO (MainThread) [homeassistant.setup] Setup of domain http took 0.00 seconds
+2025-04-02 05:58:02.804 INFO (MainThread) [homeassistant.setup] Setup of domain recorder took 0.04 seconds
+2025-04-02 05:58:02.804 INFO (MainThread) [homeassistant.bootstrap] Setting up zeroconf: {'zeroconf'}
+2025-04-02 05:58:02.804 INFO (MainThread) [homeassistant.setup] Setting up zeroconf
+2025-04-02 05:58:02.809 INFO (MainThread) [homeassistant.components.zeroconf] Starting Zeroconf broadcast
+2025-04-02 05:58:02.809 INFO (MainThread) [homeassistant.setup] Setup of domain zeroconf took 0.00 seconds
+2025-04-02 05:58:02.809 INFO (MainThread) [homeassistant.bootstrap] Setting up stage 1: {'cloud', 'usb', 'bluetooth', 'hassio', 'ssdp', 'dhcp'}
+2025-04-02 05:58:02.809 INFO (MainThread) [homeassistant.setup] Setting up webhook
+2025-04-02 05:58:02.810 INFO (MainThread) [homeassistant.setup] Setup of domain webhook took 0.00 seconds
+2025-04-02 05:58:02.810 INFO (MainThread) [homeassistant.setup] Setting up hassio
+2025-04-02 05:58:02.832 INFO (MainThread) [homeassistant.setup] Setting up usb
+2025-04-02 05:58:02.833 INFO (MainThread) [homeassistant.setup] Setup of domain usb took 0.00 seconds
+2025-04-02 05:58:02.850 INFO (MainThread) [homeassistant.components.webhook] Received message for unregistered webhook 897f1e59cdbc3165a7834048aab23958496bce5a1ec0ab00d5637552f9010a60 from 192.168.1.182
+2025-04-02 05:58:02.993 INFO (MainThread) [homeassistant.setup] Setup of domain hassio took 0.18 seconds
+2025-04-02 05:58:03.085 INFO (MainThread) [homeassistant.setup] Setting up binary_sensor
+2025-04-02 05:58:03.086 INFO (MainThread) [homeassistant.setup] Setup of domain binary_sensor took 0.00 seconds
+2025-04-02 05:58:03.086 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up hassio.binary_sensor
+2025-04-02 05:58:03.090 INFO (MainThread) [homeassistant.setup] Setting up update
+2025-04-02 05:58:03.090 INFO (MainThread) [homeassistant.setup] Setup of domain update took 0.00 seconds
+2025-04-02 05:58:03.090 INFO (MainThread) [homeassistant.components.update] Setting up hassio.update
+2025-04-02 05:58:03.168 INFO (MainThread) [homeassistant.components.webhook] Received message for unregistered webhook 897f1e59cdbc3165a7834048aab23958496bce5a1ec0ab00d5637552f9010a60 from 192.168.1.182
+2025-04-02 05:58:03.244 INFO (MainThread) [homeassistant.components.webhook] Received message for unregistered webhook 897f1e59cdbc3165a7834048aab23958496bce5a1ec0ab00d5637552f9010a60 from 192.168.1.182
+2025-04-02 05:58:03.246 INFO (MainThread) [homeassistant.setup] Setting up cloud
+2025-04-02 05:58:03.251 INFO (MainThread) [homeassistant.setup] Setting up ffmpeg
+2025-04-02 05:58:03.251 INFO (MainThread) [homeassistant.setup] Setup of domain ffmpeg took 0.00 seconds
+2025-04-02 05:58:03.251 INFO (MainThread) [homeassistant.setup] Setting up tts
+2025-04-02 05:58:03.251 INFO (MainThread) [homeassistant.setup] Setup of domain cloud took 0.00 seconds
+2025-04-02 05:58:03.282 INFO (MainThread) [homeassistant.setup] Setup of domain tts took 0.03 seconds
+2025-04-02 05:58:03.311 INFO (MainThread) [homeassistant.setup] Setting up ssdp
+2025-04-02 05:58:03.315 INFO (MainThread) [homeassistant.setup] Setup of domain ssdp took 0.00 seconds
+2025-04-02 05:58:03.881 INFO (MainThread) [homeassistant.components.webhook] Received message for unregistered webhook 897f1e59cdbc3165a7834048aab23958496bce5a1ec0ab00d5637552f9010a60 from 192.168.1.182
+2025-04-02 05:58:03.921 INFO (MainThread) [homeassistant.setup] Setting up dhcp
+2025-04-02 05:58:03.921 INFO (MainThread) [homeassistant.setup] Setup of domain dhcp took 0.00 seconds
+2025-04-02 05:58:03.930 INFO (MainThread) [hass_nabucasa.iot] Connected
+2025-04-02 05:58:03.992 INFO (MainThread) [snitun.utils.aiohttp_client] AioHTTP snitun client started on 127.0.0.1:37873
+2025-04-02 05:58:03.999 INFO (MainThread) [homeassistant.components.webhook] Received message for unregistered webhook 897f1e59cdbc3165a7834048aab23958496bce5a1ec0ab00d5637552f9010a60 from 192.168.1.182
+2025-04-02 05:58:04.017 INFO (MainThread) [homeassistant.setup] Setting up bluetooth
+2025-04-02 05:58:04.078 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up cloud.binary_sensor
+2025-04-02 05:58:04.079 INFO (MainThread) [homeassistant.setup] Setting up stt
+2025-04-02 05:58:04.080 INFO (MainThread) [homeassistant.setup] Setup of domain stt took 0.00 seconds
+2025-04-02 05:58:04.080 INFO (MainThread) [homeassistant.components.stt] Setting up cloud.stt
+2025-04-02 05:58:04.080 INFO (MainThread) [homeassistant.components.tts] Setting up cloud.tts
+2025-04-02 05:58:04.081 INFO (MainThread) [homeassistant.setup] Setting up sensor
+2025-04-02 05:58:04.081 INFO (MainThread) [homeassistant.setup] Setting up blueprint
+2025-04-02 05:58:04.081 INFO (MainThread) [homeassistant.setup] Setup of domain blueprint took 0.00 seconds
+2025-04-02 05:58:04.081 INFO (MainThread) [homeassistant.setup] Setup of domain sensor took 0.00 seconds
+2025-04-02 05:58:04.081 INFO (MainThread) [homeassistant.components.sensor] Setting up hassio.sensor
+2025-04-02 05:58:04.102 INFO (MainThread) [homeassistant.setup] Setup of domain bluetooth took 0.09 seconds
+2025-04-02 05:58:04.109 INFO (MainThread) [homeassistant.bootstrap] Setting up stage 2: {'ibeacon', 'sonos', 'input_text', 'dlna_dmr', 'matter', 'wyoming', 'midea_dehumidifier_lan', 'webostv', 'esphome', 'ffmpeg', 'prometheus', 'timer', 'thread', 'local_calendar', 'logbook', 'template', 'script', 'input_button', 'wemo', 'intent', 'default_config', 'backup', 'vesync', 'counter', 'history', 'blueprint', 'bluetooth_adapters', 'camera', 'stream', 'persistent_notification', 'schedule', 'hacs', 'conversation', 'meross_lan', 'assist_pipeline', 'wake_word', 'automation', 'inkbird', 'group', 'ble_monitor', 'input_boolean', 'mqtt', 'system_health', 'application_credentials', 'smartthings', 'input_datetime', 'cast', 'sonoff', 'sensor', 'hardware', 'zwave_js', 'tplink', 'assist_satellite', 'ipp', 'tts', 'blink', 'media_source', 'trace', 'ping', 'input_number', 'shopping_list', 'mobile_app', 'honeywell', 'homeassistant_alerts', 'openai_conversation', 'homekit_controller', 'prusalink', 'energy', 'stt', 'ab_gateway', 'google_translate', 'ollama', 'notify', 'govee_ble', 'toyota_na', 'tag', 'input_select', 'analytics', 'zone', 'tplink_easy_smart', 'sun', 'met', 'panel_custom', 'scene', 'my', 'go2rtc', 'weatherflow', 'smlight'}
+2025-04-02 05:58:04.110 INFO (MainThread) [homeassistant.setup] Setting up camera
+2025-04-02 05:58:04.111 INFO (MainThread) [homeassistant.setup] Setup of domain camera took 0.00 seconds
+2025-04-02 05:58:04.112 INFO (MainThread) [homeassistant.setup] Setting up wake_word
+2025-04-02 05:58:04.112 INFO (MainThread) [homeassistant.setup] Setup of domain wake_word took 0.00 seconds
+2025-04-02 05:58:04.112 INFO (MainThread) [homeassistant.setup] Setting up intent
+2025-04-02 05:58:04.112 INFO (MainThread) [homeassistant.setup] Setup of domain intent took 0.00 seconds
+2025-04-02 05:58:04.112 INFO (MainThread) [homeassistant.setup] Setting up conversation
+2025-04-02 05:58:04.113 INFO (MainThread) [homeassistant.setup] Setup of domain conversation took 0.00 seconds
+2025-04-02 05:58:04.114 INFO (MainThread) [homeassistant.setup] Setting up assist_pipeline
+2025-04-02 05:58:04.116 INFO (MainThread) [homeassistant.setup] Setup of domain assist_pipeline took 0.00 seconds
+2025-04-02 05:58:04.117 ERROR (MainThread) [homeassistant.config] Invalid config for 'notify' at configuration.yaml, line 27: required key 'platform' not provided, please check the docs at https://www.home-assistant.io/integrations/notify
+2025-04-02 05:58:04.117 INFO (MainThread) [homeassistant.setup] Setting up notify
+2025-04-02 05:58:04.118 INFO (MainThread) [homeassistant.setup] Setup of domain notify took 0.00 seconds
+2025-04-02 05:58:04.119 INFO (MainThread) [homeassistant.setup] Setting up scene
+2025-04-02 05:58:04.119 INFO (MainThread) [homeassistant.components.scene] Setting up homeassistant.scene
+2025-04-02 05:58:04.120 INFO (MainThread) [homeassistant.components.scene] Setting up homeassistant.scene
+2025-04-02 05:58:04.127 INFO (MainThread) [homeassistant.setup] Setup of domain scene took 0.01 seconds
+2025-04-02 05:58:04.127 INFO (MainThread) [homeassistant.setup] Setting up logbook
+2025-04-02 05:58:04.128 INFO (MainThread) [homeassistant.setup] Setup of domain logbook took 0.00 seconds
+2025-04-02 05:58:04.348 INFO (MainThread) [homeassistant.setup] Setting up template
+2025-04-02 05:58:04.348 INFO (MainThread) [homeassistant.setup] Setup of domain template took 0.00 seconds
+2025-04-02 05:58:04.349 INFO (MainThread) [homeassistant.setup] Setting up input_button
+2025-04-02 05:58:04.350 INFO (MainThread) [homeassistant.setup] Setup of domain input_button took 0.00 seconds
+2025-04-02 05:58:04.350 INFO (MainThread) [homeassistant.setup] Setting up history
+2025-04-02 05:58:04.351 INFO (MainThread) [homeassistant.setup] Setup of domain history took 0.00 seconds
+2025-04-02 05:58:04.351 INFO (MainThread) [homeassistant.setup] Setting up media_source
+2025-04-02 05:58:04.352 INFO (MainThread) [homeassistant.setup] Setup of domain media_source took 0.00 seconds
+2025-04-02 05:58:04.352 INFO (MainThread) [homeassistant.setup] Setting up stream
+2025-04-02 05:58:04.353 INFO (MainThread) [homeassistant.setup] Setting up trace
+2025-04-02 05:58:04.353 INFO (MainThread) [homeassistant.setup] Setup of domain trace took 0.00 seconds
+2025-04-02 05:58:04.356 INFO (MainThread) [homeassistant.setup] Setting up group
+2025-04-02 05:58:04.357 INFO (MainThread) [homeassistant.setup] Setup of domain group took 0.00 seconds
+2025-04-02 05:58:04.357 INFO (MainThread) [homeassistant.setup] Setting up light
+2025-04-02 05:58:04.359 INFO (MainThread) [homeassistant.setup] Setup of domain light took 0.00 seconds
+2025-04-02 05:58:04.359 INFO (MainThread) [homeassistant.components.light] Setting up group.light
+2025-04-02 05:58:04.368 INFO (MainThread) [homeassistant.setup] Setting up input_number
+2025-04-02 05:58:04.369 INFO (MainThread) [homeassistant.setup] Setup of domain input_number took 0.00 seconds
+2025-04-02 05:58:04.370 INFO (MainThread) [homeassistant.setup] Setting up input_select
+2025-04-02 05:58:04.370 INFO (MainThread) [homeassistant.setup] Setting up timer
+2025-04-02 05:58:04.436 INFO (MainThread) [homeassistant.setup] Setting up script
+2025-04-02 05:58:04.436 INFO (MainThread) [homeassistant.setup] Setup of domain script took 0.00 seconds
+2025-04-02 05:58:04.437 INFO (MainThread) [homeassistant.setup] Setting up backup
+2025-04-02 05:58:04.441 INFO (MainThread) [homeassistant.setup] Setup of domain backup took 0.00 seconds
+2025-04-02 05:58:04.442 INFO (MainThread) [homeassistant.setup] Setting up input_boolean
+2025-04-02 05:58:04.442 INFO (MainThread) [homeassistant.setup] Setting up system_health
+2025-04-02 05:58:04.442 INFO (MainThread) [homeassistant.setup] Setup of domain system_health took 0.00 seconds
+2025-04-02 05:58:04.443 INFO (MainThread) [homeassistant.setup] Setting up zone
+2025-04-02 05:58:04.443 INFO (MainThread) [homeassistant.setup] Setting up panel_custom
+2025-04-02 05:58:04.444 INFO (MainThread) [homeassistant.setup] Setup of domain panel_custom took 0.00 seconds
+2025-04-02 05:58:04.444 INFO (MainThread) [homeassistant.components.sensor] Setting up template.sensor
+2025-04-02 05:58:04.446 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up template.binary_sensor
+2025-04-02 05:58:04.462 INFO (MainThread) [homeassistant.setup] Setup of domain input_select took 0.09 seconds
+2025-04-02 05:58:04.463 INFO (MainThread) [homeassistant.setup] Setup of domain timer took 0.09 seconds
+2025-04-02 05:58:04.464 INFO (MainThread) [homeassistant.setup] Setup of domain input_boolean took 0.02 seconds
+2025-04-02 05:58:04.465 INFO (MainThread) [homeassistant.setup] Setup of domain zone took 0.02 seconds
+2025-04-02 05:58:04.465 INFO (MainThread) [homeassistant.components.sensor] Setting up template.sensor
+2025-04-02 05:58:04.502 INFO (MainThread) [homeassistant.setup] Setting up assist_satellite
+2025-04-02 05:58:04.506 INFO (MainThread) [homeassistant.setup] Setup of domain assist_satellite took 0.00 seconds
+2025-04-02 05:58:04.514 INFO (MainThread) [homeassistant.setup] Setup of domain stream took 0.16 seconds
+2025-04-02 05:58:04.583 INFO (MainThread) [snitun.utils.aiohttp_client] AioHTTP snitun client connected to: us-east-1-15.ui.nabu.casa:443
+2025-04-02 05:58:04.926 INFO (MainThread) [homeassistant.components.webhook] Received message for unregistered webhook 897f1e59cdbc3165a7834048aab23958496bce5a1ec0ab00d5637552f9010a60 from 192.168.1.182
+2025-04-02 05:58:05.405 INFO (MainThread) [homeassistant.components.webhook] Received message for unregistered webhook 897f1e59cdbc3165a7834048aab23958496bce5a1ec0ab00d5637552f9010a60 from 192.168.1.182
+2025-04-02 05:58:05.505 INFO (MainThread) [homeassistant.components.webhook] Received message for unregistered webhook 897f1e59cdbc3165a7834048aab23958496bce5a1ec0ab00d5637552f9010a60 from 192.168.1.182
+2025-04-02 05:58:05.707 INFO (MainThread) [homeassistant.setup] Setting up local_calendar
+2025-04-02 05:58:05.707 INFO (MainThread) [homeassistant.setup] Setup of domain local_calendar took 0.00 seconds
+2025-04-02 05:58:05.745 INFO (MainThread) [homeassistant.setup] Setting up wemo
+2025-04-02 05:58:05.747 INFO (Wemo HTTP Thread) [pywemo.subscribe] Listening on port 8989
+2025-04-02 05:58:05.755 INFO (MainThread) [homeassistant.setup] Setup of domain wemo took 0.01 seconds
+2025-04-02 05:58:05.771 INFO (MainThread) [homeassistant.setup] Setting up energy
+2025-04-02 05:58:05.772 INFO (MainThread) [homeassistant.setup] Setup of domain energy took 0.00 seconds
+2025-04-02 05:58:05.810 INFO (MainThread) [homeassistant.setup] Setting up go2rtc
+2025-04-02 05:58:05.813 INFO (MainThread) [homeassistant.setup] Setting up homeassistant_alerts
+2025-04-02 05:58:05.813 INFO (MainThread) [homeassistant.setup] Setup of domain homeassistant_alerts took 0.00 seconds
+2025-04-02 05:58:05.818 INFO (MainThread) [homeassistant.setup] Setting up tag
+2025-04-02 05:58:05.819 INFO (MainThread) [homeassistant.setup] Setup of domain tag took 0.00 seconds
+2025-04-02 05:58:05.821 INFO (MainThread) [homeassistant.setup] Setting up my
+2025-04-02 05:58:05.821 INFO (MainThread) [homeassistant.setup] Setup of domain my took 0.00 seconds
+2025-04-02 05:58:05.824 INFO (MainThread) [homeassistant.setup] Setting up sun
+2025-04-02 05:58:05.824 INFO (MainThread) [homeassistant.setup] Setup of domain sun took 0.00 seconds
+2025-04-02 05:58:05.826 INFO (MainThread) [homeassistant.components.sensor] Setting up sun.sensor
+2025-04-02 05:58:05.880 INFO (MainThread) [homeassistant.setup] Setting up hacs
+2025-04-02 05:58:05.880 INFO (MainThread) [homeassistant.setup] Setup of domain hacs took 0.00 seconds
+2025-04-02 05:58:05.881 INFO (MainThread) [custom_components.hacs] 
+-------------------------------------------------------------------
+HACS (Home Assistant Community Store)
+
+Version: 2.0.5
+This is a custom integration
+If you have any issues with this you need to open an issue here:
+https://github.com/hacs/integration/issues
+-------------------------------------------------------------------
+
+2025-04-02 05:58:05.907 INFO (MainThread) [custom_components.hacs] <HacsData restore> Restore started
+2025-04-02 05:58:06.127 INFO (MainThread) [custom_components.hacs] <HacsData restore> Restore done
+2025-04-02 05:58:06.128 INFO (MainThread) [custom_components.hacs] Enable category: integration
+2025-04-02 05:58:06.129 INFO (MainThread) [custom_components.hacs] Enable category: plugin
+2025-04-02 05:58:06.129 INFO (MainThread) [custom_components.hacs] Enable category: template
+2025-04-02 05:58:06.130 INFO (MainThread) [custom_components.hacs] Enable category: theme
+2025-04-02 05:58:06.133 INFO (MainThread) [homeassistant.setup] Setup of domain go2rtc took 0.32 seconds
+2025-04-02 05:58:06.140 INFO (MainThread) [homeassistant.setup] Setting up mqtt
+2025-04-02 05:58:06.141 INFO (MainThread) [homeassistant.setup] Setup of domain mqtt took 0.00 seconds
+2025-04-02 05:58:06.141 INFO (MainThread) [homeassistant.setup] Setting up application_credentials
+2025-04-02 05:58:06.141 INFO (MainThread) [homeassistant.setup] Setup of domain application_credentials took 0.00 seconds
+2025-04-02 05:58:06.145 INFO (MainThread) [homeassistant.setup] Setting up input_datetime
+2025-04-02 05:58:06.145 INFO (MainThread) [custom_components.hacs] Setting up plugin endpoint
+2025-04-02 05:58:06.145 INFO (MainThread) [custom_components.hacs] <HacsFrontend> yaml mode, cache for /hacsfiles/: False
+2025-04-02 05:58:06.147 INFO (MainThread) [homeassistant.setup] Setup of domain input_datetime took 0.00 seconds
+2025-04-02 05:58:06.192 INFO (MainThread) [homeassistant.setup] Setting up cast
+2025-04-02 05:58:06.192 INFO (MainThread) [homeassistant.setup] Setup of domain cast took 0.00 seconds
+2025-04-02 05:58:06.196 INFO (MainThread) [homeassistant.setup] Setting up hardware
+2025-04-02 05:58:06.213 INFO (MainThread) [homeassistant.setup] Setup of domain hardware took 0.02 seconds
+2025-04-02 05:58:06.227 INFO (MainThread) [homeassistant.setup] Setting up ipp
+2025-04-02 05:58:06.227 INFO (MainThread) [homeassistant.setup] Setup of domain ipp took 0.00 seconds
+2025-04-02 05:58:06.235 INFO (MainThread) [homeassistant.setup] Setting up ping
+2025-04-02 05:58:06.236 INFO (MainThread) [homeassistant.setup] Setup of domain ping took 0.00 seconds
+2025-04-02 05:58:06.242 INFO (MainThread) [homeassistant.setup] Setting up shopping_list
+2025-04-02 05:58:06.242 INFO (MainThread) [homeassistant.setup] Setup of domain shopping_list took 0.00 seconds
+2025-04-02 05:58:06.249 INFO (MainThread) [homeassistant.setup] Setting up honeywell
+2025-04-02 05:58:06.249 INFO (MainThread) [homeassistant.setup] Setup of domain honeywell took 0.00 seconds
+2025-04-02 05:58:06.762 INFO (MainThread) [homeassistant.setup] Setting up openai_conversation
+2025-04-02 05:58:06.763 INFO (MainThread) [homeassistant.setup] Setup of domain openai_conversation took 0.00 seconds
+2025-04-02 05:58:06.881 INFO (MainThread) [homeassistant.setup] Setting up google_translate
+2025-04-02 05:58:06.881 INFO (MainThread) [homeassistant.setup] Setup of domain google_translate took 0.00 seconds
+2025-04-02 05:58:06.892 INFO (MainThread) [homeassistant.setup] Setting up ollama
+2025-04-02 05:58:06.892 INFO (MainThread) [homeassistant.setup] Setup of domain ollama took 0.00 seconds
+2025-04-02 05:58:06.912 WARNING (ImportExecutor_0) [homeassistant.backports.enum] StrEnum was used from tplink_easy_smart, this is a deprecated alias which will be removed in HA Core 2025.5. Use enum.StrEnum instead, please report it to the author of the 'tplink_easy_smart' custom integration
+2025-04-02 05:58:06.914 INFO (MainThread) [homeassistant.setup] Setting up tplink_easy_smart
+2025-04-02 05:58:06.914 INFO (MainThread) [homeassistant.setup] Setup of domain tplink_easy_smart took 0.00 seconds
+2025-04-02 05:58:06.920 INFO (MainThread) [homeassistant.setup] Setting up met
+2025-04-02 05:58:06.920 INFO (MainThread) [homeassistant.setup] Setup of domain met took 0.00 seconds
+2025-04-02 05:58:06.924 INFO (MainThread) [homeassistant.setup] Setting up input_text
+2025-04-02 05:58:06.926 INFO (MainThread) [homeassistant.setup] Setup of domain input_text took 0.00 seconds
+2025-04-02 05:58:07.397 INFO (MainThread) [homeassistant.components.webhook] Received message for unregistered webhook 897f1e59cdbc3165a7834048aab23958496bce5a1ec0ab00d5637552f9010a60 from 192.168.1.182
+2025-04-02 05:58:07.770 INFO (MainThread) [homeassistant.components.webhook] Received message for unregistered webhook 897f1e59cdbc3165a7834048aab23958496bce5a1ec0ab00d5637552f9010a60 from 192.168.1.182
+2025-04-02 05:58:07.869 INFO (MainThread) [homeassistant.components.webhook] Received message for unregistered webhook 897f1e59cdbc3165a7834048aab23958496bce5a1ec0ab00d5637552f9010a60 from 192.168.1.182
+2025-04-02 05:58:07.970 INFO (MainThread) [homeassistant.components.webhook] Received message for unregistered webhook 897f1e59cdbc3165a7834048aab23958496bce5a1ec0ab00d5637552f9010a60 from 192.168.1.182
+2025-04-02 05:58:08.415 INFO (MainThread) [homeassistant.setup] Setting up matter
+2025-04-02 05:58:08.415 INFO (MainThread) [homeassistant.setup] Setup of domain matter took 0.00 seconds
+2025-04-02 05:58:08.432 INFO (MainThread) [homeassistant.setup] Setting up midea_dehumidifier_lan
+2025-04-02 05:58:08.432 INFO (MainThread) [homeassistant.setup] Setup of domain midea_dehumidifier_lan took 0.00 seconds
+2025-04-02 05:58:08.434 INFO (MainThread) [matter_server.client.connection] Connected to Matter Fabric 2 (8842448541951968263), Schema version 11, CHIP SDK Version 2024.11.4
+2025-04-02 05:58:08.635 INFO (MainThread) [homeassistant.components.webhook] Received message for unregistered webhook 897f1e59cdbc3165a7834048aab23958496bce5a1ec0ab00d5637552f9010a60 from 192.168.1.182
+2025-04-02 05:58:08.655 INFO (MainThread) [matter_server.client] Matter client initialized.
+2025-04-02 05:58:08.657 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up matter.binary_sensor
+2025-04-02 05:58:08.658 INFO (MainThread) [homeassistant.setup] Setting up button
+2025-04-02 05:58:08.659 INFO (MainThread) [homeassistant.setup] Setup of domain button took 0.00 seconds
+2025-04-02 05:58:08.659 INFO (MainThread) [homeassistant.components.button] Setting up matter.button
+2025-04-02 05:58:08.659 INFO (MainThread) [homeassistant.setup] Setting up climate
+2025-04-02 05:58:08.661 INFO (MainThread) [homeassistant.setup] Setup of domain climate took 0.00 seconds
+2025-04-02 05:58:08.661 INFO (MainThread) [homeassistant.components.climate] Setting up matter.climate
+2025-04-02 05:58:08.661 INFO (MainThread) [homeassistant.setup] Setting up cover
+2025-04-02 05:58:08.662 INFO (MainThread) [homeassistant.setup] Setup of domain cover took 0.00 seconds
+2025-04-02 05:58:08.663 INFO (MainThread) [homeassistant.components.cover] Setting up matter.cover
+2025-04-02 05:58:08.663 INFO (MainThread) [homeassistant.setup] Setting up event
+2025-04-02 05:58:08.663 INFO (MainThread) [homeassistant.setup] Setup of domain event took 0.00 seconds
+2025-04-02 05:58:08.663 INFO (MainThread) [homeassistant.components.event] Setting up matter.event
+2025-04-02 05:58:08.663 INFO (MainThread) [homeassistant.setup] Setting up fan
+2025-04-02 05:58:08.665 INFO (MainThread) [homeassistant.setup] Setup of domain fan took 0.00 seconds
+2025-04-02 05:58:08.665 INFO (MainThread) [homeassistant.components.fan] Setting up matter.fan
+2025-04-02 05:58:08.665 INFO (MainThread) [homeassistant.components.light] Setting up matter.light
+2025-04-02 05:58:08.666 INFO (MainThread) [homeassistant.setup] Setting up lock
+2025-04-02 05:58:08.666 INFO (MainThread) [homeassistant.setup] Setup of domain lock took 0.00 seconds
+2025-04-02 05:58:08.666 INFO (MainThread) [homeassistant.components.lock] Setting up matter.lock
+2025-04-02 05:58:08.666 INFO (MainThread) [homeassistant.setup] Setting up number
+2025-04-02 05:58:08.667 INFO (MainThread) [homeassistant.setup] Setup of domain number took 0.00 seconds
+2025-04-02 05:58:08.667 INFO (MainThread) [homeassistant.components.number] Setting up matter.number
+2025-04-02 05:58:08.667 INFO (MainThread) [homeassistant.setup] Setting up select
+2025-04-02 05:58:08.668 INFO (MainThread) [homeassistant.setup] Setup of domain select took 0.00 seconds
+2025-04-02 05:58:08.669 INFO (MainThread) [homeassistant.components.select] Setting up matter.select
+2025-04-02 05:58:08.669 INFO (MainThread) [homeassistant.components.sensor] Setting up matter.sensor
+2025-04-02 05:58:08.669 INFO (MainThread) [homeassistant.setup] Setting up switch
+2025-04-02 05:58:08.669 INFO (MainThread) [homeassistant.setup] Setup of domain switch took 0.00 seconds
+2025-04-02 05:58:08.669 INFO (MainThread) [homeassistant.components.switch] Setting up matter.switch
+2025-04-02 05:58:08.670 INFO (MainThread) [homeassistant.components.update] Setting up matter.update
+2025-04-02 05:58:08.670 INFO (MainThread) [homeassistant.setup] Setting up vacuum
+2025-04-02 05:58:08.670 INFO (MainThread) [homeassistant.setup] Setup of domain vacuum took 0.00 seconds
+2025-04-02 05:58:08.671 INFO (MainThread) [homeassistant.components.vacuum] Setting up matter.vacuum
+2025-04-02 05:58:08.671 INFO (MainThread) [homeassistant.setup] Setting up valve
+2025-04-02 05:58:08.671 INFO (MainThread) [homeassistant.setup] Setup of domain valve took 0.00 seconds
+2025-04-02 05:58:08.671 INFO (MainThread) [homeassistant.components.valve] Setting up matter.valve
+2025-04-02 05:58:08.696 INFO (MainThread) [homeassistant.setup] Setting up webostv
+2025-04-02 05:58:08.696 INFO (MainThread) [homeassistant.setup] Setup of domain webostv took 0.00 seconds
+2025-04-02 05:58:08.715 INFO (MainThread) [homeassistant.setup] Setting up prometheus
+2025-04-02 05:58:08.729 INFO (MainThread) [homeassistant.setup] Setup of domain prometheus took 0.01 seconds
+2025-04-02 05:58:08.741 INFO (MainThread) [homeassistant.components.webhook] Received message for unregistered webhook 897f1e59cdbc3165a7834048aab23958496bce5a1ec0ab00d5637552f9010a60 from 192.168.1.182
+2025-04-02 05:58:08.743 INFO (MainThread) [homeassistant.setup] Setting up thread
+2025-04-02 05:58:08.744 INFO (MainThread) [homeassistant.setup] Setup of domain thread took 0.00 seconds
+2025-04-02 05:58:08.758 INFO (MainThread) [homeassistant.setup] Setting up vesync
+2025-04-02 05:58:08.758 INFO (MainThread) [homeassistant.setup] Setup of domain vesync took 0.00 seconds
+2025-04-02 05:58:08.763 INFO (MainThread) [homeassistant.setup] Setting up counter
+2025-04-02 05:58:08.764 INFO (MainThread) [homeassistant.setup] Setup of domain counter took 0.00 seconds
+2025-04-02 05:58:08.772 INFO (MainThread) [homeassistant.setup] Setting up schedule
+2025-04-02 05:58:08.773 INFO (MainThread) [homeassistant.setup] Setup of domain schedule took 0.00 seconds
+2025-04-02 05:58:08.806 INFO (MainThread) [homeassistant.components.websocket_api.http.connection] [139844152416368] Received unknown command: mobile_app/push_notification_channel
+2025-04-02 05:58:08.824 INFO (MainThread) [homeassistant.components.websocket_api.http.connection] [139844152416368] Received unknown command: mobile_app/push_notification_channel
+2025-04-02 05:58:08.896 INFO (MainThread) [homeassistant.setup] Setting up ble_monitor
+2025-04-02 05:58:08.896 INFO (MainThread) [homeassistant.setup] Setup of domain ble_monitor took 0.00 seconds
+2025-04-02 05:58:08.897 INFO (MainThread) [custom_components.ble_monitor] Attention! Option report_unknown is enabled for iBeacon sensors, be ready for a huge output
+2025-04-02 05:58:08.897 INFO (MainThread) [custom_components.ble_monitor] Attention! Option report_unknown is enabled for sensor with id(s): ['EEC3CA486276']
+2025-04-02 05:58:08.979 INFO (MainThread) [homeassistant.setup] Setting up sonoff
+2025-04-02 05:58:08.979 INFO (MainThread) [homeassistant.setup] Setup of domain sonoff took 0.00 seconds
+2025-04-02 05:58:09.075 INFO (MainThread) [homeassistant.components.websocket_api.http.connection] [139844156453600] Received unknown command: mobile_app/push_notification_channel
+2025-04-02 05:58:09.075 INFO (MainThread) [homeassistant.components.websocket_api.http.connection] [139844156453600] Received unknown command: mobile_app/push_notification_channel
+2025-04-02 05:58:09.243 INFO (MainThread) [homeassistant.setup] Setting up zwave_js
+2025-04-02 05:58:09.246 INFO (MainThread) [homeassistant.setup] Setup of domain zwave_js took 0.00 seconds
+2025-04-02 05:58:09.253 INFO (MainThread) [zwave_js_server] Connected to Home 3535628495 (Server 3.0.0, Driver 15.0.3, Using Schema 40)
+2025-04-02 05:58:09.253 INFO (MainThread) [homeassistant.components.zwave_js] Connected to Zwave JS Server
+2025-04-02 05:58:09.267 INFO (MainThread) [homeassistant.setup] Setting up blink
+2025-04-02 05:58:09.267 INFO (MainThread) [homeassistant.setup] Setup of domain blink took 0.00 seconds
+2025-04-02 05:58:09.275 INFO (MainThread) [homeassistant.setup] Setting up prusalink
+2025-04-02 05:58:09.275 INFO (MainThread) [homeassistant.setup] Setup of domain prusalink took 0.00 seconds
+2025-04-02 05:58:09.292 INFO (MainThread) [homeassistant.setup] Setting up toyota_na
+2025-04-02 05:58:09.292 INFO (MainThread) [homeassistant.setup] Setup of domain toyota_na took 0.00 seconds
+2025-04-02 05:58:09.645 INFO (MainThread) [blinkpy.auth] Token expired, attempting automatic refresh.
+2025-04-02 05:58:09.645 INFO (MainThread) [blinkpy.auth] Attempting login with https://rest-prod.immedia-semi.com/api/v5/account/login
+2025-04-02 05:58:09.765 INFO (MainThread) [homeassistant.setup] Setting up weatherflow
+2025-04-02 05:58:09.765 INFO (MainThread) [homeassistant.setup] Setup of domain weatherflow took 0.00 seconds
+2025-04-02 05:58:09.828 INFO (MainThread) [homeassistant.setup] Setting up smlight
+2025-04-02 05:58:09.829 INFO (MainThread) [homeassistant.setup] Setup of domain smlight took 0.00 seconds
+2025-04-02 05:58:09.903 INFO (MainThread) [homeassistant.setup] Setting up sonos
+2025-04-02 05:58:09.903 INFO (MainThread) [homeassistant.setup] Setup of domain sonos took 0.00 seconds
+2025-04-02 05:58:09.928 INFO (MainThread) [homeassistant.setup] Setting up dlna_dmr
+2025-04-02 05:58:09.929 INFO (MainThread) [homeassistant.setup] Setup of domain dlna_dmr took 0.00 seconds
+2025-04-02 05:58:10.040 INFO (MainThread) [homeassistant.setup] Setting up wyoming
+2025-04-02 05:58:10.041 INFO (MainThread) [homeassistant.setup] Setup of domain wyoming took 0.00 seconds
+2025-04-02 05:58:10.255 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up sonoff.binary_sensor
+2025-04-02 05:58:10.256 INFO (MainThread) [homeassistant.components.button] Setting up sonoff.button
+2025-04-02 05:58:10.256 INFO (MainThread) [homeassistant.components.climate] Setting up sonoff.climate
+2025-04-02 05:58:10.256 INFO (MainThread) [homeassistant.components.cover] Setting up sonoff.cover
+2025-04-02 05:58:10.256 INFO (MainThread) [homeassistant.components.fan] Setting up sonoff.fan
+2025-04-02 05:58:10.256 INFO (MainThread) [homeassistant.components.light] Setting up sonoff.light
+2025-04-02 05:58:10.256 INFO (MainThread) [homeassistant.setup] Setting up remote
+2025-04-02 05:58:10.258 INFO (MainThread) [homeassistant.setup] Setup of domain remote took 0.00 seconds
+2025-04-02 05:58:10.258 INFO (MainThread) [homeassistant.components.remote] Setting up sonoff.remote
+2025-04-02 05:58:10.258 INFO (MainThread) [homeassistant.components.sensor] Setting up sonoff.sensor
+2025-04-02 05:58:10.258 INFO (MainThread) [homeassistant.components.switch] Setting up sonoff.switch
+2025-04-02 05:58:10.259 INFO (MainThread) [homeassistant.components.number] Setting up sonoff.number
+2025-04-02 05:58:10.289 INFO (MainThread) [zwave_js_server] Z-Wave JS initialized. 21 nodes
+2025-04-02 05:58:10.292 INFO (MainThread) [homeassistant.components.zwave_js] Connection to Zwave JS Server initialized
+2025-04-02 05:58:10.454 INFO (MainThread) [homeassistant.setup] Setting up tplink
+2025-04-02 05:58:10.455 INFO (MainThread) [homeassistant.setup] Setup of domain tplink took 0.00 seconds
+2025-04-02 05:58:10.487 INFO (MainThread) [homeassistant.setup] Setting up calendar
+2025-04-02 05:58:10.487 INFO (MainThread) [homeassistant.setup] Setup of domain calendar took 0.00 seconds
+2025-04-02 05:58:10.488 INFO (MainThread) [homeassistant.components.calendar] Setting up local_calendar.calendar
+2025-04-02 05:58:10.493 INFO (MainThread) [homeassistant.components.sensor] Setting up energy.sensor
+2025-04-02 05:58:10.611 INFO (MainThread) [homeassistant.setup] Setting up analytics
+2025-04-02 05:58:10.611 INFO (MainThread) [homeassistant.setup] Setup of domain analytics took 0.00 seconds
+2025-04-02 05:58:10.721 INFO (MainThread) [blinkpy.blinkpy] network = {
+  "network_id": 543730,
+  "name": "Home",
+  "cameras": [
+    {
+      "id": 841662,
+      "name": "Front drive",
+      "usage": 31,
+      "lv_seconds": 31,
+      "clip_seconds": 0
+    },
+    {
+      "id": 841795,
+      "name": "Back yard",
+      "usage": 20,
+      "lv_seconds": 20,
+      "clip_seconds": 0
+    },
+    {
+      "id": 846410,
+      "name": "Pad side yard",
+      "usage": 82,
+      "lv_seconds": 82,
+      "clip_seconds": 0
+    }
+  ]
+}
+2025-04-02 05:58:10.779 INFO (MainThread) [homeassistant.setup] Setting up esphome
+2025-04-02 05:58:10.784 INFO (MainThread) [homeassistant.setup] Setup of domain esphome took 0.00 seconds
+2025-04-02 05:58:10.808 INFO (MainThread) [homeassistant.setup] Setting up mobile_app
+2025-04-02 05:58:10.808 INFO (MainThread) [homeassistant.setup] Setup of domain mobile_app took 0.00 seconds
+2025-04-02 05:58:10.808 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up mobile_app.binary_sensor
+2025-04-02 05:58:10.816 INFO (MainThread) [homeassistant.setup] Setting up device_tracker
+2025-04-02 05:58:10.819 INFO (MainThread) [homeassistant.setup] Setup of domain device_tracker took 0.00 seconds
+2025-04-02 05:58:10.819 INFO (MainThread) [homeassistant.components.device_tracker] Setting up mobile_app.device_tracker
+2025-04-02 05:58:10.820 INFO (MainThread) [homeassistant.components.sensor] Setting up mobile_app.sensor
+2025-04-02 05:58:10.849 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up mobile_app.binary_sensor
+2025-04-02 05:58:10.856 INFO (MainThread) [homeassistant.components.device_tracker] Setting up mobile_app.device_tracker
+2025-04-02 05:58:10.864 INFO (MainThread) [homeassistant.components.sensor] Setting up mobile_app.sensor
+2025-04-02 05:58:10.884 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up mobile_app.binary_sensor
+2025-04-02 05:58:10.885 INFO (MainThread) [homeassistant.components.device_tracker] Setting up mobile_app.device_tracker
+2025-04-02 05:58:10.885 INFO (MainThread) [homeassistant.components.sensor] Setting up mobile_app.sensor
+2025-04-02 05:58:10.894 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up mobile_app.binary_sensor
+2025-04-02 05:58:10.894 INFO (MainThread) [homeassistant.components.device_tracker] Setting up mobile_app.device_tracker
+2025-04-02 05:58:10.895 INFO (MainThread) [homeassistant.components.sensor] Setting up mobile_app.sensor
+2025-04-02 05:58:10.907 INFO (MainThread) [homeassistant.components.notify] Setting up notify.mobile_app
+2025-04-02 05:58:10.924 INFO (MainThread) [homeassistant.setup] Setting up default_config
+2025-04-02 05:58:10.924 INFO (MainThread) [homeassistant.setup] Setup of domain default_config took 0.00 seconds
+2025-04-02 05:58:11.175 INFO (MainThread) [homeassistant.setup] Setting up smartthings
+2025-04-02 05:58:11.175 INFO (MainThread) [homeassistant.setup] Setup of domain smartthings took 0.00 seconds
+2025-04-02 05:58:11.178 INFO (MainThread) [homeassistant.components.switch] Setting up hacs.switch
+2025-04-02 05:58:11.189 INFO (MainThread) [homeassistant.components.update] Setting up hacs.update
+2025-04-02 05:58:11.202 INFO (MainThread) [custom_components.hacs] Stage changed: setup
+2025-04-02 05:58:11.202 INFO (MainThread) [custom_components.hacs] Stage changed: waiting
+2025-04-02 05:58:11.202 INFO (MainThread) [custom_components.hacs] Setup complete, waiting for Home Assistant before startup tasks starts
+2025-04-02 05:58:11.323 INFO (MainThread) [homeassistant.setup] Setting up media_player
+2025-04-02 05:58:11.327 INFO (MainThread) [homeassistant.setup] Setup of domain media_player took 0.00 seconds
+2025-04-02 05:58:11.328 INFO (MainThread) [homeassistant.components.media_player] Setting up cast.media_player
+2025-04-02 05:58:11.334 INFO (MainThread) [homeassistant.setup] Setting up todo
+2025-04-02 05:58:11.336 INFO (MainThread) [homeassistant.setup] Setup of domain todo took 0.00 seconds
+2025-04-02 05:58:11.336 INFO (MainThread) [homeassistant.components.todo] Setting up shopping_list.todo
+2025-04-02 05:58:11.347 INFO (MainThread) [homeassistant.components.tts] Setting up google_translate.tts
+2025-04-02 05:58:11.352 INFO (MainThread) [homeassistant.components.conversation] Setting up openai_conversation.conversation
+2025-04-02 05:58:11.359 INFO (MainThread) [homeassistant.components.conversation] Setting up ollama.conversation
+2025-04-02 05:58:11.359 INFO (MainThread) [homeassistant.setup] Setting up weather
+2025-04-02 05:58:11.360 INFO (MainThread) [homeassistant.setup] Setup of domain weather took 0.00 seconds
+2025-04-02 05:58:11.360 INFO (MainThread) [homeassistant.components.weather] Setting up met.weather
+2025-04-02 05:58:11.362 INFO (MainThread) [homeassistant.components.conversation] Setting up ollama.conversation
+2025-04-02 05:58:11.363 INFO (MainThread) [homeassistant.components.conversation] Setting up ollama.conversation
+2025-04-02 05:58:11.363 INFO (MainThread) [homeassistant.components.weather] Setting up met.weather
+2025-04-02 05:58:11.375 INFO (MainThread) [homeassistant.components.climate] Setting up honeywell.climate
+2025-04-02 05:58:11.378 INFO (MainThread) [homeassistant.setup] Setting up humidifier
+2025-04-02 05:58:11.379 INFO (MainThread) [homeassistant.setup] Setup of domain humidifier took 0.00 seconds
+2025-04-02 05:58:11.379 INFO (MainThread) [homeassistant.components.humidifier] Setting up honeywell.humidifier
+2025-04-02 05:58:11.379 INFO (MainThread) [homeassistant.components.sensor] Setting up honeywell.sensor
+2025-04-02 05:58:11.383 INFO (MainThread) [homeassistant.components.switch] Setting up honeywell.switch
+2025-04-02 05:58:11.401 INFO (MainThread) [homeassistant.components.sensor] Setting up tplink_easy_smart.sensor
+2025-04-02 05:58:11.402 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up tplink_easy_smart.binary_sensor
+2025-04-02 05:58:11.410 INFO (MainThread) [homeassistant.components.switch] Setting up tplink_easy_smart.switch
+2025-04-02 05:58:11.431 INFO (MainThread) [homeassistant.components.media_player] Setting up webostv.media_player
+2025-04-02 05:58:11.440 INFO (MainThread) [homeassistant.components.device_tracker] Setting up ble_monitor.device_tracker
+2025-04-02 05:58:11.440 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up ble_monitor.binary_sensor
+2025-04-02 05:58:11.440 INFO (MainThread) [homeassistant.components.sensor] Setting up ble_monitor.sensor
+2025-04-02 05:58:11.825 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up prusalink.binary_sensor
+2025-04-02 05:58:11.826 INFO (MainThread) [homeassistant.components.button] Setting up prusalink.button
+2025-04-02 05:58:11.827 INFO (MainThread) [homeassistant.components.camera] Setting up prusalink.camera
+2025-04-02 05:58:11.827 INFO (MainThread) [homeassistant.components.sensor] Setting up prusalink.sensor
+2025-04-02 05:58:11.842 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up vesync.binary_sensor
+2025-04-02 05:58:11.842 INFO (MainThread) [homeassistant.components.fan] Setting up vesync.fan
+2025-04-02 05:58:11.842 INFO (MainThread) [homeassistant.components.humidifier] Setting up vesync.humidifier
+2025-04-02 05:58:11.843 INFO (MainThread) [homeassistant.components.light] Setting up vesync.light
+2025-04-02 05:58:11.843 INFO (MainThread) [homeassistant.components.number] Setting up vesync.number
+2025-04-02 05:58:11.843 INFO (MainThread) [homeassistant.components.select] Setting up vesync.select
+2025-04-02 05:58:11.844 INFO (MainThread) [homeassistant.components.sensor] Setting up vesync.sensor
+2025-04-02 05:58:11.845 INFO (MainThread) [homeassistant.components.switch] Setting up vesync.switch
+2025-04-02 05:58:11.855 INFO (SyncWorker_5) [pywemo.subscribe] Subscribing to events from <WeMo Switch "Stove light">
+2025-04-02 05:58:11.861 INFO (Wemo Events Thread) [pywemo.subscribe] Resubscribe for <Subscription basicevent "Stove light">
+2025-04-02 05:58:11.871 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up midea_dehumidifier_lan.binary_sensor
+2025-04-02 05:58:11.873 INFO (MainThread) [homeassistant.components.climate] Setting up midea_dehumidifier_lan.climate
+2025-04-02 05:58:11.873 INFO (MainThread) [homeassistant.components.fan] Setting up midea_dehumidifier_lan.fan
+2025-04-02 05:58:11.875 INFO (MainThread) [homeassistant.components.humidifier] Setting up midea_dehumidifier_lan.humidifier
+2025-04-02 05:58:11.876 INFO (MainThread) [homeassistant.components.sensor] Setting up midea_dehumidifier_lan.sensor
+2025-04-02 05:58:11.878 INFO (MainThread) [homeassistant.components.switch] Setting up midea_dehumidifier_lan.switch
+2025-04-02 05:58:11.880 INFO (MainThread) [homeassistant.components.sensor] Setting up weatherflow.sensor
+2025-04-02 05:58:12.393 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up sonos.binary_sensor
+2025-04-02 05:58:12.393 INFO (MainThread) [homeassistant.components.media_player] Setting up sonos.media_player
+2025-04-02 05:58:12.395 INFO (MainThread) [homeassistant.components.number] Setting up sonos.number
+2025-04-02 05:58:12.395 INFO (MainThread) [homeassistant.components.sensor] Setting up sonos.sensor
+2025-04-02 05:58:12.395 INFO (MainThread) [homeassistant.components.switch] Setting up sonos.switch
+2025-04-02 05:58:12.401 INFO (MainThread) [homeassistant.components.media_player] Setting up dlna_dmr.media_player
+2025-04-02 05:58:12.408 INFO (MainThread) [homeassistant.components.stt] Setting up wyoming.stt
+2025-04-02 05:58:12.413 INFO (MainThread) [homeassistant.components.tts] Setting up wyoming.tts
+2025-04-02 05:58:12.435 INFO (MainThread) [homeassistant.components.sensor] Setting up zwave_js.sensor
+2025-04-02 05:58:12.477 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up ping.binary_sensor
+2025-04-02 05:58:12.477 INFO (MainThread) [homeassistant.components.device_tracker] Setting up ping.device_tracker
+2025-04-02 05:58:12.478 INFO (MainThread) [homeassistant.components.sensor] Setting up ping.sensor
+2025-04-02 05:58:12.528 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up tplink.binary_sensor
+2025-04-02 05:58:12.529 INFO (MainThread) [homeassistant.components.button] Setting up tplink.button
+2025-04-02 05:58:12.530 INFO (MainThread) [homeassistant.components.camera] Setting up tplink.camera
+2025-04-02 05:58:12.530 INFO (MainThread) [homeassistant.components.climate] Setting up tplink.climate
+2025-04-02 05:58:12.530 INFO (MainThread) [homeassistant.components.fan] Setting up tplink.fan
+2025-04-02 05:58:12.530 INFO (MainThread) [homeassistant.components.light] Setting up tplink.light
+2025-04-02 05:58:12.530 INFO (MainThread) [homeassistant.components.number] Setting up tplink.number
+2025-04-02 05:58:12.531 INFO (MainThread) [homeassistant.components.select] Setting up tplink.select
+2025-04-02 05:58:12.531 INFO (MainThread) [homeassistant.components.sensor] Setting up tplink.sensor
+2025-04-02 05:58:12.532 INFO (MainThread) [homeassistant.setup] Setting up siren
+2025-04-02 05:58:12.532 INFO (MainThread) [homeassistant.setup] Setup of domain siren took 0.00 seconds
+2025-04-02 05:58:12.534 INFO (MainThread) [homeassistant.components.siren] Setting up tplink.siren
+2025-04-02 05:58:12.534 INFO (MainThread) [homeassistant.components.switch] Setting up tplink.switch
+2025-04-02 05:58:12.536 INFO (MainThread) [homeassistant.components.vacuum] Setting up tplink.vacuum
+2025-04-02 05:58:12.536 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up tplink.binary_sensor
+2025-04-02 05:58:12.537 INFO (MainThread) [homeassistant.components.button] Setting up tplink.button
+2025-04-02 05:58:12.538 INFO (MainThread) [homeassistant.components.camera] Setting up tplink.camera
+2025-04-02 05:58:12.538 INFO (MainThread) [homeassistant.components.climate] Setting up tplink.climate
+2025-04-02 05:58:12.538 INFO (MainThread) [homeassistant.components.fan] Setting up tplink.fan
+2025-04-02 05:58:12.538 INFO (MainThread) [homeassistant.components.light] Setting up tplink.light
+2025-04-02 05:58:12.538 INFO (MainThread) [homeassistant.components.number] Setting up tplink.number
+2025-04-02 05:58:12.539 INFO (MainThread) [homeassistant.components.select] Setting up tplink.select
+2025-04-02 05:58:12.539 INFO (MainThread) [homeassistant.components.sensor] Setting up tplink.sensor
+2025-04-02 05:58:12.540 INFO (MainThread) [homeassistant.components.siren] Setting up tplink.siren
+2025-04-02 05:58:12.540 INFO (MainThread) [homeassistant.components.switch] Setting up tplink.switch
+2025-04-02 05:58:12.544 INFO (MainThread) [homeassistant.components.vacuum] Setting up tplink.vacuum
+2025-04-02 05:58:12.544 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up tplink.binary_sensor
+2025-04-02 05:58:12.545 INFO (MainThread) [homeassistant.components.button] Setting up tplink.button
+2025-04-02 05:58:12.545 INFO (MainThread) [homeassistant.components.camera] Setting up tplink.camera
+2025-04-02 05:58:12.546 INFO (MainThread) [homeassistant.components.climate] Setting up tplink.climate
+2025-04-02 05:58:12.546 INFO (MainThread) [homeassistant.components.fan] Setting up tplink.fan
+2025-04-02 05:58:12.546 INFO (MainThread) [homeassistant.components.light] Setting up tplink.light
+2025-04-02 05:58:12.547 INFO (MainThread) [homeassistant.components.number] Setting up tplink.number
+2025-04-02 05:58:12.547 INFO (MainThread) [homeassistant.components.select] Setting up tplink.select
+2025-04-02 05:58:12.547 INFO (MainThread) [homeassistant.components.sensor] Setting up tplink.sensor
+2025-04-02 05:58:12.552 INFO (MainThread) [homeassistant.components.siren] Setting up tplink.siren
+2025-04-02 05:58:12.552 INFO (MainThread) [homeassistant.components.switch] Setting up tplink.switch
+2025-04-02 05:58:12.554 INFO (MainThread) [homeassistant.components.vacuum] Setting up tplink.vacuum
+2025-04-02 05:58:12.557 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up tplink.binary_sensor
+2025-04-02 05:58:12.558 INFO (MainThread) [homeassistant.components.button] Setting up tplink.button
+2025-04-02 05:58:12.559 INFO (MainThread) [homeassistant.components.camera] Setting up tplink.camera
+2025-04-02 05:58:12.559 INFO (MainThread) [homeassistant.components.climate] Setting up tplink.climate
+2025-04-02 05:58:12.560 INFO (MainThread) [homeassistant.components.fan] Setting up tplink.fan
+2025-04-02 05:58:12.560 INFO (MainThread) [homeassistant.components.light] Setting up tplink.light
+2025-04-02 05:58:12.560 INFO (MainThread) [homeassistant.components.number] Setting up tplink.number
+2025-04-02 05:58:12.560 INFO (MainThread) [homeassistant.components.select] Setting up tplink.select
+2025-04-02 05:58:12.560 INFO (MainThread) [homeassistant.components.sensor] Setting up tplink.sensor
+2025-04-02 05:58:12.563 INFO (MainThread) [homeassistant.components.siren] Setting up tplink.siren
+2025-04-02 05:58:12.563 INFO (MainThread) [homeassistant.components.switch] Setting up tplink.switch
+2025-04-02 05:58:12.566 INFO (MainThread) [homeassistant.components.vacuum] Setting up tplink.vacuum
+2025-04-02 05:58:12.567 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up tplink.binary_sensor
+2025-04-02 05:58:12.568 INFO (MainThread) [homeassistant.components.button] Setting up tplink.button
+2025-04-02 05:58:12.569 INFO (MainThread) [homeassistant.components.camera] Setting up tplink.camera
+2025-04-02 05:58:12.569 INFO (MainThread) [homeassistant.components.climate] Setting up tplink.climate
+2025-04-02 05:58:12.578 INFO (MainThread) [homeassistant.components.fan] Setting up tplink.fan
+2025-04-02 05:58:12.578 INFO (MainThread) [homeassistant.components.light] Setting up tplink.light
+2025-04-02 05:58:12.578 INFO (MainThread) [homeassistant.components.number] Setting up tplink.number
+2025-04-02 05:58:12.579 INFO (MainThread) [homeassistant.components.select] Setting up tplink.select
+2025-04-02 05:58:12.579 INFO (MainThread) [homeassistant.components.sensor] Setting up tplink.sensor
+2025-04-02 05:58:12.608 INFO (MainThread) [homeassistant.components.siren] Setting up tplink.siren
+2025-04-02 05:58:12.609 INFO (MainThread) [homeassistant.components.switch] Setting up tplink.switch
+2025-04-02 05:58:12.617 INFO (MainThread) [homeassistant.components.vacuum] Setting up tplink.vacuum
+2025-04-02 05:58:12.624 INFO (MainThread) [homeassistant.components.update] Setting up esphome.update
+2025-04-02 05:58:12.624 ERROR (MainThread) [homeassistant.components.update] Error while setting up esphome platform for update: 
 Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 10:07:32.858 WARNING (MainThread) [alexapy.helpers] alexaapi.get_customer_history_records((<alexapy.alexalogin.AlexaLogin object at 0x7f3fc199fe00>,), {'max_record_size': 10}): Timeout error occurred accessing AlexaAPI: An exception of type CancelledError occurred. Arguments:
-()
-2025-02-14 10:11:21.595 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 10:15:10.498 WARNING (Recorder) [homeassistant.components.sensor.recorder] Entity sensor.reserviorsensor_reservoir_current_volume from integration esphome has state class total_increasing, but its state is not strictly increasing. Triggered by state 2.82 (3.0) with last_updated set to 2025-02-14T16:10:48.860943+00:00. Please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+esphome%22
-2025-02-14 10:16:21.584 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 10:21:21.583 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 10:26:00.459 WARNING (MainThread) [homeassistant.helpers.entity] Update of climate.master_bedroom is taking over 10 seconds
-2025-02-14 10:33:00.556 WARNING (MainThread) [homeassistant.helpers.entity] Update of climate.master_bedroom is taking over 10 seconds
-2025-02-14 10:36:24.214 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 10:41:24.677 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 10:46:24.591 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 10:49:34.030 ERROR (MainThread) [homeassistant.helpers.script.websocket_api_script] websocket_api script: Error executing script. Service not found for call_service at pos 1: Action sensor.reserviorsensor_last_fertigation_time not found
-2025-02-14 10:49:34.032 ERROR (MainThread) [homeassistant.components.websocket_api.http.connection] [139911322785904] Action sensor.reserviorsensor_last_fertigation_time not found
-2025-02-14 10:51:24.574 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 10:55:00.299 ERROR (MainThread) [homeassistant.helpers.script.websocket_api_script] websocket_api script: Error executing script. Service not found for call_service at pos 1: Action esphome.reserviorsensor_set_last_fertigation_time not found
-2025-02-14 10:55:00.299 ERROR (MainThread) [homeassistant.components.websocket_api.http.connection] [139911322785904] Action esphome.reserviorsensor_set_last_fertigation_time not found
-2025-02-14 10:56:21.823 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/sensor.py", line 207, in _update_attrs
-    self._attr_native_value = self.entity_description.value_fn(self)
-                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/sensor.py", line 60, in <lambda>
-    .active_time_by_zone_id.get(sensor.zone.id, timedelta())
-                                ^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 11:01:21.578 WARNING (MainThread) [homeassistant.components.sonos.speaker] No recent activity and cannot reach Linda’s Bedroom, marking unavailable
-2025-02-14 11:06:27.381 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 11:11:27.640 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 11:16:27.597 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 11:21:27.582 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 11:32:04.120 WARNING (MainThread) [alexapy.helpers] alexaapi.get_customer_history_records((<alexapy.alexalogin.AlexaLogin object at 0x7f3fc199fe00>,), {'max_record_size': 10}): Timeout error occurred accessing AlexaAPI: An exception of type CancelledError occurred. Arguments:
-()
-2025-02-14 11:32:20.468 ERROR (MainThread) [homeassistant.components.automation.fertigation] Fertigation: Error executing script. Service not found for call_service at pos 8: Action esphome.reserviorsensor_set_last_fertigation_time not found
-2025-02-14 11:36:30.264 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 11:41:30.711 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 11:46:30.621 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 11:51:30.584 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 11:56:22.866 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/sensor.py", line 207, in _update_attrs
-    self._attr_native_value = self.entity_description.value_fn(self)
-                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/sensor.py", line 60, in <lambda>
-    .active_time_by_zone_id.get(sensor.zone.id, timedelta())
-                                ^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 11:59:30.718 WARNING (MainThread) [homeassistant.helpers.entity] Update of climate.upstairs is taking over 10 seconds
-2025-02-14 12:06:33.284 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 12:11:33.613 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 12:16:33.585 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 12:21:33.572 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 12:35:30.787 WARNING (MainThread) [homeassistant.helpers.entity] Update of climate.family_room is taking over 10 seconds
-2025-02-14 12:36:36.302 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 12:41:36.708 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 12:45:49.183 WARNING (MainThread) [alexapy.helpers] alexaapi.get_customer_history_records((<alexapy.alexalogin.AlexaLogin object at 0x7f3fc199fe00>,), {'max_record_size': 10}): Timeout error occurred accessing AlexaAPI: An exception of type CancelledError occurred. Arguments:
-()
-2025-02-14 12:46:36.628 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 12:51:36.585 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 12:56:23.653 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/sensor.py", line 207, in _update_attrs
-    self._attr_native_value = self.entity_description.value_fn(self)
-                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/sensor.py", line 60, in <lambda>
-    .active_time_by_zone_id.get(sensor.zone.id, timedelta())
-                                ^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 13:06:39.285 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 13:11:39.673 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 13:16:39.617 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 13:19:50.797 ERROR (SyncWorker_30) [homeassistant.config] The configuration file configuration.yaml does not contain a dictionary
-2025-02-14 13:19:50.798 ERROR (MainThread) [homeassistant.components.homeassistant] The system cannot reload because the configuration is not valid: Error loading /config/configuration.yaml: The configuration file configuration.yaml does not contain a dictionary
-2025-02-14 13:19:50.798 ERROR (MainThread) [homeassistant.components.websocket_api.http.connection] [139911410282080] Unexpected exception
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/components/websocket_api/commands.py", line 245, in handle_call_service
-    response = await hass.services.async_call(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<7 lines>...
-    )
-    ^
-  File "/usr/src/homeassistant/homeassistant/core.py", line 2794, in async_call
-    response_data = await coro
-                    ^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/core.py", line 2837, in _execute_service
-    return await target(service_call)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 1110, in _async_admin_handler
-    await result
-  File "/usr/src/homeassistant/homeassistant/components/homeassistant/__init__.py", line 355, in async_handle_reload_all
-    raise HomeAssistantError(
-    ...<2 lines>...
-    )
-homeassistant.exceptions.HomeAssistantError: Cannot quick reload all YAML configurations because the configuration is not valid: Error loading /config/configuration.yaml: The configuration file configuration.yaml does not contain a dictionary
-2025-02-14 13:21:23.806 ERROR (MainThread) [homeassistant.components.automation] Automation with alias 'front_door_unlocked_scream' could not be validated and has been disabled: required key not provided @ data['actions']. Got None
-required key not provided @ data['triggers'][0]['trigger']. Got None
-2025-02-14 13:21:23.957 ERROR (MainThread) [homeassistant.components.automation] Automation with alias 'front_door_unlocked_scream' could not be validated and has been disabled: required key not provided @ data['actions']. Got None
-required key not provided @ data['triggers'][0]['trigger']. Got None
-2025-02-14 13:21:39.582 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 13:36:42.256 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 13:38:24.032 WARNING (MainThread) [alexapy.helpers] alexaapi.get_customer_history_records((<alexapy.alexalogin.AlexaLogin object at 0x7f3fc199fe00>,), {'max_record_size': 10}): Timeout error occurred accessing AlexaAPI: An exception of type CancelledError occurred. Arguments:
-()
-2025-02-14 13:41:42.669 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
-2025-02-14 13:46:30.937 WARNING (MainThread) [homeassistant.helpers.entity] Update of climate.upstairs is taking over 10 seconds
-2025-02-14 13:46:42.611 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 268, in _handle_refresh_interval
-    await self._async_refresh(log_failures=True, scheduled=True)
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 479, in _async_refresh
-    self.async_update_listeners()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 178, in async_update_listeners
-    update_callback()
-    ~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 71, in _handle_coordinator_update
-    self._update_attrs()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 125, in _update_attrs
-    self._attr_is_on = self.entity_description.value_fn(self)
-                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/binary_sensor.py", line 64, in <lambda>
-    lambda watering_sensor: watering_sensor.zone.scheduled_runs.current_run
-                            ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/src/homeassistant/homeassistant/components/hydrawise/entity.py", line 55, in zone
-    return self.coordinator.data.zones[self.zone_id]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-KeyError: 8857190
+  File "/usr/src/homeassistant/homeassistant/helpers/entity_platform.py", line 382, in _async_setup_platform
+    await asyncio.shield(awaitable)
+  File "/usr/src/homeassistant/homeassistant/components/esphome/update.py", line 64, in async_setup_entry
+    assert entry_data.device_info is not None
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+2025-04-02 05:58:12.648 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up esphome.binary_sensor
+2025-04-02 05:58:12.649 INFO (MainThread) [homeassistant.components.select] Setting up esphome.select
+2025-04-02 05:58:12.650 INFO (MainThread) [homeassistant.components.media_player] Setting up esphome.media_player
+2025-04-02 05:58:12.651 INFO (MainThread) [homeassistant.components.light] Setting up esphome.light
+2025-04-02 05:58:12.651 INFO (MainThread) [homeassistant.components.event] Setting up esphome.event
+2025-04-02 05:58:12.651 INFO (MainThread) [homeassistant.components.button] Setting up esphome.button
+2025-04-02 05:58:12.651 INFO (MainThread) [homeassistant.components.update] Setting up esphome.update
+2025-04-02 05:58:12.651 INFO (MainThread) [homeassistant.components.switch] Setting up esphome.switch
+2025-04-02 05:58:12.659 INFO (MainThread) [homeassistant.components.update] Setting up esphome.update
+2025-04-02 05:58:12.659 INFO (MainThread) [homeassistant.components.sensor] Setting up esphome.sensor
+2025-04-02 05:58:12.701 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up smlight.binary_sensor
+2025-04-02 05:58:12.704 INFO (MainThread) [homeassistant.components.button] Setting up smlight.button
+2025-04-02 05:58:12.706 INFO (MainThread) [homeassistant.components.sensor] Setting up smlight.sensor
+2025-04-02 05:58:12.709 INFO (MainThread) [homeassistant.components.switch] Setting up smlight.switch
+2025-04-02 05:58:12.713 INFO (MainThread) [homeassistant.components.update] Setting up smlight.update
+2025-04-02 05:58:12.781 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up mqtt.binary_sensor
+2025-04-02 05:58:12.782 INFO (MainThread) [homeassistant.components.number] Setting up mqtt.number
+2025-04-02 05:58:12.782 INFO (MainThread) [homeassistant.components.select] Setting up mqtt.select
+2025-04-02 05:58:12.782 INFO (MainThread) [homeassistant.components.light] Setting up mqtt.light
+2025-04-02 05:58:12.782 INFO (MainThread) [homeassistant.components.lock] Setting up mqtt.lock
+2025-04-02 05:58:12.782 INFO (MainThread) [homeassistant.components.event] Setting up mqtt.event
+2025-04-02 05:58:12.782 INFO (MainThread) [homeassistant.components.button] Setting up mqtt.button
+2025-04-02 05:58:12.783 INFO (MainThread) [homeassistant.components.switch] Setting up mqtt.switch
+2025-04-02 05:58:12.783 INFO (MainThread) [homeassistant.components.update] Setting up mqtt.update
+2025-04-02 05:58:12.783 INFO (MainThread) [homeassistant.components.sensor] Setting up mqtt.sensor
+2025-04-02 05:58:12.785 INFO (MainThread) [homeassistant.setup] Setting up alarm_control_panel
+2025-04-02 05:58:12.786 INFO (MainThread) [homeassistant.setup] Setup of domain alarm_control_panel took 0.00 seconds
+2025-04-02 05:58:12.786 INFO (MainThread) [homeassistant.components.alarm_control_panel] Setting up mqtt.alarm_control_panel
+2025-04-02 05:58:12.787 INFO (MainThread) [homeassistant.components.camera] Setting up mqtt.camera
+2025-04-02 05:58:12.800 INFO (MainThread) [aioesphomeapi.reconnect_logic] Successfully connected to wroommicrousb @ 192.168.1.177 in 0.131s
+2025-04-02 05:58:12.822 INFO (MainThread) [homeassistant.components.notify] Setting up notify.webostv
+2025-04-02 05:58:12.840 INFO (MainThread) [homeassistant.components.switch] Setting up wemo.switch
+2025-04-02 05:58:12.840 INFO (MainThread) [homeassistant.components.sensor] Setting up wemo.sensor
+2025-04-02 05:58:12.843 INFO (MainThread) [homeassistant.components.button] Setting up zwave_js.button
+2025-04-02 05:58:13.510 INFO (MainThread) [homeassistant.setup] Setting up bluetooth_adapters
+2025-04-02 05:58:13.510 INFO (MainThread) [homeassistant.setup] Setup of domain bluetooth_adapters took 0.00 seconds
+2025-04-02 05:58:13.511 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up zwave_js.binary_sensor
+2025-04-02 05:58:13.572 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up toyota_na.binary_sensor
+2025-04-02 05:58:13.578 INFO (MainThread) [homeassistant.components.device_tracker] Setting up toyota_na.device_tracker
+2025-04-02 05:58:13.579 INFO (MainThread) [homeassistant.components.lock] Setting up toyota_na.lock
+2025-04-02 05:58:13.579 INFO (MainThread) [homeassistant.components.sensor] Setting up toyota_na.sensor
+2025-04-02 05:58:13.589 INFO (MainThread) [homeassistant.setup] Setting up ab_gateway
+2025-04-02 05:58:13.590 DEBUG (MainThread) [custom_components.ab_gateway] Async setup AB Gateway
+2025-04-02 05:58:13.590 INFO (MainThread) [homeassistant.setup] Setup of domain ab_gateway took 0.00 seconds
+2025-04-02 05:58:13.590 DEBUG (MainThread) [custom_components.ab_gateway] Setup entry: {'discovery_prefix': 'ab_gateway'}
+2025-04-02 05:58:13.590 DEBUG (MainThread) [custom_components.ab_gateway.discovery] ab_gateway: Connecting scanner
+2025-04-02 05:58:13.597 INFO (MainThread) [aioesphomeapi.reconnect_logic] Successfully connected to home-assistant-voice-090900 @ 192.168.1.67 in 0.932s
+2025-04-02 05:58:13.668 INFO (MainThread) [homeassistant.setup] Setting up meross_lan
+2025-04-02 05:58:13.668 INFO (MainThread) [homeassistant.setup] Setup of domain meross_lan took 0.00 seconds
+2025-04-02 05:58:13.671 INFO (MainThread) [homeassistant.components.number] Setting up zwave_js.number
+2025-04-02 05:58:13.675 INFO (MainThread) [homeassistant.components.select] Setting up zwave_js.select
+2025-04-02 05:58:13.675 INFO (MainThread) [homeassistant.components.light] Setting up zwave_js.light
+2025-04-02 05:58:13.675 INFO (MainThread) [homeassistant.components.event] Setting up zwave_js.event
+2025-04-02 05:58:13.675 INFO (MainThread) [homeassistant.components.fan] Setting up zwave_js.fan
+2025-04-02 05:58:13.805 INFO (MainThread) [homeassistant.components.sensor] Setting up meross_lan.sensor
+2025-04-02 05:58:13.805 INFO (MainThread) [homeassistant.components.lock] Setting up zwave_js.lock
+2025-04-02 05:58:13.843 INFO (MainThread) [aioesphomeapi.reconnect_logic] Successful handshake with wroommicrousb @ 192.168.1.177 in 1.043s
+2025-04-02 05:58:13.856 INFO (MainThread) [homeassistant.setup] Setting up inkbird
+2025-04-02 05:58:13.857 INFO (MainThread) [homeassistant.setup] Setup of domain inkbird took 0.00 seconds
+2025-04-02 05:58:13.867 INFO (MainThread) [homeassistant.components.update] Setting up meross_lan.update
+2025-04-02 05:58:13.867 INFO (MainThread) [homeassistant.components.sensor] Setting up meross_lan.sensor
+2025-04-02 05:58:13.868 INFO (MainThread) [homeassistant.components.light] Setting up meross_lan.light
+2025-04-02 05:58:13.869 INFO (MainThread) [homeassistant.components.number] Setting up meross_lan.number
+2025-04-02 05:58:13.869 INFO (MainThread) [homeassistant.components.switch] Setting up meross_lan.switch
+2025-04-02 05:58:13.869 INFO (MainThread) [homeassistant.components.cover] Setting up meross_lan.cover
+2025-04-02 05:58:13.876 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up meross_lan.binary_sensor
+2025-04-02 05:58:13.920 INFO (MainThread) [aioesphomeapi.reconnect_logic] Successful handshake with home-assistant-voice-090900 @ 192.168.1.67 in 0.323s
+2025-04-02 05:58:14.158 INFO (MainThread) [homeassistant.setup] Setting up homekit_controller
+2025-04-02 05:58:14.158 INFO (MainThread) [homeassistant.setup] Setting up govee_ble
+2025-04-02 05:58:14.159 INFO (MainThread) [homeassistant.setup] Setup of domain govee_ble took 0.00 seconds
+2025-04-02 05:58:14.179 WARNING (MainThread) [pysmartthings] Unknown capability samsungce.audioVolumeLevel. Please raise an issue at https://github.com/pySmartThings/pysmartthings.
+2025-04-02 05:58:14.189 INFO (MainThread) [homeassistant.setup] Setup of domain homekit_controller took 0.03 seconds
+2025-04-02 05:58:14.202 INFO (MainThread) [homeassistant.setup] Setting up ibeacon
+2025-04-02 05:58:14.202 INFO (MainThread) [homeassistant.setup] Setup of domain ibeacon took 0.00 seconds
+2025-04-02 05:58:14.213 INFO (MainThread) [homeassistant.components.update] Setting up zwave_js.update
+2025-04-02 05:58:14.213 INFO (MainThread) [homeassistant.components.sensor] Setting up inkbird.sensor
+2025-04-02 05:58:14.214 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up govee_ble.binary_sensor
+2025-04-02 05:58:14.215 INFO (MainThread) [homeassistant.components.event] Setting up govee_ble.event
+2025-04-02 05:58:14.215 INFO (MainThread) [homeassistant.components.sensor] Setting up govee_ble.sensor
+2025-04-02 05:58:14.265 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up govee_ble.binary_sensor
+2025-04-02 05:58:14.266 INFO (MainThread) [homeassistant.components.event] Setting up govee_ble.event
+2025-04-02 05:58:14.266 INFO (MainThread) [homeassistant.components.sensor] Setting up govee_ble.sensor
+2025-04-02 05:58:14.270 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up govee_ble.binary_sensor
+2025-04-02 05:58:14.271 INFO (MainThread) [homeassistant.components.event] Setting up govee_ble.event
+2025-04-02 05:58:14.272 INFO (MainThread) [homeassistant.components.sensor] Setting up govee_ble.sensor
+2025-04-02 05:58:14.275 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up govee_ble.binary_sensor
+2025-04-02 05:58:14.277 INFO (MainThread) [homeassistant.components.event] Setting up govee_ble.event
+2025-04-02 05:58:14.277 INFO (MainThread) [homeassistant.components.sensor] Setting up govee_ble.sensor
+2025-04-02 05:58:14.285 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up govee_ble.binary_sensor
+2025-04-02 05:58:14.286 INFO (MainThread) [homeassistant.components.event] Setting up govee_ble.event
+2025-04-02 05:58:14.286 INFO (MainThread) [homeassistant.components.sensor] Setting up govee_ble.sensor
+2025-04-02 05:58:14.288 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up govee_ble.binary_sensor
+2025-04-02 05:58:14.289 INFO (MainThread) [homeassistant.components.event] Setting up govee_ble.event
+2025-04-02 05:58:14.289 INFO (MainThread) [homeassistant.components.sensor] Setting up govee_ble.sensor
+2025-04-02 05:58:14.292 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up govee_ble.binary_sensor
+2025-04-02 05:58:14.292 INFO (MainThread) [homeassistant.components.event] Setting up govee_ble.event
+2025-04-02 05:58:14.292 INFO (MainThread) [homeassistant.components.sensor] Setting up govee_ble.sensor
+2025-04-02 05:58:14.302 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up govee_ble.binary_sensor
+2025-04-02 05:58:14.302 INFO (MainThread) [homeassistant.components.event] Setting up govee_ble.event
+2025-04-02 05:58:14.303 INFO (MainThread) [homeassistant.components.sensor] Setting up govee_ble.sensor
+2025-04-02 05:58:14.309 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up govee_ble.binary_sensor
+2025-04-02 05:58:14.312 INFO (MainThread) [homeassistant.components.event] Setting up govee_ble.event
+2025-04-02 05:58:14.312 INFO (MainThread) [homeassistant.components.sensor] Setting up govee_ble.sensor
+2025-04-02 05:58:14.319 INFO (MainThread) [homeassistant.components.device_tracker] Setting up ibeacon.device_tracker
+2025-04-02 05:58:14.319 INFO (MainThread) [homeassistant.components.sensor] Setting up ibeacon.sensor
+2025-04-02 05:58:14.353 INFO (MainThread) [homeassistant.setup] Setting up automation
+2025-04-02 05:58:14.358 INFO (MainThread) [homeassistant.setup] Setup of domain automation took 0.00 seconds
+2025-04-02 05:58:14.358 INFO (MainThread) [homeassistant.components.assist_satellite] Setting up esphome.assist_satellite
+2025-04-02 05:58:14.384 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up smartthings.binary_sensor
+2025-04-02 05:58:14.384 INFO (MainThread) [homeassistant.components.climate] Setting up smartthings.climate
+2025-04-02 05:58:14.384 INFO (MainThread) [homeassistant.components.cover] Setting up smartthings.cover
+2025-04-02 05:58:14.385 INFO (MainThread) [homeassistant.components.fan] Setting up smartthings.fan
+2025-04-02 05:58:14.385 INFO (MainThread) [homeassistant.components.light] Setting up smartthings.light
+2025-04-02 05:58:14.385 INFO (MainThread) [homeassistant.components.lock] Setting up smartthings.lock
+2025-04-02 05:58:14.385 INFO (MainThread) [homeassistant.components.scene] Setting up smartthings.scene
+2025-04-02 05:58:14.385 INFO (MainThread) [homeassistant.components.sensor] Setting up smartthings.sensor
+2025-04-02 05:58:14.388 INFO (MainThread) [homeassistant.components.switch] Setting up smartthings.switch
+2025-04-02 05:58:14.473 INFO (MainThread) [homeassistant.components.button] Setting up homekit_controller.button
+2025-04-02 05:58:14.474 INFO (MainThread) [homeassistant.components.media_player] Setting up homekit_controller.media_player
+2025-04-02 05:58:14.476 INFO (MainThread) [homeassistant.components.switch] Setting up homekit_controller.switch
+2025-04-02 05:58:15.222 INFO (MainThread) [homeassistant.components.button] Setting up homekit_controller.button
+2025-04-02 05:58:15.223 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up homekit_controller.binary_sensor
+2025-04-02 05:58:15.224 INFO (MainThread) [homeassistant.components.sensor] Setting up homekit_controller.sensor
+2025-04-02 05:58:15.694 WARNING (MainThread) [aioesphomeapi.reconnect_logic] Can't connect to ESPHome API for m5stack-atom-echo-fdb254 @ 192.168.1.149: Error connecting to [AddrInfo(family=<AddressFamily.AF_INET: 2>, type=<SocketKind.SOCK_STREAM: 1>, proto=6, sockaddr=IPv4Sockaddr(address='192.168.1.149', port=6053))]: [Errno 113] Connect call failed ('192.168.1.149', 6053) (SocketAPIError)
+2025-04-02 05:58:15.695 INFO (MainThread) [aioesphomeapi.reconnect_logic] Trying to connect to m5stack-atom-echo-fdb254 @ 192.168.1.149 in the background
+2025-04-02 05:58:16.190 INFO (MainThread) [homeassistant.components.alarm_control_panel] Setting up blink.alarm_control_panel
+2025-04-02 05:58:16.193 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up blink.binary_sensor
+2025-04-02 05:58:16.217 INFO (MainThread) [homeassistant.components.camera] Setting up blink.camera
+2025-04-02 05:58:16.226 INFO (MainThread) [homeassistant.components.sensor] Setting up blink.sensor
+2025-04-02 05:58:16.255 INFO (MainThread) [homeassistant.components.switch] Setting up blink.switch
+2025-04-02 05:58:24.643 INFO (MainThread) [homeassistant.bootstrap] Home Assistant initialized in 22.80s
+2025-04-02 05:58:24.644 INFO (MainThread) [homeassistant.core] Starting Home Assistant
+2025-04-02 05:58:24.734 INFO (MainThread) [homeassistant.setup] Setting up alexa
+2025-04-02 05:58:24.734 INFO (MainThread) [homeassistant.setup] Setup of domain alexa took 0.00 seconds
+2025-04-02 05:58:24.744 INFO (MainThread) [custom_components.hacs] Stage changed: startup
+2025-04-02 05:58:24.759 INFO (MainThread) [custom_components.hacs] Loading removed repositories
+2025-04-02 05:58:24.973 INFO (MainThread) [custom_components.hacs] Loading known repositories
+2025-04-02 05:58:25.163 INFO (MainThread) [custom_components.hacs] Stage changed: running
+2025-04-02 05:58:25.197 INFO (SyncWorker_22) [homeassistant.loader] Loaded zha from homeassistant.components.zha
+2025-04-02 05:58:25.197 INFO (SyncWorker_25) [homeassistant.loader] Loaded apple_tv from homeassistant.components.apple_tv
+2025-04-02 05:58:25.197 INFO (SyncWorker_3) [homeassistant.loader] Loaded octoprint from homeassistant.components.octoprint
+2025-04-02 05:58:25.200 INFO (SyncWorker_16) [homeassistant.loader] Loaded switchbot from homeassistant.components.switchbot
+2025-04-02 05:58:25.202 INFO (MainThread) [homeassistant.components.automation.lights_sunset_sunrise] Initialized trigger Lights Sunset Sunrise
+2025-04-02 05:58:25.203 INFO (MainThread) [homeassistant.components.automation.update_map_entities_group] Initialized trigger Update Map Entities Sensor
+2025-04-02 05:58:25.203 INFO (MainThread) [homeassistant.components.automation.garage_door_always_on] Initialized trigger garage_door_always_on
+2025-04-02 05:58:25.203 INFO (MainThread) [homeassistant.components.automation.grow_lights_on] Initialized trigger grow_lights_on
+2025-04-02 05:58:25.205 INFO (MainThread) [homeassistant.components.automation.grow_lights_off] Initialized trigger grow_lights_off
+2025-04-02 05:58:25.205 INFO (MainThread) [homeassistant.components.automation.pantry_light_motion] Initialized trigger pantry_light_motion
+2025-04-02 05:58:25.205 INFO (MainThread) [homeassistant.components.automation.tell_kristy_the_dryer_is_done] Initialized trigger Tell Kristy the dryer is done
+2025-04-02 05:58:25.206 INFO (MainThread) [homeassistant.components.automation.report_offline_zigbee_zwave_battery_smart_plug_devices_2] Initialized trigger Report offline zigbee/zwave/battery/smart plug devices
+2025-04-02 05:58:25.207 INFO (MainThread) [homeassistant.components.automation.morning_lights_2] Initialized trigger Morning lights
+2025-04-02 05:58:25.208 INFO (MainThread) [homeassistant.components.automation.low_reservior_level_alert] Initialized trigger Low Reservior Level Alert
+2025-04-02 05:58:25.229 INFO (SyncWorker_8) [homeassistant.loader] Loaded homeassistant_hardware from homeassistant.components.homeassistant_hardware
+2025-04-02 05:58:27.194 INFO (ImportExecutor_0) [zigpy.serial] Using pyserial-asyncio-fast in place of pyserial-asyncio
+2025-04-02 05:58:27.676 INFO (MainThread) [homeassistant.setup] Setting up homeassistant_hardware
+2025-04-02 05:58:30.212 INFO (MainThread) [homeassistant.components.mqtt.client] MQTT client initialized, birth message sent
+2025-04-02 05:58:45.262 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: binary_sensor 53e285e8-f74b-48f0-8150-f06f9d51877c 343ea4dd9df1_motion
+2025-04-02 05:58:45.285 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: switch 53e285e8-f74b-48f0-8150-f06f9d51877c 343ea4dd9df1_stream
+2025-04-02 05:58:45.309 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: switch 53e285e8-f74b-48f0-8150-f06f9d51877c 343ea4dd9df1_event_stream
+2025-04-02 05:58:45.315 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: select 53e285e8-f74b-48f0-8150-f06f9d51877c 343ea4dd9df1_event_select
+2025-04-02 05:58:45.323 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: binary_sensor 53e285e8-f74b-48f0-8150-f06f9d51877c 343ea4dd9df1_ding
+2025-04-02 05:58:45.325 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: camera 53e285e8-f74b-48f0-8150-f06f9d51877c 343ea4dd9df1_snapshot
+2025-04-02 05:58:45.327 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: select 53e285e8-f74b-48f0-8150-f06f9d51877c 343ea4dd9df1_snapshot_mode
+2025-04-02 05:58:45.330 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: number 53e285e8-f74b-48f0-8150-f06f9d51877c 343ea4dd9df1_snapshot_interval
+2025-04-02 05:58:45.337 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: button 53e285e8-f74b-48f0-8150-f06f9d51877c 343ea4dd9df1_take_snapshot
+2025-04-02 05:58:45.339 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: switch 53e285e8-f74b-48f0-8150-f06f9d51877c 343ea4dd9df1_motion_detection
+2025-04-02 05:58:45.341 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: number 53e285e8-f74b-48f0-8150-f06f9d51877c 343ea4dd9df1_motion_duration
+2025-04-02 05:58:45.342 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: number 53e285e8-f74b-48f0-8150-f06f9d51877c 343ea4dd9df1_ding_duration
+2025-04-02 05:58:45.344 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: sensor 53e285e8-f74b-48f0-8150-f06f9d51877c 343ea4dd9df1_info
+2025-04-02 05:58:45.348 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: sensor 53e285e8-f74b-48f0-8150-f06f9d51877c 343ea4dd9df1_wireless
+2025-04-02 05:58:45.351 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: binary_sensor 53e285e8-f74b-48f0-8150-f06f9d51877c 187f88940205_motion
+2025-04-02 05:58:45.353 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: switch 53e285e8-f74b-48f0-8150-f06f9d51877c 187f88940205_stream
+2025-04-02 05:58:45.354 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: switch 53e285e8-f74b-48f0-8150-f06f9d51877c 187f88940205_event_stream
+2025-04-02 05:58:45.356 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: select 53e285e8-f74b-48f0-8150-f06f9d51877c 187f88940205_event_select
+2025-04-02 05:58:45.359 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: switch 53e285e8-f74b-48f0-8150-f06f9d51877c 187f88940205_siren
+2025-04-02 05:58:45.360 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: camera 53e285e8-f74b-48f0-8150-f06f9d51877c 187f88940205_snapshot
+2025-04-02 05:58:45.362 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: select 53e285e8-f74b-48f0-8150-f06f9d51877c 187f88940205_snapshot_mode
+2025-04-02 05:58:45.363 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: number 53e285e8-f74b-48f0-8150-f06f9d51877c 187f88940205_snapshot_interval
+2025-04-02 05:58:45.365 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: button 53e285e8-f74b-48f0-8150-f06f9d51877c 187f88940205_take_snapshot
+2025-04-02 05:58:45.367 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: switch 53e285e8-f74b-48f0-8150-f06f9d51877c 187f88940205_motion_detection
+2025-04-02 05:58:45.373 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: switch 53e285e8-f74b-48f0-8150-f06f9d51877c 187f88940205_motion_warning
+2025-04-02 05:58:45.376 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: number 53e285e8-f74b-48f0-8150-f06f9d51877c 187f88940205_motion_duration
+2025-04-02 05:58:45.378 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: sensor 53e285e8-f74b-48f0-8150-f06f9d51877c 187f88940205_info
+2025-04-02 05:58:45.390 INFO (MainThread) [homeassistant.components.mqtt.discovery] Found new component: sensor 53e285e8-f74b-48f0-8150-f06f9d51877c 187f88940205_wireless
+2025-04-02 05:59:50.419 INFO (MainThread) [custom_components.toyota_na] Tokens refreshed, updating ConfigEntry
+2025-04-02 06:00:10.604 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_lightning_count, last_reset set to 2025-04-02T10:55:25+00:00 (old last_reset 2025-04-02T10:54:25+00:00)
+2025-04-02 06:00:10.605 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_lightning_count, last_reset set to 2025-04-02T10:56:25+00:00 (old last_reset 2025-04-02T10:55:25+00:00)
+2025-04-02 06:00:10.605 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_lightning_count, last_reset set to 2025-04-02T10:57:25+00:00 (old last_reset 2025-04-02T10:56:25+00:00)
+2025-04-02 06:00:10.605 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_lightning_count, last_reset set to 2025-04-02T10:58:25+00:00 (old last_reset 2025-04-02T10:57:25+00:00)
+2025-04-02 06:00:10.605 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_lightning_count, last_reset set to 2025-04-02T10:59:25+00:00 (old last_reset 2025-04-02T10:58:25+00:00)
+2025-04-02 06:00:10.605 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_precipitation, last_reset set to 2025-04-02T10:55:25+00:00 (old last_reset 2025-04-02T10:54:25+00:00)
+2025-04-02 06:00:10.605 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_precipitation, last_reset set to 2025-04-02T10:56:25+00:00 (old last_reset 2025-04-02T10:55:25+00:00)
+2025-04-02 06:00:10.605 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_precipitation, last_reset set to 2025-04-02T10:57:25+00:00 (old last_reset 2025-04-02T10:56:25+00:00)
+2025-04-02 06:00:10.605 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_precipitation, last_reset set to 2025-04-02T10:58:25+00:00 (old last_reset 2025-04-02T10:57:25+00:00)
+2025-04-02 06:00:10.605 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_precipitation, last_reset set to 2025-04-02T10:59:25+00:00 (old last_reset 2025-04-02T10:58:25+00:00)
+2025-04-02 06:01:56.885 INFO (Wemo Events Thread) [pywemo.subscribe] Resubscribe for <Subscription basicevent "Stove light">
+2025-04-02 06:04:09.890 INFO (MainThread) [homeassistant.components.automation.update_map_entities_group] Update Map Entities Sensor: Running automation actions
+2025-04-02 06:04:09.893 INFO (MainThread) [homeassistant.components.automation.update_map_entities_group] Update Map Entities Sensor: Executing step delay 0:00:01
+2025-04-02 06:04:09.893 INFO (MainThread) [homeassistant.components.sensor] Setting up template.sensor
+2025-04-02 06:04:09.899 INFO (MainThread) [homeassistant.components.sensor] Setting up template.sensor
+2025-04-02 06:04:09.902 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up template.binary_sensor
+2025-04-02 06:04:09.907 WARNING (MainThread) [homeassistant.components.automation.update_map_entities_group] Update Map Entities Sensor: Already running
+2025-04-02 06:04:09.907 ERROR (MainThread) [homeassistant.config] Invalid config for 'notify' at configuration.yaml, line 27: required key 'platform' not provided, please check the docs at https://www.home-assistant.io/integrations/notify
+2025-04-02 06:04:10.894 INFO (MainThread) [homeassistant.components.automation.update_map_entities_group] Update Map Entities Sensor: Executing step call service
+2025-04-02 06:04:10.896 INFO (MainThread) [homeassistant.components.automation.update_map_entities_group] Update Map Entities Sensor: Executing step call service
+2025-04-02 06:04:33.516 INFO (SyncWorker_27) [homeassistant.loader] Loaded samsungtv from homeassistant.components.samsungtv
+2025-04-02 06:04:33.524 INFO (SyncWorker_27) [homeassistant.loader] Loaded hue from homeassistant.components.hue
+2025-04-02 06:04:33.525 INFO (SyncWorker_27) [homeassistant.loader] Loaded androidtv_remote from homeassistant.components.androidtv_remote
+2025-04-02 06:05:10.395 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_lightning_count, last_reset set to 2025-04-02T11:00:25+00:00 (old last_reset 2025-04-02T10:59:25+00:00)
+2025-04-02 06:05:10.395 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_lightning_count, last_reset set to 2025-04-02T11:01:25+00:00 (old last_reset 2025-04-02T11:00:25+00:00)
+2025-04-02 06:05:10.395 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_lightning_count, last_reset set to 2025-04-02T11:02:26+00:00 (old last_reset 2025-04-02T11:01:25+00:00)
+2025-04-02 06:05:10.395 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_lightning_count, last_reset set to 2025-04-02T11:03:27+00:00 (old last_reset 2025-04-02T11:02:26+00:00)
+2025-04-02 06:05:10.395 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_lightning_count, last_reset set to 2025-04-02T11:04:27+00:00 (old last_reset 2025-04-02T11:03:27+00:00)
+2025-04-02 06:05:10.395 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_precipitation, last_reset set to 2025-04-02T11:00:25+00:00 (old last_reset 2025-04-02T10:59:25+00:00)
+2025-04-02 06:05:10.395 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_precipitation, last_reset set to 2025-04-02T11:01:25+00:00 (old last_reset 2025-04-02T11:00:25+00:00)
+2025-04-02 06:05:10.395 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_precipitation, last_reset set to 2025-04-02T11:02:26+00:00 (old last_reset 2025-04-02T11:01:25+00:00)
+2025-04-02 06:05:10.395 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_precipitation, last_reset set to 2025-04-02T11:03:27+00:00 (old last_reset 2025-04-02T11:02:26+00:00)
+2025-04-02 06:05:10.395 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_precipitation, last_reset set to 2025-04-02T11:04:27+00:00 (old last_reset 2025-04-02T11:03:27+00:00)
+2025-04-02 06:05:14.425 INFO (MainThread) [custom_components.toyota_na] Tokens refreshed, updating ConfigEntry
+2025-04-02 06:05:41.907 INFO (Wemo Events Thread) [pywemo.subscribe] Resubscribe for <Subscription basicevent "Stove light">
+2025-04-02 06:09:26.927 INFO (Wemo Events Thread) [pywemo.subscribe] Resubscribe for <Subscription basicevent "Stove light">
+2025-04-02 06:10:10.407 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_lightning_count, last_reset set to 2025-04-02T11:05:28+00:00 (old last_reset 2025-04-02T11:04:27+00:00)
+2025-04-02 06:10:10.407 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_lightning_count, last_reset set to 2025-04-02T11:06:27+00:00 (old last_reset 2025-04-02T11:05:28+00:00)
+2025-04-02 06:10:10.407 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_lightning_count, last_reset set to 2025-04-02T11:07:27+00:00 (old last_reset 2025-04-02T11:06:27+00:00)
+2025-04-02 06:10:10.407 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_lightning_count, last_reset set to 2025-04-02T11:08:27+00:00 (old last_reset 2025-04-02T11:07:27+00:00)
+2025-04-02 06:10:10.407 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_lightning_count, last_reset set to 2025-04-02T11:09:27+00:00 (old last_reset 2025-04-02T11:08:27+00:00)
+2025-04-02 06:10:10.407 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_precipitation, last_reset set to 2025-04-02T11:05:28+00:00 (old last_reset 2025-04-02T11:04:27+00:00)
+2025-04-02 06:10:10.407 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_precipitation, last_reset set to 2025-04-02T11:06:27+00:00 (old last_reset 2025-04-02T11:05:28+00:00)
+2025-04-02 06:10:10.408 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_precipitation, last_reset set to 2025-04-02T11:07:27+00:00 (old last_reset 2025-04-02T11:06:27+00:00)
+2025-04-02 06:10:10.408 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_precipitation, last_reset set to 2025-04-02T11:08:27+00:00 (old last_reset 2025-04-02T11:07:27+00:00)
+2025-04-02 06:10:10.408 INFO (Recorder) [homeassistant.components.sensor.recorder] Detected new cycle for sensor.st_00141983_precipitation, last_reset set to 2025-04-02T11:09:27+00:00 (old last_reset 2025-04-02T11:08:27+00:00)
+2025-04-02 06:10:37.437 INFO (MainThread) [custom_components.toyota_na] Tokens refreshed, updating ConfigEntry
+2025-04-02 06:13:11.940 INFO (Wemo Events Thread) [pywemo.subscribe] Resubscribe for <Subscription basicevent "Stove light">

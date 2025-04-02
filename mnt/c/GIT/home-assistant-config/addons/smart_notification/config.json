@@ -1,0 +1,13 @@
+{
+  "name": "Smart Notification Router",
+  "version": "1.0.0",
+  "slug": "smart_notification",
+  "description": "Flexible notification routing with severity, audience, and deduplication",
+  "startup": "application",
+  "boot": "auto",
+  "host_network": true,
+  "options": {},
+  "schema": {},
+  "arch": ["amd64", "aarch64", "armv7"],
+  "ingress": false
+}
