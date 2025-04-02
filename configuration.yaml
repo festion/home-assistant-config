@@ -8,7 +8,7 @@ lovelace:
   resources:
     - url: /webrtc/webrtc-camera.js
       type: module
-    - url: /hacsfiles/mushroom-strategy/mushroom-strategy.js
+    - url: /local/mushroom-strategy.js
       type: module
 
 prometheus:
@@ -24,7 +24,7 @@ scene: !include scenes.yaml
 sensor: !include sensors.yaml
 template: !include templates.yaml
 mqtt: !include mqtt.yaml
-notify: !include_list notify.yaml
+notify: !include notify.yaml
 
 # --- HTTP Configuration ---
 http:

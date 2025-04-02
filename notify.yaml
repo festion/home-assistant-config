@@ -1,4 +1,3 @@
-# Notification platforms
 - platform: smtp
   name: email_kristy
   server: smtp.gmail.com
@@ -17,7 +16,7 @@
   services:
     - service: mobile_app_pixel_9_pro_xl
     - service: mobile_app_pixel_watch_3
-    
+  
 - platform: group
   name: jeremy_devices
   services:
