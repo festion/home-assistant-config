@@ -1,0 +1,70 @@
+- id: '1736974728744'
+  name: lights_out
+  entities:
+    light.lamp_2:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - None
+      - candle
+      - fire
+      - prism
+      - sparkle
+      - opal
+      - glisten
+      - unknown
+      - unknown
+      - unknown
+      - unknown
+      - sunrise
+      - sunset
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect:
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      mode: normal
+      dynamics: none
+      friendly_name: lamp
+      supported_features: 44
+      state: 'off'
+    cover.left_curtain:
+      current_position: 0
+      last_run_success: true
+      device_class: curtain
+      friendly_name: left_curtain
+      supported_features: 15
+      state: closed
+    cover.right_curtain:
+      current_position: 0
+      last_run_success: true
+      device_class: curtain
+      friendly_name: right_curtain
+      supported_features: 15
+      state: closed
+    light.master_light_5:
+      supported_color_modes:
+      - brightness
+      color_mode:
+      brightness:
+      friendly_name: 'master_light '
+      supported_features: 32
+      state: 'off'
+    light.master_light_basic_5:
+      supported_color_modes:
+      - brightness
+      color_mode:
+      brightness:
+      friendly_name: master_light Basic
+      supported_features: 0
+      state: unknown
+  metadata: {}
+  icon: mdi:lightbulb

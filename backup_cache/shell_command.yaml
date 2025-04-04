@@ -1,0 +1,8 @@
+add_ble_device: >
+  python3 /config/scripts/add_ble_device.py 
+  /config/templates.yaml 
+  "{{ device_name }}" 
+  "{{ mac_address }}" 
+  "{{ device_type }}" 
+  "{{ rssi_threshold }}" 
+  "{{ icon }}"

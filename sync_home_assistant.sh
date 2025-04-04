@@ -44,6 +44,7 @@ DRY_RUN=true  # Default to test run
 SAMBA_USER="homeassistant"
 SAMBA_PASS="redflower805"
 SPECIFIC_FILES=""
+EXCLUDE_DB=true  # Default to exclude database files
 
 # Parse command line arguments
 while [[ "$#" -gt 0 ]]; do
@@ -52,6 +53,8 @@ while [[ "$#" -gt 0 ]]; do
     --pull) DIRECTION="pull"; shift ;;
     --dry-run) DRY_RUN=true; shift ;;
     --execute) DRY_RUN=false; shift ;;
+    --include-db) EXCLUDE_DB=false; shift ;;
+    --exclude-db) EXCLUDE_DB=true; shift ;;
     *)
       # If not a recognized flag, treat as specific file
       if [[ -f "$LOCAL_REPO/$1" ]]; then
@@ -108,28 +111,43 @@ mount_share() {
 perform_sync() {
   local DRY_RUN=$1
   local DIRECTION=$2
-  # Define rsync options with all exclusions consolidated
+  # Define rsync options with all exclusions consolidated and performance optimizations
   # Use --inplace to avoid creating temporary files
-  local RSYNC_OPTS="-av --inplace --exclude=.git --exclude=.gitignore --exclude=.storage"
+  # Use --size-only for faster comparisons instead of full checksums (much faster)
+  # Add --compress to speed up transfers over network
+  # Increase IO with --blocking-io
+  local RSYNC_OPTS="-av --size-only --inplace --compress --blocking-io --exclude=.git --exclude=.gitignore --exclude=.storage"
   
   # Python cache files (multiple patterns to ensure they're caught)
   RSYNC_OPTS="$RSYNC_OPTS --exclude=__pycache__ --exclude='*/__pycache__/*' --exclude='*.pyc'"
   
   # Log and database temp files
-  RSYNC_OPTS="$RSYNC_OPTS --exclude='*.log' --exclude='*.log.*' --exclude='home-assistant_v2.db-*'"
-  RSYNC_OPTS="$RSYNC_OPTS --exclude='*.db-shm' --exclude='*.db-wal' --exclude='*.swp'"
+  RSYNC_OPTS="$RSYNC_OPTS --exclude='*.log' --exclude='*.log.*'"
+  
+  # Only exclude DB files if specific flag is set
+  if [ "$EXCLUDE_DB" = true ]; then
+    RSYNC_OPTS="$RSYNC_OPTS --exclude='home-assistant_v2.db' --exclude='home-assistant_v2.db-*'"
+  else
+    # Include DB but exclude temp files
+    RSYNC_OPTS="$RSYNC_OPTS --exclude='*.db-shm' --exclude='*.db-wal'"
+  fi
+  
+  RSYNC_OPTS="$RSYNC_OPTS --exclude='*.swp'"
   
   # Other directories to exclude
-  RSYNC_OPTS="$RSYNC_OPTS --exclude=deps --exclude=tts --exclude='*.tmp'"
+  RSYNC_OPTS="$RSYNC_OPTS --exclude=deps --exclude=tts --exclude='*.tmp' --exclude=image --exclude=www/community"
   
   # Make sure we get all remaining subdirectories created
   RSYNC_OPTS="$RSYNC_OPTS --prune-empty-dirs"
   
-  # Copy directories even if they're empty
+  # Copy directories even if they're empty, but optimize for speed
   RSYNC_OPTS="$RSYNC_OPTS --dirs --include='*/' --exclude='*/__pycache__/'"
   
   # Create missing directories and don't worry about permissions
   RSYNC_OPTS="$RSYNC_OPTS --chmod=ugo=rwX"
+  
+  # Add options for faster transfer
+  RSYNC_OPTS="$RSYNC_OPTS --no-times --no-perms --no-owner --no-group"
   
   # We won't use -R as it causes path issues
   

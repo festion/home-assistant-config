@@ -1,0 +1,7 @@
+purge_keep_days: 30
+auto_purge: true
+commit_interval: 30
+db_max_retries: 10
+db_retry_wait: 3
+auto_repack: true
+db_url: sqlite:///config/home-assistant_v2.db?timeout=30&journal_mode=WAL&synchronous=NORMAL&cache_size=-16384

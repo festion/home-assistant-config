@@ -1,0 +1,166 @@
+---
+type: "custom:layout-card"
+layout_type: "custom:grid-layout"
+layout:
+  # Tablet/Desktop layout
+  grid-template-columns: "1fr 1fr 1fr 1fr 1fr 1fr"
+  grid-template-areas: |
+    "header header header header header header"
+    "controls controls controls controls controls controls"
+    "title1 title1 title1 title1 title1 title1"
+    "ble_devices ble_devices ble_devices ble_devices ble_devices ble_devices"
+    "title2 title2 title2 title2 title2 title2"
+    "ble_sensors ble_sensors ble_sensors ble_sensors ble_sensors ble_sensors"
+    "title3 title3 title3 title3 title3 title3"
+    "ble_stats ble_stats ble_stats ble_stats ble_stats ble_stats"
+  mediaquery:
+    # Mobile layout
+    "(max-width: 800px)":
+      grid-template-columns: "1fr 1fr"
+      grid-template-areas: |
+        "header header"
+        "controls controls"
+        "title1 title1"
+        "ble_devices ble_devices"
+        "title2 title2"
+        "ble_sensors ble_sensors"
+        "title3 title3"
+        "ble_stats ble_stats"
+view_layout:
+  grid-area: "main"
+cards:
+  # Header section
+  - view_layout:
+      grid-area: "header"
+    type: "custom:button-card"
+    template: "card_title"
+    name: "Bluetooth (BLE) Device Dashboard"
+    label: "Monitor and control your Bluetooth devices"
+    
+  # Control buttons
+  - view_layout:
+      grid-area: "controls"
+    type: "horizontal-stack"
+    cards:
+      - type: "custom:button-card"
+        template: "card_button"
+        icon: "mdi:bluetooth-search"
+        name: "Scan Devices"
+        tap_action:
+          action: "call-service"
+          service: "script.scan_bluetooth_devices"
+      - type: "custom:button-card"
+        template: "card_button"
+        icon: "mdi:reload"
+        name: "Reconnect Gateway"
+        tap_action:
+          action: "call-service"
+          service: "script.ble_gateway_reconnect"
+      - type: "custom:button-card"
+        template: "card_button"
+        icon: "mdi:heart-pulse"
+        name: "Health Check"
+        tap_action:
+          action: "call-service"
+          service: "script.ble_gateway_health_check"
+
+  # BLE Devices Section Title
+  - view_layout:
+      grid-area: "title1"
+    type: "custom:button-card"
+    template: "card_title"
+    name: "BLE Devices"
+    label: "Connected Bluetooth devices"
+
+  # BLE Devices Cards
+  - view_layout:
+      grid-area: "ble_devices"
+    type: "custom:auto-entities"
+    card:
+      type: "grid"
+      columns: 3
+      square: false
+    card_param: "cards"
+    filter:
+      include:
+        - integration: "ble_monitor"
+          options:
+            type: "custom:button-card"
+            template: "card_generic"
+        - integration: "bluetooth"
+          options:
+            type: "custom:button-card"
+            template: "card_generic"
+
+  # BLE Sensors Section Title
+  - view_layout:
+      grid-area: "title2"
+    type: "custom:button-card"
+    template: "card_title"
+    name: "BLE Sensors"
+    label: "Sensor readings from Bluetooth devices"
+
+  # BLE Sensors
+  - view_layout:
+      grid-area: "ble_sensors"
+    type: "custom:auto-entities"
+    card:
+      type: "entities"
+    filter:
+      include:
+        - integration: "ble_monitor"
+          entity_id: "sensor.*"
+        - attributes:
+            device_type: "BLE"
+          entity_id: "sensor.*"
+    sort:
+      method: "name"
+
+  # Battery Levels Section Title
+  - view_layout:
+      grid-area: "title3"
+    type: "custom:button-card"
+    template: "card_title"
+    name: "BLE Device Status"
+    label: "Battery levels and signal strength"
+
+  # Battery and Signal Strength Grid
+  - view_layout:
+      grid-area: "ble_stats"
+    type: "custom:auto-entities"
+    card:
+      type: "grid"
+      columns: 3
+      square: false
+    card_param: "cards"
+    filter:
+      include:
+        - integration: "ble_monitor"
+          attributes:
+            device_class: "battery"
+          options:
+            type: "custom:button-card"
+            template: "card_battery"
+            variables:
+              ulm_card_battery_battery_state_entity_id: "this.entity_id"
+              ulm_card_battery_battery_level_danger: 20
+              ulm_card_battery_battery_level_warning: 50
+        - integration: "bluetooth"
+          attributes:
+            device_class: "battery"
+          options:
+            type: "custom:button-card"
+            template: "card_battery"
+            variables:
+              ulm_card_battery_battery_state_entity_id: "this.entity_id"
+              ulm_card_battery_battery_level_danger: 20
+              ulm_card_battery_battery_level_warning: 50
+        - integration: "ble_monitor"
+          attributes:
+            unit_of_measurement: "dBm"
+          options:
+            type: "custom:button-card"
+            template: "card_generic"
+            entity: "this.entity_id"
+    sort:
+      method: "name"

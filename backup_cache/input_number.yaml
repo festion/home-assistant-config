@@ -1,0 +1,8 @@
+ble_rssi_threshold:
+  name: RSSI Threshold
+  min: -100
+  max: -40
+  step: 1
+  initial: -80
+  unit_of_measurement: dBm
+  icon: mdi:signal-variant

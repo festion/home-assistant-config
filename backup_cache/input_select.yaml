@@ -1,0 +1,65 @@
+ble_device_type:
+  name: BLE Device Type
+  options:
+    - presence
+    - temperature
+    - other
+  initial: presence
+  icon: mdi:devices
+
+ble_device_icon:
+  name: BLE Device Icon
+  options:
+    - Car (mdi:car)
+    - Phone (mdi:cellphone)
+    - Watch (mdi:watch)
+    - Tag (mdi:tag)
+    - Sensor (mdi:access-point)
+    - Thermometer (mdi:thermometer)
+    - Bluetooth (mdi:bluetooth)
+  initial: Bluetooth (mdi:bluetooth)
+  icon: mdi:format-list-bulleted
+  
+notify_target_user:
+  name: Target User
+  options:
+    - jeremy
+    - kristy
+  initial: jeremy
+
+notify_severity:
+  name: Notification Severity
+  options:
+    - low
+    - medium
+    - high
+    - critical
+  initial: medium
+
+notify_status:
+  name: Notification Status
+  options:
+    - info
+    - warning
+    - success
+    - error
+  initial: info
+
+notify_jeremy_severity:
+  name: Jeremy Minimum Severity
+  options:
+    - low
+    - medium
+    - high
+    - critical
+  initial: high
+
+notify_kristy_severity:
+  name: Kristy Minimum Severity
+  options:
+    - low
+    - medium
+    - high
+    - critical
+  initial: critical
+  

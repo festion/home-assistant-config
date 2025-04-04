@@ -6,10 +6,19 @@ frontend:
 lovelace:
   mode: yaml
   resources:
-    - url: /webrtc/webrtc-camera.js
+    - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
       type: module
     - url: /local/mushroom-strategy.js
       type: module
+    - url: /hacsfiles/lovelace-auto-entities/auto-entities.js
+      type: module
+    - url: /hacsfiles/room-summary-card/room-summary-card.js
+      type: module
+    - url: /hacsfiles/lovelace-mushroom-better-sliders/mushroom.js
+      type: module
+    - url: /hacsfiles/hassio-trash-card/trashcard.js
+      type: module
+
 
 prometheus:
   namespace: homeassistant
@@ -25,6 +34,12 @@ sensor: !include sensors.yaml
 template: !include templates.yaml
 mqtt: !include mqtt.yaml
 notify: !include notify.yaml
+#recorder: !include recorder.yaml
+
+input_text: !include input_text.yaml
+input_select: !include input_select.yaml
+input_number: !include input_number.yaml
+shell_command: !include shell_command.yaml
 
 # --- HTTP Configuration ---
 http:
@@ -44,10 +59,20 @@ panel_custom:
     config:
       ingress: core_configurator
 
+python_script:
+# Enable Python scripts
+
+automation blueprint:
+  - source: /config/ble_discovery_automation.yaml
+
 logger:
   default: info
   logs:
     custom_components.ab_gateway: debug
 
 recorder:
-  purge_keep_days: 30
+  db_url: mysql://homeassistant:Skyw4lk3rH4z3!@core-mariadb/homeassistant
+
+
+
+

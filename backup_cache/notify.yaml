@@ -1,0 +1,30 @@
+- platform: smtp
+  name: email_kristy
+  server: smtp.gmail.com
+  port: 587
+  timeout: 15
+  sender: jeremy.ames@gmail.com
+  encryption: starttls
+  username: your.email@gmail.com
+  password: !secret gmail_app_password
+  recipient: kristy.email@example.com
+  sender_name: Home Assistant
+  verify_ssl: true
+
+# Group notifications
+- platform: group
+  name: all_devices
+  services:
+    - service: mobile_app_pixel_9_pro_xl
+    - service: mobile_app_pixel_watch_3
+  
+- platform: group
+  name: jeremy_devices
+  services:
+    - service: mobile_app_pixel_9_pro_xl
+    - service: mobile_app_pixel_watch_3
+
+- platform: group
+  name: kristy_devices
+  services:
+    - service: email_kristy

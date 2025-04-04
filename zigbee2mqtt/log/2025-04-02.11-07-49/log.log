@@ -1,0 +1,12 @@
+[2025-04-02 11:07:49] error: 	zh:ember:uart:ash: Failed to init port with error Error: Error: No such file or directory, cannot open /dev/serial/by-id/usb-Itead_Sonoff_Zigbee_3.0_USB_Dongle_Plus_V2_a0fa6b188439ef11a69459f454516304-if00-port0
+[2025-04-02 11:07:49] error: 	z2m: Error while starting zigbee-herdsman
+[2025-04-02 11:07:49] error: 	z2m: Failed to start zigbee-herdsman
+[2025-04-02 11:07:49] error: 	z2m: Check https://www.zigbee2mqtt.io/guide/installation/20_zigbee2mqtt-fails-to-start_crashes-runtime.html for possible solutions
+[2025-04-02 11:07:49] error: 	z2m: Exiting...
+[2025-04-02 11:07:49] error: 	z2m: Error: Failed to start EZSP layer with status=HOST_FATAL_ERROR.
+    at EmberAdapter.initEzsp (/app/node_modules/.pnpm/zigbee-herdsman@3.4.11/node_modules/zigbee-herdsman/src/adapter/ember/adapter/emberAdapter.ts:672:19)
+    at EmberAdapter.start (/app/node_modules/.pnpm/zigbee-herdsman@3.4.11/node_modules/zigbee-herdsman/src/adapter/ember/adapter/emberAdapter.ts:1538:24)
+    at Controller.start (/app/node_modules/.pnpm/zigbee-herdsman@3.4.11/node_modules/zigbee-herdsman/src/controller/controller.ts:136:29)
+    at Zigbee.start (/app/lib/zigbee.ts:69:27)
+    at Controller.start (/app/lib/controller.ts:104:13)
+    at start (/app/index.js:149:5)

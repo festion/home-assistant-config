@@ -38,3 +38,20 @@ views:
     cards:
       - !include "views/livingroom.yaml"
       - !include "popup/popup.yaml"
+      
+  - type: "custom:grid-layout"
+    title: "Bluetooth"
+    icon: "mdi:bluetooth"
+    path: "bluetooth"
+    layout:
+      grid-template-columns: "1fr 1fr"
+      grid-template-rows: "min-content"
+      grid-template-areas: |
+        "main popup"
+      mediaquery:
+        "(max-width: 1100px), (orientation: portrait)":
+          grid-template-columns: "100%"
+          grid-template-areas: "main"
+    cards:
+      - !include "views/ble-dashboard.yaml"
+      - !include "popup/popup.yaml"

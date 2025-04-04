@@ -1,0 +1,240 @@
+- id: '1736869556746'
+  alias: Lights Sunset Sunrise
+  description: Automation based on sunrise/sun set
+  triggers:
+  - event: sunset
+    id: Sunset
+    trigger: sun
+  - event: sunrise
+    id: Sunrise
+    offset: +00:15:00
+    trigger: sun
+  actions:
+  - target:
+      entity_id: light.porch_light
+    action: light.turn_{{ 'on' if trigger.id == 'Sunset' else 'off' }}
+  - choose:
+    - conditions:
+      - condition: trigger
+        id:
+        - Sunset
+      sequence:
+      - target:
+          entity_id: light.hall_light
+        data:
+          brightness_pct: 100
+        action: light.turn_on
+      - action: switch.turn_on
+        metadata: {}
+        data: {}
+        target:
+          entity_id: switch.tp_link_smart_plug_5e5b_walkway
+    - conditions:
+      - condition: trigger
+        id:
+        - Sunrise
+      sequence:
+      - target:
+          entity_id: light.hall_light
+        action: light.turn_off
+        data: {}
+      - action: switch.turn_off
+        metadata: {}
+        data: {}
+        target:
+          entity_id: switch.tp_link_smart_plug_5e5b_walkway
+    default:
+    - data:
+        message: 'No Sunrise/Sunset actions (trigger: {{ trigger.id }})'
+        name: Lights Sunset Sunrise Automation
+        entity_id: sun.sun
+      action: logbook.log
+- id: '1742000000001'
+  alias: Update Map Entities Sensor
+  description: Forces the map entities sensor to refresh when presence changes
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.hide_home_icon
+  action:
+  - delay:
+      seconds: 1
+  - service: homeassistant.update_entity
+    target:
+      entity_id: sensor.map_entities
+  - service: persistent_notification.create
+    data:
+      title: Map Entities Update
+      message: 'Map entities sensor refreshed: {{ states(''sensor.map_entities'')
+        }}'
+      notification_id: map_entities_update
+- id: '1736963481981'
+  alias: Fertigation
+  description: ''
+  triggers:
+  - at: 03:30:00
+    trigger: time
+  - at: 07:30:00
+    trigger: time
+  - at: '11:30:00'
+    trigger: time
+  - at: '15:30:00'
+    trigger: time
+  actions:
+  - target:
+      entity_id: switch.tp_link_smart_plug_c82e_feed_pump
+    action: switch.turn_on
+    data: {}
+  - target:
+      entity_id: switch.tp_link_smart_plug_c82e_waste_pump
+    action: switch.turn_on
+    data: {}
+  - delay:
+      seconds: 20
+  - target:
+      entity_id: switch.tp_link_smart_plug_c82e_feed_pump
+    action: switch.turn_off
+    data: {}
+  - delay:
+      minutes: 2
+  - target:
+      entity_id: switch.tp_link_smart_plug_c82e_waste_pump
+    action: switch.turn_off
+    data: {}
+  - target:
+      entity_id: input_datetime.last_fertigation_time
+    data:
+      datetime: '{{ now().strftime(''%Y-%m-%d %H:%M:%S'') }}'
+    action: input_datetime.set_datetime
+  - data:
+      timestamp: '{{ as_timestamp(now()) | int }}'
+    action: esphome.wroommicrousb_set_last_fertigation_time
+  - data:
+      message: Fertigation complete!
+    action: notify.mobile_app_pixel_9_pro_xl
+  mode: single
+- id: '1736972664016'
+  alias: garage_door_always_on
+  description: ''
+  triggers:
+  - entity_id:
+    - switch.tp_link_power_strip_8bba_garage_door_opener_always_on
+    to: 'off'
+    trigger: state
+  actions:
+  - action: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.tp_link_power_strip_8bba_garage_door_opener_always_on
+  mode: single
+- id: '1736972856548'
+  alias: grow_lights_on
+  description: ''
+  triggers:
+  - at: 07:00:00
+    trigger: time
+  actions:
+  - target:
+      label_id: grow_lights
+    action: switch.turn_on
+    data: {}
+  mode: single
+- id: '1736972905755'
+  alias: grow_lights_off
+  description: ''
+  triggers:
+  - at: '19:00:00'
+    trigger: time
+  actions:
+  - target:
+      label_id: grow_lights
+    action: switch.turn_off
+    data: {}
+  mode: single
+- id: '1737217638878'
+  alias: pantry_light_motion
+  description: ''
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.eye_of_sauron_motion_detection
+      light_target:
+        device_id: f973418ec638992abe6d7ba0689bf2ed
+- id: '1741921580385'
+  alias: Match Outside Colour Temperature Kelvin
+  description: ''
+  use_blueprint:
+    path: HarvsG/match-color-temp-kelvin.yaml
+    input:
+      target_lights:
+      - light.bar_strip
+      - light.top_left_strip
+      - light.top_right_strip
+      - light.lamp
+      max_color_temp: 3000
+      min_color_temp: 6500
+- id: '1742241925341'
+  alias: Tell Kristy the dryer is done
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - sensor.dryer_machine_state
+    from: run
+    to: stop
+  conditions: []
+  actions:
+  - action: notify.mobile_app_iphone
+    metadata: {}
+    data:
+      message: Dryer is finished
+      title: Dryer
+  mode: single
+- id: '1742568407148'
+  alias: Report offline zigbee/zwave/battery/smart plug devices
+  description: ''
+  use_blueprint:
+    path: Tahutipai/report_zigbee_zwave_devices_gone_offline.yaml
+    input:
+      actions:
+      - action: notify.mobile_app_pixel_9_pro_xl
+        metadata: {}
+        data:
+          message: '{{offline_devices}} are offline'
+- id: '1742733210353'
+  alias: Morning lights
+  description: ''
+  triggers:
+  - trigger: time
+    at: 07:00:00
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: light.all_strips
+  mode: single
+- id: low_reservior_level_alert
+  alias: Low Reservior Level Alert
+  description: Send notification when reservoir water level falls below 1 gallon
+  triggers:
+  - platform: numeric_state
+    entity_id: sensor.wroommicrousb_reservoir_current_volume
+    below: 1.0
+  conditions: []
+  actions:
+  - service: notify.mobile_app_pixel_9_pro_xl
+    data:
+      title: Low Reservior Alert!
+      message: Reservoir level is below 1 gallon, there is less than 24 hours of fertigation
+        nutrients remaining. Please refill soon.
+      data:
+        priority: high
+        ttl: 0
+        channel: water_alerts
+  - service: notify.mobile_app_pixel_watch_3
+    data:
+      title: Low Reservior Alert
+      message: Reservoir water level critically low!
+  mode: single
+  max_exceeded: silent

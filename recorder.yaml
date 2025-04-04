@@ -1,0 +1,7 @@
+# Simple database configuration
+purge_keep_days: 7
+auto_purge: true
+commit_interval: 1
+
+# Use a simple SQLite URL without options
+db_url: sqlite:///config/home-assistant_v2.db

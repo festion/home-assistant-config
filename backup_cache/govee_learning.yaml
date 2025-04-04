@@ -1,0 +1,5 @@
+BA:4B:D5:55:F2:E6:50:E1:
+  set_brightness_max:
+  get_brightness_max: 100
+  before_set_brightness_turn_on: false
+  config_offline_is_off: false

@@ -32,6 +32,20 @@ ble_gateway_health_check:
       data:
         notification_id: "persistent_notification"
 
+# Scan for Bluetooth Devices
+scan_bluetooth_devices:
+  alias: Scan for Bluetooth Devices
+  sequence:
+    - service: button.press
+      target:
+        entity_id: button.bluetooth_scan
+    - delay: 
+        seconds: 3
+    - service: persistent_notification.create
+      data:
+        title: "Bluetooth Scan"
+        message: "Scan for Bluetooth devices completed"
+
 # Smart Notification Script
 send_notification:
   alias: Send Smart Notification
@@ -98,3 +112,339 @@ send_notification:
         title: "{{ msg_title }}"
         message: "{{ msg_content }}"
         data: "{{ notification_data }}"
+
+# Enhanced BLE Management Scripts
+
+# Add BLE Device Script
+add_ble_device:
+  alias: Add BLE Device
+  description: Add a new BLE device with appropriate sensors based on device type
+  fields:
+    device_name:
+      description: Name of the BLE device
+      example: "Pixel Watch"
+    mac_address:
+      description: MAC address of the BLE device (colon or no separators)
+      example: "AA:BB:CC:DD:EE:FF"
+    device_type:
+      description: Type of device (presence, temperature, other)
+      example: "presence"
+    rssi_threshold:
+      description: RSSI threshold for presence detection
+      example: -80
+    icon:
+      description: Icon for the device
+      example: "mdi:watch"
+  sequence:
+    # Format MAC address - remove colons and convert to uppercase
+    - variables:
+        formatted_mac: >-
+          {{ mac_address | replace(':', '') | replace('-', '') | upper }}
+        safe_name: >-
+          {{ device_name | lower | replace(' ', '_') }}
+        
+    # Validate inputs
+    - condition: template
+      value_template: >-
+        {{ 
+          device_name is defined and device_name|length > 0 and
+          formatted_mac is defined and formatted_mac|regex_match('^[0-9A-F]{12}$') and
+          device_type is defined and device_type in ['presence', 'temperature', 'other'] and
+          rssi_threshold is defined and rssi_threshold|int <= -40 and rssi_threshold|int >= -100 and
+          icon is defined and icon|length > 0
+        }}
+        
+    # Create persistent RSSI threshold input
+    - service: input_number.create
+      data:
+        entity_id: "input_number.{{ safe_name }}_rssi_threshold"
+        min: -100
+        max: -40
+        step: 1
+        initial: "{{ rssi_threshold }}"
+        unit_of_measurement: "dBm"
+        icon: mdi:signal-variant
+        name: "{{ device_name }} RSSI Threshold"
+
+    # Call the shell command to add device to templates.yaml
+    - service: shell_command.add_ble_device
+      data:
+        device_name: "{{ device_name }}"
+        mac_address: "{{ formatted_mac }}"
+        device_type: "{{ device_type }}"
+        rssi_threshold: "{{ rssi_threshold }}"
+        icon: "{{ icon }}"
+    
+    # Notify user
+    - service: persistent_notification.create
+      data:
+        title: "BLE Device Added"
+        message: >
+          Added {{ device_name }} ({{ formatted_mac }}) as a {{ device_type }} device.
+          Restarting Home Assistant to apply changes...
+    
+    - delay:
+        seconds: 5
+        
+    - service: homeassistant.restart
+
+# Enhanced Gateway Health Check
+enhanced_ble_gateway_health_check:
+  alias: Enhanced BLE Gateway Health Check
+  sequence:
+    - condition: template
+      value_template: "{{ states('sensor.ble_gateway_raw_data') != 'unavailable' }}"
+    - variables:
+        gateway_data: "{{ state_attr('sensor.ble_gateway_raw_data', 'devices') }}"
+        device_count: >
+          {% if gateway_data is not none %}
+            {{ gateway_data|length }}
+          {% else %}
+            0
+          {% endif %}
+    - service: persistent_notification.create
+      data:
+        title: "BLE Gateway Health Check"
+        message: >
+          BLE Gateway is responding.
+          Time: {{ now().strftime('%Y-%m-%d %H:%M:%S') }}
+          Devices detected: {{ device_count }}
+          State: {{ states('sensor.ble_gateway_raw_data') }}
+        notification_id: "ble_gateway_health"
+    - service: system_log.write
+      data:
+        message: "BLE Gateway health check: {{ device_count }} devices detected"
+        level: "info"
+    - delay:
+        seconds: 10
+    - service: persistent_notification.dismiss
+      data:
+        notification_id: "ble_gateway_health"
+
+# Enhanced Bluetooth Scan
+enhanced_bluetooth_scan:
+  alias: Enhanced Bluetooth Scan
+  sequence:
+    - service: persistent_notification.create
+      data:
+        title: "Bluetooth Scan"
+        message: "Starting Bluetooth scan..."
+        notification_id: "ble_scan"
+    - service: button.press
+      target:
+        entity_id: button.bluetooth_scan
+    - delay: 
+        seconds: 5
+    - variables:
+        gateway_data: "{{ state_attr('sensor.ble_gateway_raw_data', 'devices') }}"
+        device_count: >
+          {% if gateway_data is not none %}
+            {{ gateway_data|length }}
+          {% else %}
+            0
+          {% endif %}
+    - service: persistent_notification.create
+      data:
+        title: "Bluetooth Scan"
+        message: >
+          Scan completed at {{ now().strftime('%H:%M:%S') }}
+          Devices found: {{ device_count }}
+        notification_id: "ble_scan"
+    - delay:
+        seconds: 5
+    - service: persistent_notification.dismiss
+      data:
+        notification_id: "ble_scan"
+
+# Get Nearby Devices
+get_nearby_ble_devices:
+  alias: Get Nearby BLE Devices
+  sequence:
+    - service: button.press
+      target:
+        entity_id: button.bluetooth_scan
+    - delay: 
+        seconds: 3
+    - variables:
+        gateway_data: "{{ state_attr('sensor.ble_gateway_raw_data', 'devices') }}"
+        devices_list: >
+          {% if gateway_data is not none %}
+            {% set devices = [] %}
+            {% for device in gateway_data %}
+              {% if device|length >= 3 and device[1]|string|trim != '' and device[2]|string|trim != '' %}
+                {% set device_info = {
+                  'mac': device[1],
+                  'rssi': device[2]|int(-100),
+                  'adv_data': device[3] if device|length > 3 and device[3]|string|trim != '' else 'None'
+                } %}
+                {% set devices = devices + [device_info] %}
+              {% endif %}
+            {% endfor %}
+            {% set sorted_devices = devices|sort(attribute='rssi')|reverse %}
+            {{ sorted_devices }}
+          {% else %}
+            []
+          {% endif %}
+    - service: persistent_notification.create
+      data:
+        title: "Nearby BLE Devices"
+        message: >
+          {% if devices_list and devices_list|length > 0 %}
+            Found {{ devices_list|length }} devices:
+            {% for device in devices_list %}
+              - MAC: {{ device.mac }}, RSSI: {{ device.rssi }} dBm
+            {% endfor %}
+          {% else %}
+            No BLE devices detected.
+          {% endif %}
+        notification_id: "nearby_ble_devices"
+
+# Export BLE Data
+export_ble_data:
+  alias: Export BLE Data
+  sequence:
+    - service: button.press
+      target:
+        entity_id: button.bluetooth_scan
+    - delay: 
+        seconds: 3
+    - variables:
+        gateway_data: "{{ state_attr('sensor.ble_gateway_raw_data', 'devices') }}"
+        timestamp: "{{ now().strftime('%Y%m%d_%H%M%S') }}"
+        export_data: >
+          {% if gateway_data is not none %}
+            Time: {{ now().strftime('%Y-%m-%d %H:%M:%S') }}
+            Devices:
+            {% for device in gateway_data %}
+              Device {{ loop.index }}:
+              - MAC: {{ device[1] if device|length > 1 else 'Unknown' }}
+              - RSSI: {{ device[2] if device|length > 2 else 'Unknown' }}
+              - Data: {{ device[3] if device|length > 3 else 'None' }}
+            {% endfor %}
+          {% else %}
+            No BLE data available at {{ now().strftime('%Y-%m-%d %H:%M:%S') }}
+          {% endif %}
+    - service: persistent_notification.create
+      data:
+        title: "BLE Data Export"
+        message: >
+          BLE data exported. {{ gateway_data|length if gateway_data is not none else 0 }} devices found.
+          Time: {{ now().strftime('%Y-%m-%d %H:%M:%S') }}
+        notification_id: "ble_data_export"
+
+# BLE Device Signal Test
+test_ble_signal:
+  alias: Test BLE Device Signal
+  description: Test BLE device signal strength over time
+  fields:
+    mac_address:
+      description: MAC address of device to test
+      example: "AA:BB:CC:DD:EE:FF"
+    test_duration:
+      description: Test duration in seconds
+      example: 30
+  sequence:
+    # Format MAC address
+    - variables:
+        formatted_mac: >-
+          {{ mac_address | replace(':', '') | replace('-', '') | upper }}
+        readings: []
+        duration: "{{ test_duration|int(30) }}"
+    
+    # Start notification
+    - service: persistent_notification.create
+      data:
+        title: "BLE Signal Test"
+        message: "Starting signal test for {{ formatted_mac }} for {{ duration }} seconds..."
+        notification_id: "ble_signal_test"
+    
+    # Take multiple readings
+    - repeat:
+        count: "{{ (duration / 5)|int(6) }}"
+        sequence:
+          - service: button.press
+            target:
+              entity_id: button.bluetooth_scan
+          
+          - delay:
+              seconds: 2
+          
+          - variables:
+              gateway_data: "{{ state_attr('sensor.ble_gateway_raw_data', 'devices') }}"
+              current_rssi: >
+                {% if gateway_data is not none %}
+                  {% for device in gateway_data %}
+                    {% if device|length > 2 and device[1] == formatted_mac %}
+                      {{ device[2]|int(-100) }}
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+                {% else %}
+                  -100
+                {% endif %}
+              readings: >
+                {{ readings + [current_rssi] }}
+              
+          - delay:
+              seconds: 3
+    
+    # Calculate results
+    - variables:
+        average_rssi: >
+          {% if readings|length > 0 %}
+            {{ (readings|sum / readings|length)|round(1) }}
+          {% else %}
+            -100
+          {% endif %}
+        min_rssi: >
+          {% if readings|length > 0 %}
+            {{ readings|min }}
+          {% else %}
+            -100
+          {% endif %}
+        max_rssi: >
+          {% if readings|length > 0 %}
+            {{ readings|max }}
+          {% else %}
+            -100
+          {% endif %}
+        detected_count: >
+          {% set count = 0 %}
+          {% for reading in readings %}
+            {% if reading > -100 %}
+              {% set count = count + 1 %}
+            {% endif %}
+          {% endfor %}
+          {{ count }}
+    
+    # Display results
+    - service: persistent_notification.create
+      data:
+        title: "BLE Signal Test Results"
+        message: >
+          Signal test for {{ formatted_mac }} complete:
+          
+          - Test duration: {{ duration }} seconds
+          - Samples taken: {{ readings|length }}
+          - Detection rate: {{ (detected_count / readings|length * 100)|round }}%
+          - Average RSSI: {{ average_rssi }} dBm
+          - Min RSSI: {{ min_rssi }} dBm
+          - Max RSSI: {{ max_rssi }} dBm
+          
+          Recommended threshold: {{ (min_rssi + 5)|round }} dBm
+        notification_id: "ble_signal_test"
+        
+enhanced_ble_gateway_reconnect:
+  alias: Enhanced BLE Gateway Reconnect
+  sequence:
+    - service: persistent_notification.create
+      data:
+        title: "BLE Gateway"
+        message: "Attempting to reconnect to BLE Gateway..."
+    - service: homeassistant.restart
+      data: {}
+    - delay:
+        seconds: 30
+    - service: persistent_notification.dismiss
+      data:
+        notification_id: "persistent_notification"        

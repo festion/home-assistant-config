@@ -159,6 +159,33 @@
       motion_entity: binary_sensor.eye_of_sauron_motion_detection
       light_target:
         device_id: f973418ec638992abe6d7ba0689bf2ed
+- id: '1737669355677'
+  alias: Lock after 30
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - lock.front_door
+    - button.front_door_idle_access_control_lock_state
+    from: locked
+    to: unlocked
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 30
+  conditions:
+  - condition: state
+    entity_id: binary_sensor.front_door_sensor_window_door_is_open
+    state: 'off'
+  actions:
+  - action: lock.lock
+    data: {}
+    target:
+      device_id: 7549d9536a0df1258fc38e7bd3b2ae45
+  - data:
+      message: Front door locked
+    action: notify.mobile_app_pixel_9_pro_xl
+  mode: single
 - id: '1741921580385'
   alias: Match Outside Colour Temperature Kelvin
   description: ''
@@ -183,10 +210,10 @@
     to: stop
   conditions: []
   actions:
-  - action: notify.mobile_app_iphone
+  - action: notify.kristy_devices
     metadata: {}
     data:
-      message: Dryer is finished
+      message: Dryer is finished!
       title: Dryer
   mode: single
 - id: '1742568407148'
@@ -208,13 +235,12 @@
     at: 07:00:00
   conditions: []
   actions:
-  - action: light.turn_on
-    metadata: {}
-    data: {}
-    target:
-      entity_id: light.all_strips
+  - type: turn_on
+    device_id: 78eb138137ff2019f332dfc979a272f5
+    entity_id: 49eccc694b76edeca73a6b8ef45b371f
+    domain: light
   mode: single
-- id: low_reservior_level_alert
+- id: 'low_reservior_level_alert'
   alias: Low Reservior Level Alert
   description: Send notification when reservoir water level falls below 1 gallon
   triggers:

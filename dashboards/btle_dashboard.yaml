@@ -1,0 +1,20 @@
+title: "BLE Management"
+views:
+  - title: "BLE Overview"
+    icon: mdi:bluetooth
+    path: btle-overview
+    cards:
+      - type: entities
+        title: "BLE Devices"
+        entities:
+          - entity: sensor.rav4_btle_rssi_from_json
+          - entity: binary_sensor.rav4_in_driveway_from_json
+          - entity: sensor.gavin_camry_rssi_from_json
+          - entity: binary_sensor.gavin_camry_in_driveway_from_json
+      
+      - type: button
+        name: "Scan for BLE Devices"
+        tap_action:
+          action: call-service
+          service: script.scan_bluetooth_devices
+        icon: mdi:bluetooth-search

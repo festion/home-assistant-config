@@ -1,0 +1,15 @@
+# Example Prometheus scrape_configs entry
+  - job_name: "hass"
+    scrape_interval: 60s
+    metrics_path: /api/prometheus
+
+    # Legacy api password
+    params:
+      api_password: ['PASSWORD']
+
+    # Long-Lived Access Token
+    bearer_token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI3NmFlN2Q1OTcwY2Q0MGY4YTk0NDI2N2I1ZTEyMjAwMyIsImlhdCI6MTczODg3NTA5OCwiZXhwIjoyMDU0MjM1MDk4fQ.TWHI7Sfrt-stRwcDvJc_0YXMsqfN4kja42eeh5lKlzg"
+
+    scheme: https
+    static_configs:
+      - targets: ['HOSTNAME:8123']

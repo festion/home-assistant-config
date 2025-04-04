@@ -123,7 +123,7 @@ sensor:
     name: "Average Volume Since Last Fertigation"
     id: avg_volume
     device_class: volume
-    state_class: ""
+    state_class: "total"  # This allows values to both increase and decrease
     unit_of_measurement: "gal"
     accuracy_decimals: 2
     update_interval: 60s
@@ -131,14 +131,13 @@ sensor:
       if (id(depth_count) > 0) {
         const float bucket_diameter = 29.21;
         float avg_depth_cm = id(depth_sum) / id(depth_count);
-        
+      
         float bucket_radius = bucket_diameter / 2.0;
         float avg_volume_cm3 = M_PI * bucket_radius * bucket_radius * avg_depth_cm;
         float avg_volume_gal = avg_volume_cm3 * 0.000264172;
-        
+      
         return avg_volume_gal;
       }
-      return 0.0;
 
   - platform: dallas_temp
     id: reservoir_water_temp

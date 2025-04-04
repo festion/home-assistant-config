@@ -2,78 +2,71 @@
     "1": {
         "color_mode": "xy",
         "color": {
-            "x": 0.589,
-            "y": 0.329,
-            "hue": 5,
-            "saturation": 91,
-            "h": 5,
-            "s": 91
+            "x": 0.326,
+            "y": 0.333,
+            "hue": 52,
+            "saturation": 4,
+            "h": 52,
+            "s": 4
         },
         "state": "ON",
         "brightness": 64
     },
     "0x54ef4410008393a3": {
-        "voltage": 3014,
+        "voltage": 3012,
         "battery": 100,
         "detection_interval": 30,
         "motion_sensitivity": "medium",
         "trigger_indicator": true,
         "occupancy": false,
-        "illuminance": 0,
-        "linkquality": 220,
-        "device_temperature": 26,
+        "illuminance": 5,
+        "linkquality": 216,
+        "device_temperature": 25,
         "power_outage_count": 0
     },
     "0x24fd5b000103f112": {
-        "voltage": 1600,
-        "battery": 4,
-        "occupancy": false,
+        "voltage": 2600,
+        "battery": 93,
+        "occupancy": true,
         "tamper": false,
         "battery_low": false,
-        "temperature": 23.13,
-        "linkquality": 196
+        "temperature": 24.02,
+        "linkquality": 164
     },
     "0x286d97000113f617": {
         "battery": 52.5,
-        "linkquality": 168,
-        "temperature": 22.26,
+        "linkquality": 164,
+        "temperature": 21.87,
         "water_leak": false,
         "tamper": false,
         "battery_low": false
     },
-    "0x00158d000af2a851": {
-        "voltage": 3015,
-        "battery": 100,
-        "device_temperature": 33,
-        "power_outage_count": 16,
-        "linkquality": 248
-    },
     "0xa4c1381ee56b8bae": {
-        "linkquality": 144,
+        "linkquality": 112,
         "state": "ON",
         "brightness": 64,
         "color_mode": "xy",
         "color": {
-            "x": 0.589,
-            "y": 0.329,
-            "saturation": 91,
-            "hue": 5,
-            "h": 5,
-            "s": 91
+            "x": 0.326,
+            "y": 0.333,
+            "saturation": 4,
+            "hue": 52,
+            "h": 52,
+            "s": 4
         },
         "color_power_on_behavior": "initial",
         "do_not_disturb": false
     },
     "0xa4c138d04ea0033c": {
-        "linkquality": 144,
+        "linkquality": 168,
         "color_mode": "xy",
         "color": {
-            "x": 0.589,
-            "y": 0.329,
-            "saturation": 91,
-            "hue": 5,
-            "h": 5,
-            "s": 91
+            "x": 0.326,
+            "y": 0.333,
+            "saturation": 4,
+            "hue": 52,
+            "h": 52,
+            "s": 4
         },
         "state": "ON",
         "brightness": 64,
@@ -83,17 +76,17 @@
     "0xa4c138e95c788c21": {
         "color_power_on_behavior": "initial",
         "do_not_disturb": false,
-        "linkquality": 156,
+        "linkquality": 168,
         "state": "ON",
         "brightness": 64,
         "color_mode": "xy",
         "color": {
-            "x": 0.589,
-            "y": 0.329,
-            "hue": 5,
-            "saturation": 91,
-            "h": 5,
-            "s": 91
+            "x": 0.326,
+            "y": 0.333,
+            "hue": 52,
+            "saturation": 4,
+            "h": 52,
+            "s": 4
         }
     },
     "0x001788010ce63c53": {
@@ -102,7 +95,7 @@
             "installed_version": 16786690,
             "latest_version": 16786690
         },
-        "linkquality": 100,
+        "linkquality": 96,
         "color_temp_startup": 500,
         "power_on_behavior": "previous",
         "state": "ON",
@@ -124,6 +117,6 @@
         "device_temperature": 26,
         "power_outage_count": 15,
         "trigger_count": 0,
-        "linkquality": 168
+        "linkquality": 164
     }
 }

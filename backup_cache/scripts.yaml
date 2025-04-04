@@ -1,0 +1,100 @@
+# Smart Notification System
+
+# Reconnect BLE Gateway if it's offline
+ble_gateway_reconnect:
+  alias: Reconnect BLE Gateway
+  sequence:
+    - service: persistent_notification.create
+      data:
+        title: "BLE Gateway"
+        message: "Attempting to reconnect to BLE Gateway..."
+    - service: homeassistant.restart
+      data: {}
+    - delay:
+        seconds: 30
+    - service: persistent_notification.dismiss
+      data:
+        notification_id: "persistent_notification"
+
+# BLE Gateway Health Check
+ble_gateway_health_check:
+  alias: BLE Gateway Health Check
+  sequence:
+    - condition: template
+      value_template: "{{ states('sensor.ble_gateway_raw_data') != 'unavailable' }}"
+    - service: persistent_notification.create
+      data:
+        title: "BLE Gateway Health Check"
+        message: "BLE Gateway is responding normally."
+    - delay:
+        seconds: 5
+    - service: persistent_notification.dismiss
+      data:
+        notification_id: "persistent_notification"
+
+# Smart Notification Script
+send_notification:
+  alias: Send Smart Notification
+  description: Send notifications based on severity and user preferences
+  fields:
+    title:
+      description: Notification title
+      example: "Water Leak Detected"
+    message: 
+      description: Notification message
+      example: "Water detected in the basement"
+    target_user:
+      description: User to notify (jeremy or kristy)
+      example: "jeremy"
+      default: "jeremy"
+    severity:
+      description: Severity level (low, medium, high, critical)
+      example: "high"
+      default: "medium"
+    status:
+      description: Status type for styling (info, warning, success, error)
+      example: "warning"
+      default: "info"
+    data:
+      description: Additional notification data
+      example: '{"channel": "alerts", "tag": "leak_alert"}'
+      default: '{}'
+  sequence:
+    - variables:
+        severity_level: "{{ severity | default(states('input_select.notify_severity')) }}"
+        target: "{{ target_user | default(states('input_select.notify_target_user')) }}"
+        msg_title: "{{ title | default(states('input_text.notify_title')) }}"
+        msg_content: "{{ message | default(states('input_text.notify_message')) }}"
+        user_min_severity: "{{ states('input_select.notify_' + target + '_severity') }}"
+        notification_service: "{{ states('input_text.notify_' + target + '_devices') }}"
+        severity_levels: ['low', 'medium', 'high', 'critical']
+        severity_index: "{{ severity_levels.index(severity_level) }}"
+        user_min_severity_index: "{{ severity_levels.index(user_min_severity) }}"
+        should_notify: "{{ severity_index >= user_min_severity_index }}"
+        notification_data: >
+          {% set base_data = {
+            "tag": target + "_" + severity_level,
+            "channel": severity_level + "_alerts",
+            "ttl": 0
+          } %}
+          {% if status is defined %}
+            {% set base_data = base_data | combine({"color": status}) %}
+          {% endif %}
+          {% if data is defined and data is string and data|length > 0 %}
+            {% set extra_data = data | from_json %}
+            {{ base_data | combine(extra_data) }}
+          {% else %}
+            {{ base_data }}
+          {% endif %}
+    - condition: template
+      value_template: "{{ should_notify }}"
+    - service: >
+        {% if 'notify.' in notification_service %}
+          {{ notification_service }}
+        {% else %}
+          notify.{{ notification_service }}
+        {% endif %}
+      data:
+        title: "{{ msg_title }}"
+        message: "{{ msg_content }}"
+        data: "{{ notification_data }}"

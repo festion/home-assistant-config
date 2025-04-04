@@ -2,6 +2,7 @@ version: 4
 homeassistant:
   experimental_event_entities: true
   enabled: true
+  legacy_action_sensor: true
 advanced:
   homeassistant_legacy_entity_attributes: false
   homeassistant_legacy_triggers: false
@@ -34,6 +35,7 @@ advanced:
     - 252
     - 14
     - 107
+  log_level: error
 mqtt:
   server: mqtt://core-mosquitto:1883
   user: mqtt_user
@@ -41,8 +43,9 @@ mqtt:
   keepalive: 60
   reject_unauthorized: true
   version: 4
-  client_id: MY_CLIENT_ID
+  client_id: HA_Z2M
   force_disable_retain: true
+  include_device_information: true
 frontend:
   enabled: true
   port: 8099
@@ -99,4 +102,7 @@ devices:
 groups:
   '1':
     friendly_name: all_strips
-availability: {}
+availability:
+  active:
+    timeout: 30
+  enabled: true
