@@ -52,21 +52,16 @@
 - id: '1742000000001'
   alias: Update Map Entities Sensor
   description: Forces the map entities sensor to refresh when presence changes
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.hide_home_icon
-  action:
+  triggers:
+  - entity_id: binary_sensor.hide_home_icon
+    trigger: state
+  actions:
   - delay:
       seconds: 1
-  - service: homeassistant.update_entity
-    target:
+  - target:
       entity_id: sensor.map_entities
-  - service: persistent_notification.create
-    data:
-      title: Map Entities Update
-      message: 'Map entities sensor refreshed: {{ states(''sensor.map_entities'')
-        }}'
-      notification_id: map_entities_update
+    action: homeassistant.update_entity
+    data: {}
 - id: '1736963481981'
   alias: Fertigation
   description: ''
@@ -240,7 +235,7 @@
     entity_id: 49eccc694b76edeca73a6b8ef45b371f
     domain: light
   mode: single
-- id: 'low_reservior_level_alert'
+- id: low_reservior_level_alert
   alias: Low Reservior Level Alert
   description: Send notification when reservoir water level falls below 1 gallon
   triggers:

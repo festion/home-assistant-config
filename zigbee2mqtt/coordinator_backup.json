@@ -4,43 +4,28 @@
     "version": 1,
     "source": "zigbee-herdsman@3.4.11",
     "internal": {
-      "date": "2025-04-02T18:03:45.769Z",
-      "ezspVersion": 13
+      "date": "2025-04-07T17:01:34.541Z",
+      "znpVersion": 1
     }
   },
   "stack_specific": {
-    "ezsp": {
-      "hashed_tclk": "4fce89a57c6f2265f48c164f315141e6"
+    "zstack": {
+      "tclk_seed": "7a4e2c63e65de32f082c19eae9b492df"
     }
   },
-  "coordinator_ieee": "3e6821feffbf06e4",
-  "pan_id": "e23d",
-  "extended_pan_id": "7f69a73236fc0e6b",
+  "coordinator_ieee": "e406bffffe21683e",
+  "pan_id": "e165",
+  "extended_pan_id": "922a9f92c35d9253",
   "nwk_update_id": 0,
   "security_level": 5,
   "channel": 11,
   "channel_mask": [
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
-    25,
-    26
+    11
   ],
   "network_key": {
-    "key": "ab96725bc063336d290cc1f705b4c912",
+    "key": "20442def73926812b936da839d43f7c7",
     "sequence_number": 0,
-    "frame_counter": 1130601
+    "frame_counter": 1
   },
   "devices": []
 }

@@ -62,8 +62,6 @@ panel_custom:
 python_script:
 # Enable Python scripts
 
-automation blueprint:
-  - source: /config/ble_discovery_automation.yaml
 
 logger:
   default: info

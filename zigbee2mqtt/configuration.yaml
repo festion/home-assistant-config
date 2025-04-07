@@ -1,108 +1,53 @@
 version: 4
-homeassistant:
-  experimental_event_entities: true
-  enabled: true
-  legacy_action_sensor: true
-advanced:
-  homeassistant_legacy_entity_attributes: false
-  homeassistant_legacy_triggers: false
-  legacy_api: false
-  legacy_availability_payload: false
-  network_key:
-    - 171
-    - 150
-    - 114
-    - 91
-    - 192
-    - 99
-    - 51
-    - 109
-    - 41
-    - 12
-    - 193
-    - 247
-    - 5
-    - 180
-    - 201
-    - 18
-  pan_id: 57917
-  ext_pan_id:
-    - 127
-    - 105
-    - 167
-    - 50
-    - 54
-    - 252
-    - 14
-    - 107
-  log_level: error
 mqtt:
+  base_topic: zigbee2mqtt
   server: mqtt://core-mosquitto:1883
-  user: mqtt_user
-  password: Skyw4lk3rH4z3!
-  keepalive: 60
-  reject_unauthorized: true
-  version: 4
-  client_id: HA_Z2M
-  force_disable_retain: true
-  include_device_information: true
+  user: addons
+  password: sae2ui4Uquah2sha7ooyieg5cheiRie6riephei9pheir4ohpeku8oal0fee4the
+serial:
+  port: tcp://192.168.1.78:6638
+  adapter: zstack
+  baudrate: 115200
+  rtscts: false
+advanced:
+  log_level: info
+  channel: 11
+  network_key:
+    - 32
+    - 68
+    - 45
+    - 239
+    - 115
+    - 146
+    - 104
+    - 18
+    - 185
+    - 54
+    - 218
+    - 131
+    - 157
+    - 67
+    - 247
+    - 199
+  pan_id: 57701
+  ext_pan_id:
+    - 146
+    - 42
+    - 159
+    - 146
+    - 195
+    - 93
+    - 146
+    - 83
 frontend:
   enabled: true
   port: 8099
-serial:
-  port: >-
-    /dev/serial/by-id/usb-Itead_Sonoff_Zigbee_3.0_USB_Dongle_Plus_V2_a0fa6b188439ef11a69459f454516304-if00-port0
-  adapter: ember
-zigbee_herdsman_debug: true
-device_options:
-  legacy: false
+homeassistant:
+  enabled: true
 devices:
-  '0x54ef4410008393a3':
-    friendly_name: AqaraP1
-    icon: device_icons/e3cf8f26cf8676dbe6b7cafc07a77acf.png
-  '0x24fd5b000103f112':
-    friendly_name: SmartThings Motion
-    icon: device_icons/b2c3a98203c4da53dbf0e9408bd54ab9.png
-  '0x286d97000113f617':
-    friendly_name: Leak_sensor
-    icon: device_icons/19259cccf367e4006fd31e717e0539ea.png
-  '0x00158d000af2a851':
-    friendly_name: smart_button
-    icon: device_icons/8a6e32e6447964fb879458a4c207d6f6.png
-  '0xa4c1381ee56b8bae':
-    friendly_name: top_right_strip
-    color_sync: true
-    state_action: false
-    icon: device_icons/2bab7a960e244017b0962095dbf9fa34.png
-    homeassistant:
-      name: top_right_strip
-    optimistic: true
-  '0xa4c138d04ea0033c':
-    friendly_name: top_left_strip
-    color_sync: true
-    state_action: false
-    icon: device_icons/2bab7a960e244017b0962095dbf9fa34.png
-    homeassistant:
-      name: top_left_strip
-    optimistic: true
   '0xa4c138e95c788c21':
     friendly_name: bar_strip
-    color_sync: true
-    state_action: false
-    icon: device_icons/2bab7a960e244017b0962095dbf9fa34.png
-    homeassistant:
-      name: bar_strip
-    optimistic: true
-  '0x001788010ce63c53':
-    friendly_name: lamp
-    icon: device_icons/aebd1271512dcfb87775f223ebe44505.png
-  '0x00158d008b3d8390':
-    friendly_name: Drier Leak
-    icon: device_icons/2d19c1b8e82d9b72921bbd1fcbde4541.png
-groups:
-  '1':
-    friendly_name: all_strips
-availability:
-  active:
-    timeout: 30
-  enabled: true
+  '0xa4c138d04ea0033c':
+    friendly_name: top_left
+  '0xa4c1381ee56b8bae':
+    friendly_name: top_right
