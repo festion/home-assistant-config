@@ -123,3 +123,60 @@
 [2025-04-07 12:25:32] info: 	z2m: Starting network scan (includeRoutes 'false')
 [2025-04-07 12:25:36] info: 	z2m: Network scan finished
 [2025-04-07 12:25:36] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/networkmap', payload '{"data":{"routes":false,"type":"raw","value":{"links":[{"depth":1,"linkquality":93,"lqi":93,"relationship":1,"routes":[],"source":{"ieeeAddr":"0xa4c138e95c788c21","networkAddress":62392},"sourceIeeeAddr":"0xa4c138e95c788c21","sourceNwkAddr":62392,"target":{"ieeeAddr":"0xe406bffffe21683e","networkAddress":0},"targetIeeeAddr":"0xe406bffffe21683e"},{"depth":255,"linkquality":58,"lqi":58,"relationship":2,"routes":[],"source":{"ieeeAddr":"0xa4c138d04ea0033c","networkAddress":58178},"sourceIeeeAddr":"0xa4c138d04ea0033c","sourceNwkAddr":58178,"target":{"ieeeAddr":"0xe406bffffe21683e","networkAddress":0},"targetIeeeAddr":"0xe406bffffe21683e"},{"depth":255,"linkquality":83,"lqi":83,"relationship":2,"routes":[],"source":{"ieeeAddr":"0xa4c1381ee56b8bae","networkAddress":61367},"sourceIeeeAddr":"0xa4c1381ee56b8bae","sourceNwkAddr":61367,"target":{"ieeeAddr":"0xe406bffffe21683e","networkAddress":0},"targetIeeeAddr":"0xe406bffffe21683e"},{"depth":0,"linkquality":97,"lqi":97,"relationship":0,"routes":[],"source":{"ieeeAddr":"0xe406bffffe21683e","networkAddress":0},"sourceIeeeAddr":"0xe406bffffe21683e","sourceNwkAddr":0,"target":{"ieeeAddr":"0xa4c138e95c788c21","networkAddress":62392},"targetIeeeAddr":"0xa4c138e95c788c21"},{"depth":2,"linkquality":109,"lqi":109,"relationship":1,"routes":[],"source":{"ieeeAddr":"0xa4c138d04ea0033c","networkAddress":58178},"sourceIeeeAddr":"0xa4c138d04ea0033c","sourceNwkAddr":58178,"target":{"ieeeAddr":"0xa4c138e95c788c21","networkAddress":62392},"targetIeeeAddr":"0xa4c138e95c788c21"},{"depth":3,"linkquality":121,"lqi":121,"relationship":2,"routes":[],"source":{"ieeeAddr":"0xa4c1381ee56b8bae","networkAddress":61367},"sourceIeeeAddr":"0xa4c1381ee56b8bae","sourceNwkAddr":61367,"target":{"ieeeAddr":"0xa4c138e95c788c21","networkAddress":62392},"targetIeeeAddr":"0xa4c138e95c788c21"},{"depth":1,"linkquality":109,"lqi":109,"relationship":0,"routes":[],"source":{"ieeeAddr":"0xa4c138e95c788c21","networkAddress":62392},"sourceIeeeAddr":"0xa4c138e95c788c21","sourceNwkAddr":62392,"target":{"ieeeAddr":"0xa4c138d04ea0033c","networkAddress":58178},"targetIeeeAddr":"0xa4c138d04ea0033c"},{"depth":0,"linkquality":69,"lqi":69,"relationship":2,"routes":[],"source":{"ieeeAddr":"0xe406bffffe21683e","networkAddress":0},"sourceIeeeAddr":"0xe406bffffe21683e","sourceNwkAddr":0,"target":{"ieeeAddr":"0xa4c138d04ea0033c","networkAddress":58178},"targetIeeeAddr":"0xa4c138d04ea0033c"},{"depth":3,"linkquality":115,"lqi":115,"relationship":1,"routes":[],"source":{"ieeeAddr":"0xa4c1381ee56b8bae","networkAddress":61367},"sourceIeeeAddr":"0xa4c1381ee56b8bae","sourceNwkAddr":61367,"target":{"ieeeAddr":"0xa4c138d04ea0033c","networkAddress":58178},"targetIeeeAddr":"0xa4c138d04ea0033c"},{"depth":2,"linkquality":112,"lqi":112,"relationship":0,"routes":[],"source":{"ieeeAddr":"0xa4c138d04ea0033c","networkAddress":58178},"sourceIeeeAddr":"0xa4c138d04ea0033c","sourceNwkAddr":58178,"target":{"ieeeAddr":"0xa4c1381ee56b8bae","networkAddress":61367},"targetIeeeAddr":"0xa4c1381ee56b8bae"},{"depth":0,"linkquality":88,"lqi":88,"relationship":2,"routes":[],"source":{"ieeeAddr":"0xe406bffffe21683e","networkAddress":0},"sourceIeeeAddr":"0xe406bffffe21683e","sourceNwkAddr":0,"target":{"ieeeAddr":"0xa4c1381ee56b8bae","networkAddress":61367},"targetIeeeAddr":"0xa4c1381ee56b8bae"},{"depth":1,"linkquality":121,"lqi":121,"relationship":2,"routes":[],"source":{"ieeeAddr":"0xa4c138e95c788c21","networkAddress":62392},"sourceIeeeAddr":"0xa4c138e95c788c21","sourceNwkAddr":62392,"target":{"ieeeAddr":"0xa4c1381ee56b8bae","networkAddress":61367},"targetIeeeAddr":"0xa4c1381ee56b8bae"}],"nodes":[{"failed":[],"friendlyName":"Coordinator","ieeeAddr":"0xe406bffffe21683e","networkAddress":0,"type":"Coordinator"},{"definition":{"description":"Zigbee RGBW light","model":"TS0504B","supports":"light (state, brightness, color_xy), effect, do_not_disturb, color_power_on_behavior, linkquality","vendor":"Tuya"},"failed":[],"friendlyName":"bar_strip","ieeeAddr":"0xa4c138e95c788c21","lastSeen":1744045566849,"manufacturerName":"_TZ3210_b44hll99","modelID":"TS0504B","networkAddress":62392,"type":"Router"},{"definition":{"description":"Zigbee RGBW light","model":"TS0504B","supports":"light (state, brightness, color_xy), effect, do_not_disturb, color_power_on_behavior, linkquality","vendor":"Tuya"},"failed":[],"friendlyName":"top_left","ieeeAddr":"0xa4c138d04ea0033c","lastSeen":1744045677328,"manufacturerName":"_TZ3210_b44hll99","modelID":"TS0504B","networkAddress":58178,"type":"Router"},{"definition":{"description":"Zigbee RGBW light","model":"TS0504B","supports":"light (state, brightness, color_xy), effect, do_not_disturb, color_power_on_behavior, linkquality","vendor":"Tuya"},"failed":[],"friendlyName":"top_right","ieeeAddr":"0xa4c1381ee56b8bae","lastSeen":1744045882936,"manufacturerName":"_TZ3210_b44hll99","modelID":"TS0504B","networkAddress":61367,"type":"Router"}]}},"status":"ok","transaction":"wax3n-1"}'
+[2025-04-07 13:21:21] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bar_strip', payload '{"color_power_on_behavior":null,"do_not_disturb":null,"effect":null,"linkquality":94,"state":null}'
+[2025-04-07 13:21:21] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/top_left', payload '{"color_power_on_behavior":null,"do_not_disturb":null,"effect":null,"linkquality":94,"state":null}'
+[2025-04-07 13:21:21] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/top_right', payload '{"color_power_on_behavior":null,"do_not_disturb":null,"effect":null,"linkquality":61,"state":null}'
+[2025-04-07 14:05:02] info: 	z2m: Zigbee: allowing new devices to join.
+[2025-04-07 14:05:03] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/permit_join', payload '{"data":{"time":254},"status":"ok","transaction":"y0bmb-1"}'
+[2025-04-07 14:08:38] info: 	z2m: Zigbee: disabling joining new devices.
+[2025-04-07 14:08:38] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/permit_join', payload '{"data":{"time":0},"status":"ok","transaction":"ljmnd-1"}'
+[2025-04-07 14:08:41] info: 	z2m: Zigbee: allowing new devices to join.
+[2025-04-07 14:08:41] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/permit_join', payload '{"data":{"time":254},"status":"ok","transaction":"ljmnd-2"}'
+[2025-04-07 14:10:12] info: 	z2m: Zigbee: disabling joining new devices.
+[2025-04-07 14:10:12] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/permit_join', payload '{"data":{"time":0},"status":"ok","transaction":"f9s4d-1"}'
+[2025-04-07 14:10:25] info: 	z2m: Zigbee: allowing new devices to join.
+[2025-04-07 14:10:25] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/permit_join', payload '{"data":{"time":254},"status":"ok","transaction":"f9s4d-2"}'
+[2025-04-07 14:10:52] info: 	z2m: Start Touchlink scan
+[2025-04-07 14:10:52] info: 	zh:controller:touchlink: Set InterPAN channel to '11'
+[2025-04-07 14:10:52] info: 	zh:controller:touchlink: Set InterPAN channel to '15'
+[2025-04-07 14:10:53] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2025-04-07 14:10:53] info: 	zh:controller:touchlink: Set InterPAN channel to '20'
+[2025-04-07 14:10:53] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2025-04-07 14:10:53] info: 	zh:controller:touchlink: Set InterPAN channel to '25'
+[2025-04-07 14:10:54] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2025-04-07 14:10:54] info: 	zh:controller:touchlink: Set InterPAN channel to '12'
+[2025-04-07 14:10:54] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2025-04-07 14:10:54] info: 	zh:controller:touchlink: Set InterPAN channel to '13'
+[2025-04-07 14:10:55] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2025-04-07 14:10:55] info: 	zh:controller:touchlink: Set InterPAN channel to '14'
+[2025-04-07 14:10:55] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2025-04-07 14:10:55] info: 	zh:controller:touchlink: Set InterPAN channel to '16'
+[2025-04-07 14:10:56] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2025-04-07 14:10:56] info: 	zh:controller:touchlink: Set InterPAN channel to '17'
+[2025-04-07 14:10:56] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2025-04-07 14:10:56] info: 	zh:controller:touchlink: Set InterPAN channel to '18'
+[2025-04-07 14:10:57] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2025-04-07 14:10:57] info: 	zh:controller:touchlink: Set InterPAN channel to '19'
+[2025-04-07 14:10:58] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2025-04-07 14:10:58] info: 	zh:controller:touchlink: Set InterPAN channel to '21'
+[2025-04-07 14:10:58] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2025-04-07 14:10:58] info: 	zh:controller:touchlink: Set InterPAN channel to '22'
+[2025-04-07 14:10:59] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2025-04-07 14:10:59] info: 	zh:controller:touchlink: Set InterPAN channel to '23'
+[2025-04-07 14:10:59] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2025-04-07 14:10:59] info: 	zh:controller:touchlink: Set InterPAN channel to '24'
+[2025-04-07 14:11:00] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2025-04-07 14:11:00] info: 	zh:controller:touchlink: Set InterPAN channel to '26'
+[2025-04-07 14:11:00] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2025-04-07 14:11:00] info: 	zh:controller:touchlink: Restore InterPAN channel
+[2025-04-07 14:11:03] info: 	z2m: Finished Touchlink scan
+[2025-04-07 14:11:03] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/touchlink/scan', payload '{"data":{"found":[{"channel":11,"ieee_address":"0xa4c138e95c788c21"}]},"status":"ok","transaction":"2zkue-1"}'
+[2025-04-07 14:11:32] info: 	z2m: Restarting Zigbee2MQTT
+[2025-04-07 14:11:32] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/restart', payload '{"data":{},"status":"ok","transaction":"v91td-1"}'
+[2025-04-07 14:11:33] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"offline"}'
+[2025-04-07 14:11:33] info: 	z2m: Disconnecting from MQTT server
+[2025-04-07 14:11:33] info: 	z2m: Stopping zigbee-herdsman...
+[2025-04-07 14:11:53] info: 	zh:controller: Wrote coordinator backup to '/config/zigbee2mqtt/coordinator_backup.json'
+[2025-04-07 14:11:53] info: 	zh:zstack:znp: closing
+[2025-04-07 14:11:53] info: 	z2m: Stopped zigbee-herdsman
+[2025-04-07 14:11:53] info: 	z2m: Stopped Zigbee2MQTT

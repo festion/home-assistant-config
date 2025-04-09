@@ -1,11 +1,14 @@
 {
     "0xa4c138e95c788c21": {
-        "linkquality": 94
+        "linkquality": 65,
+        "state": "ON"
     },
     "0xa4c138d04ea0033c": {
-        "linkquality": 94
+        "linkquality": 47,
+        "state": "ON"
     },
     "0xa4c1381ee56b8bae": {
-        "linkquality": 61
+        "linkquality": 80,
+        "state": "ON"
     }
 }

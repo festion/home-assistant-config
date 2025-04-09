@@ -4,6 +4,10 @@ mqtt:
   server: mqtt://core-mosquitto:1883
   user: addons
   password: sae2ui4Uquah2sha7ooyieg5cheiRie6riephei9pheir4ohpeku8oal0fee4the
+  client_id: Z2M
+  keepalive: 60
+  reject_unauthorized: false
+  version: 4
 serial:
   port: tcp://192.168.1.78:6638
   adapter: zstack
@@ -51,3 +55,6 @@ devices:
     friendly_name: top_left
   '0xa4c1381ee56b8bae':
     friendly_name: top_right
+groups:
+  '1':
+    friendly_name: all_strips

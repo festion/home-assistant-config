@@ -58,6 +58,7 @@ panel_custom:
     require_admin: true
     config:
       ingress: core_configurator
+      
 
 python_script:
 # Enable Python scripts

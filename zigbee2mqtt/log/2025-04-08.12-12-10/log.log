@@ -1,0 +1,48 @@
+[2025-04-08 12:12:10] info: 	z2m: Logging to console, file (filename: log.log)
+[2025-04-08 12:12:10] info: 	z2m: Starting Zigbee2MQTT version 2.2.1 (commit #unknown)
+[2025-04-08 12:12:10] info: 	z2m: Starting zigbee-herdsman (3.4.11)
+[2025-04-08 12:12:10] info: 	zh:zstack:znp: Opening TCP socket with 192.168.1.78:6638
+[2025-04-08 12:12:10] info: 	zh:zstack:znp: Socket connected
+[2025-04-08 12:12:10] info: 	zh:zstack:znp: Socket ready
+[2025-04-08 12:12:10] info: 	zh:zstack:znp: Writing CC2530/CC2531 skip bootloader payload
+[2025-04-08 12:12:11] info: 	zh:zstack:znp: Skip bootloader for CC2652/CC1352
+[2025-04-08 12:12:12] info: 	z2m: zigbee-herdsman started (resumed)
+[2025-04-08 12:12:12] info: 	z2m: Coordinator firmware version: '{"meta":{"maintrel":1,"majorrel":2,"minorrel":7,"product":1,"revision":20250321,"transportrev":2},"type":"zStack3x0"}'
+[2025-04-08 12:12:12] info: 	z2m: bar_strip (0xa4c138e95c788c21): TS0504B - Tuya Zigbee RGBW light (Router)
+[2025-04-08 12:12:12] info: 	z2m: top_left (0xa4c138d04ea0033c): TS0504B - Tuya Zigbee RGBW light (Router)
+[2025-04-08 12:12:12] info: 	z2m: top_right (0xa4c1381ee56b8bae): TS0504B - Tuya Zigbee RGBW light (Router)
+[2025-04-08 12:12:12] info: 	z2m: Currently 3 devices are joined.
+[2025-04-08 12:12:12] info: 	z2m: Connecting to MQTT server at mqtt://core-mosquitto:1883
+[2025-04-08 12:12:12] info: 	z2m: Connected to MQTT server
+[2025-04-08 12:12:12] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"online"}'
+[2025-04-08 12:12:12] info: 	z2m: Started frontend on port 8099
+[2025-04-08 12:12:12] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bar_strip', payload '{"color_power_on_behavior":null,"do_not_disturb":null,"effect":null,"linkquality":94,"state":"OFF"}'
+[2025-04-08 12:12:12] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/top_left', payload '{"color_power_on_behavior":null,"do_not_disturb":null,"effect":null,"linkquality":94,"state":null}'
+[2025-04-08 12:12:12] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/top_right', payload '{"color_power_on_behavior":null,"do_not_disturb":null,"effect":null,"linkquality":61,"state":null}'
+[2025-04-08 12:12:12] info: 	z2m: Zigbee2MQTT started!
+[2025-04-08 12:12:17] info: 	z2m:mqtt: MQTT publish: topic 'homeassistant/binary_sensor/1221051039810110150109113116116_0xe406bffffe21683e/connection_state/config', payload '{"device":{"hw_version":"zStack3x0 20250321","identifiers":["zigbee2mqtt_bridge_0xe406bffffe21683e"],"manufacturer":"Zigbee2MQTT","model":"Bridge","name":"Zigbee2MQTT Bridge","sw_version":"2.2.1"},"device_class":"connectivity","entity_category":"diagnostic","name":"Connection state","object_id":"zigbee2mqtt_bridge_connection_state","origin":{"name":"Zigbee2MQTT","sw":"2.2.1","url":"https://www.zigbee2mqtt.io"},"payload_off":"offline","payload_on":"online","state_topic":"zigbee2mqtt/bridge/state","unique_id":"bridge_0xe406bffffe21683e_connection_state_zigbee2mqtt","value_template":"{{ value_json.state }}"}'
+[2025-04-08 12:12:31] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/top_left', payload '{"color_power_on_behavior":null,"do_not_disturb":null,"effect":null,"linkquality":51,"state":"ON"}'
+[2025-04-08 12:12:33] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/top_right', payload '{"color_power_on_behavior":null,"do_not_disturb":null,"effect":null,"linkquality":80,"state":"ON"}'
+[2025-04-08 12:12:34] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bar_strip', payload '{"color_power_on_behavior":null,"do_not_disturb":null,"effect":null,"linkquality":65,"state":"ON"}'
+[2025-04-08 12:12:45] error: 	z2m: Request 'zigbee2mqtt/bridge/request/group/add' failed with error: 'friendly_name must be at least 1 char long'
+[2025-04-08 12:12:45] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/group/add', payload '{"data":{},"error":"friendly_name must be at least 1 char long","status":"error","transaction":"o7w1s-3"}'
+[2025-04-08 12:12:54] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/group/add', payload '{"data":{"friendly_name":"all_strips","id":1},"status":"ok","transaction":"o7w1s-4"}'
+[2025-04-08 12:12:59] error: 	z2m: Request 'zigbee2mqtt/bridge/request/group/rename' failed with error: 'friendly_name 'all_strips' is already in use'
+[2025-04-08 12:12:59] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/group/rename', payload '{"data":{},"error":"friendly_name 'all_strips' is already in use","status":"error","transaction":"o7w1s-5"}'
+[2025-04-08 12:13:11] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/group/members/add', payload '{"data":{},"error":"Device '' does not exist","status":"error","transaction":"o7w1s-6"}'
+[2025-04-08 12:13:11] error: 	z2m: Device '' does not exist
+[2025-04-08 12:13:18] info: 	z2m: Adding 'bar_strip' to 'all_strips'
+[2025-04-08 12:13:18] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/group/members/add', payload '{"data":{"device":"0xa4c138e95c788c21","endpoint":"1","group":"all_strips"},"status":"ok","transaction":"o7w1s-7"}'
+[2025-04-08 12:13:18] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/all_strips/availability', payload '{"state":"offline"}'
+[2025-04-08 12:13:18] info: 	z2m:mqtt: MQTT publish: topic 'homeassistant/light/1221051039810110150109113116116_1/light/config', payload '{"availability":[{"topic":"zigbee2mqtt/bridge/state","value_template":"{{ value_json.state }}"}],"brightness":true,"brightness_scale":254,"command_topic":"zigbee2mqtt/all_strips/set","device":{"identifiers":["zigbee2mqtt_1221051039810110150109113116116_1"],"manufacturer":"Zigbee2MQTT","model":"Group","name":"all_strips","sw_version":"Zigbee2MQTT 2.2.1","via_device":"zigbee2mqtt_bridge_0xe406bffffe21683e"},"effect":true,"effect_list":["blink","breathe","okay","channel_change","finish_effect","stop_effect","colorloop","stop_colorloop"],"name":null,"object_id":"all_strips","origin":{"name":"Zigbee2MQTT","sw":"2.2.1","url":"https://www.zigbee2mqtt.io"},"schema":"json","state_topic":"zigbee2mqtt/all_strips","supported_color_modes":["xy"],"unique_id":"1_light_zigbee2mqtt"}'
+[2025-04-08 12:13:22] info: 	z2m: Adding 'top_left' to 'all_strips'
+[2025-04-08 12:13:22] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/group/members/add', payload '{"data":{"device":"0xa4c138d04ea0033c","endpoint":"1","group":"all_strips"},"status":"ok","transaction":"o7w1s-8"}'
+[2025-04-08 12:13:24] info: 	z2m: Adding 'top_right' to 'all_strips'
+[2025-04-08 12:13:24] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/group/members/add', payload '{"data":{"device":"0xa4c1381ee56b8bae","endpoint":"1","group":"all_strips"},"status":"ok","transaction":"o7w1s-9"}'
+[2025-04-08 14:45:47] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"offline"}'
+[2025-04-08 14:45:47] info: 	z2m: Disconnecting from MQTT server
+[2025-04-08 14:45:47] info: 	z2m: Stopping zigbee-herdsman...
+[2025-04-08 14:46:08] info: 	zh:controller: Wrote coordinator backup to '/config/zigbee2mqtt/coordinator_backup.json'
+[2025-04-08 14:46:08] info: 	zh:zstack:znp: closing
+[2025-04-08 14:46:08] info: 	z2m: Stopped zigbee-herdsman
+[2025-04-08 14:46:08] info: 	z2m: Stopped Zigbee2MQTT
